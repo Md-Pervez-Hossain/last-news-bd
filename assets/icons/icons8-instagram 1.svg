@@ -1,0 +1,24 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="icons8-instagram 1">
+<path id="Vector" d="M17.0085 20.995L7.0085 21.0045C4.8085 21.0065 3.007 19.2085 3.0045 17.0085L2.995 7.0085C2.993 4.8085 4.791 3.007 6.991 3.0045L16.991 2.995C19.191 2.993 20.9925 4.791 20.995 6.991L21.0045 16.991C21.007 19.1915 19.2085 20.993 17.0085 20.995Z" fill="url(#paint0_radial_92_60)"/>
+<path id="Vector_2" d="M17.0085 20.995L7.0085 21.0045C4.8085 21.0065 3.007 19.2085 3.0045 17.0085L2.995 7.0085C2.993 4.8085 4.791 3.007 6.991 3.0045L16.991 2.995C19.191 2.993 20.9925 4.791 20.995 6.991L21.0045 16.991C21.007 19.1915 19.2085 20.993 17.0085 20.995Z" fill="url(#paint1_radial_92_60)"/>
+<path id="Vector_3" d="M12 15.5C10.0705 15.5 8.5 13.93 8.5 12C8.5 10.07 10.0705 8.5 12 8.5C13.9295 8.5 15.5 10.07 15.5 12C15.5 13.93 13.9295 15.5 12 15.5ZM12 9.5C10.6215 9.5 9.5 10.6215 9.5 12C9.5 13.3785 10.6215 14.5 12 14.5C13.3785 14.5 14.5 13.3785 14.5 12C14.5 10.6215 13.3785 9.5 12 9.5Z" fill="white"/>
+<path id="Vector_4" d="M15.75 9C16.1642 9 16.5 8.66421 16.5 8.25C16.5 7.83579 16.1642 7.5 15.75 7.5C15.3358 7.5 15 7.83579 15 8.25C15 8.66421 15.3358 9 15.75 9Z" fill="white"/>
+<path id="Vector_5" d="M15 18.5H9C7.0705 18.5 5.5 16.93 5.5 15V9C5.5 7.07 7.0705 5.5 9 5.5H15C16.9295 5.5 18.5 7.07 18.5 9V15C18.5 16.93 16.9295 18.5 15 18.5ZM9 6.5C7.6215 6.5 6.5 7.6215 6.5 9V15C6.5 16.3785 7.6215 17.5 9 17.5H15C16.3785 17.5 17.5 16.3785 17.5 15V9C17.5 7.6215 16.3785 6.5 15 6.5H9Z" fill="white"/>
+</g>
+<defs>
+<radialGradient id="paint0_radial_92_60" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(9.69 21.0175) scale(22.4495)">
+<stop stop-color="#FFDD55"/>
+<stop offset="0.328" stop-color="#FF543F"/>
+<stop offset="0.348" stop-color="#FC5245"/>
+<stop offset="0.504" stop-color="#E64771"/>
+<stop offset="0.643" stop-color="#D53E91"/>
+<stop offset="0.761" stop-color="#CC39A4"/>
+<stop offset="0.841" stop-color="#C837AB"/>
+</radialGradient>
+<radialGradient id="paint1_radial_92_60" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(5.893 2.77015) scale(14.9065 9.9322)">
+<stop stop-color="#4168C9"/>
+<stop offset="0.999" stop-color="#4168C9" stop-opacity="0"/>
+</radialGradient>
+</defs>
+</svg>
