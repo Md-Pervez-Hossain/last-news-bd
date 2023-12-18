@@ -6,7 +6,7 @@ const ShowContent = ({ show, setShow }) => {
         onClick={() => setShow("home")}
         className={
           show === "home"
-            ? "border-b-[4px]  border-b-secondary text-secondary font-[600] "
+            ? "border-b-[3px]  border-b-secondary text-secondary font-[600] "
             : " py-5  "
         }
       >
@@ -16,7 +16,7 @@ const ShowContent = ({ show, setShow }) => {
         onClick={() => setShow("politics")}
         className={
           show === "politics"
-            ? "border-b-[4px]  border-b-secondary text-secondary font-[600] "
+            ? "border-b-[3px]  border-b-secondary text-secondary font-[600] "
             : "  py-5  "
         }
       >
@@ -26,7 +26,7 @@ const ShowContent = ({ show, setShow }) => {
         onClick={() => setShow("crime")}
         className={
           show === "crime"
-            ? "border-b-[4px]  border-b-secondary text-secondary font-[600] "
+            ? "border-b-[3px]  border-b-secondary text-secondary font-[600] "
             : "  py-5  "
         }
       >
@@ -36,7 +36,7 @@ const ShowContent = ({ show, setShow }) => {
         onClick={() => setShow("world")}
         className={
           show === "world"
-            ? "border-b-[4px]  border-b-secondary text-secondary font-[600] "
+            ? "border-b-[3px]  border-b-secondary text-secondary font-[600] "
             : "  py-5  "
         }
       >
@@ -46,7 +46,7 @@ const ShowContent = ({ show, setShow }) => {
         onClick={() => setShow("business")}
         className={
           show === "business"
-            ? "border-b-[4px]  border-b-secondary text-secondary font-[600] "
+            ? "border-b-[3px]  border-b-secondary text-secondary font-[600] "
             : "  py-5  "
         }
       >
@@ -56,18 +56,17 @@ const ShowContent = ({ show, setShow }) => {
         onClick={() => setShow("views")}
         className={
           show === "views"
-            ? "border-b-[4px]  border-b-secondary text-secondary font-[600] "
+            ? "border-b-[3px]  border-b-secondary text-secondary font-[600] "
             : "  py-5  "
         }
       >
         Views
       </button>
-
       <button
         onClick={() => setShow("game")}
         className={
           show === "game"
-            ? "border-b-[4px]  border-b-secondary text-secondary font-[600] "
+            ? "border-b-[3px]  border-b-secondary text-secondary font-[600] "
             : "  py-5  "
         }
       >
@@ -77,7 +76,7 @@ const ShowContent = ({ show, setShow }) => {
         onClick={() => setShow("entertainment")}
         className={
           show === "entertainment"
-            ? "border-b-[4px]  border-b-secondary text-secondary font-[600] "
+            ? "border-b-[3px]  border-b-secondary text-secondary font-[600] "
             : "  py-5  "
         }
       >
@@ -87,7 +86,7 @@ const ShowContent = ({ show, setShow }) => {
         onClick={() => setShow("jobs")}
         className={
           show === "jobs"
-            ? "border-b-[4px]  border-b-secondary text-secondary font-[600] "
+            ? "border-b-[3px]  border-b-secondary text-secondary font-[600] "
             : "  py-5  "
         }
       >
@@ -97,7 +96,7 @@ const ShowContent = ({ show, setShow }) => {
         onClick={() => setShow("lifestyle")}
         className={
           show === "lifestyle"
-            ? "border-b-[4px]  border-b-secondary text-secondary font-[600] "
+            ? "border-b-[3px]  border-b-secondary text-secondary font-[600] "
             : "  py-5  "
         }
       >
@@ -107,7 +106,7 @@ const ShowContent = ({ show, setShow }) => {
         onClick={() => setShow("technology")}
         className={
           show === "technology"
-            ? "border-b-[4px]  border-b-secondary text-secondary font-[600] "
+            ? "border-b-[3px]  border-b-secondary text-secondary font-[600] "
             : "  py-5  "
         }
       >
@@ -117,7 +116,7 @@ const ShowContent = ({ show, setShow }) => {
         onClick={() => setShow("education")}
         className={
           show === "education"
-            ? "border-b-[4px]  border-b-secondary text-secondary font-[600] "
+            ? "border-b-[3px]  border-b-secondary text-secondary font-[600] "
             : "  py-5  "
         }
       >
@@ -127,11 +126,21 @@ const ShowContent = ({ show, setShow }) => {
         onClick={() => setShow("special_news")}
         className={
           show === "special_news"
-            ? "border-b-[4px]  border-b-secondary text-secondary font-[600] "
+            ? "border-b-[3px]  border-b-secondary text-secondary font-[600] "
             : "  py-5  "
         }
       >
         Special News
+      </button>
+      <button
+        onClick={() => setShow("latest_news")}
+        className={
+          show === "latest_news"
+            ? "border-b-[3px]  border-b-secondary text-secondary font-[600] "
+            : "  py-5  "
+        }
+      >
+        Latest News
       </button>
 
     </div>

@@ -1,48 +1,99 @@
 "use client"
-import BusinessNews from '@/components/BusinessNews/BusinessNews';
-import CrimeNews from '@/components/CrimeNews/CrimeNews';
-import EducationNews from '@/components/EducationNews/EducationNews';
-import EntertainmentNews from '@/components/EntertainmentNews/EntertainmentNews';
-import GameNews from '@/components/GameNews/GameNews';
-import HomeNews from '@/components/HomeNews/HomeNews';
-import JobsNews from '@/components/JobsNews/JobsNews';
-import LifeStyleNews from '@/components/LifeStyleNews/LifeStyleNews';
-import PoliticsNews from '@/components/PoliticsNews/PoliticsNews';
-import SepcialNews from '@/components/SepcialNews/SepcialNews';
-
-import ShowContent from '@/components/Share/ShowContent/ShowContent';
-import TechnologyNews from '@/components/TechnologyNews/TechnologyNews';
-import ViewsNews from '@/components/ViewsNews/ViewsNews';
-import WorldNews from '@/components/WorldNews/WorldNews';
 import Container from '@/components/ui/Container/Container';
 import Title from '@/components/ui/Title/Title';
 import React, { useState } from 'react';
-
+import Link from 'next/link'
+import { usePathname } from 'next/navigation';
 const Menubar = () => {
-  const [show, setShow] = useState("home")
+
+  const pathname = usePathname()
+  console.log(pathname);
+
+
+  const menubarArray = [
+    {
+      id: 1,
+      title: "Home",
+      path: "/"
+    },
+    {
+      id: 2,
+      title: "Politics",
+      path: "/politics"
+    },
+    {
+      id: 3,
+      title: "Crime",
+      path: "/crime"
+    },
+    {
+      id: 4,
+      title: "World",
+      path: "/world"
+    },
+    {
+      id: 5,
+      title: "Business",
+      path: "/business"
+    },
+    {
+      id: 6,
+      title: "Views",
+      path: "/views"
+    },
+    {
+      id: 7,
+      title: "Game",
+      path: "/game"
+    },
+    {
+      id: 8,
+      title: "Entertainment",
+      path: "/entertainment"
+    },
+    {
+      id: 9,
+      title: "Jobs",
+      path: "/jobs"
+    },
+    {
+      id: 10,
+      title: "Lifestyle",
+      path: "/lifestyle"
+    },
+    {
+      id: 11,
+      title: "Technology",
+      path: "/technology"
+    },
+    {
+      id: 12,
+      title: "Education",
+      path: "/education"
+    },
+    {
+      id: 13,
+      title: "Special News",
+      path: "/special-news"
+    },
+  ]
   return (
-    <div>
+    <div className='pb-16'>
       <div className='bg-primary py-8 '>
         <Container>
-          <Title className="text-white ">News</Title>
-          <ShowContent show={show} setShow={setShow} />
+          <Title className="text-white mb-5">News</Title>
+          <div className='flex items-center justify-between text-white'>
+            {
+              menubarArray?.map(item => {
+                return (
+                  <>
+                    <Link href={item?.path} className={`${pathname === item?.path ? "text-secondary border-b-2 border-b-secondary" : "text-white"}`}>{item?.title}</Link>
+                  </>
+                )
+              })
+            }
+          </div>
         </Container>
-
-      </div>
-      <div className='py-10'>
-        {show === "home" && <HomeNews />}
-        {show === "politics" && <PoliticsNews />}
-        {show === "crime" && <CrimeNews />}
-        {show === "world" && <WorldNews />}
-        {show === "business" && <BusinessNews />}
-        {show === "views" && <ViewsNews />}
-        {show === "game" && <GameNews />}
-        {show === "entertainment" && <EntertainmentNews />}
-        {show === "jobs" && <JobsNews />}
-        {show === "lifestyle" && <LifeStyleNews />}
-        {show === "technology" && <TechnologyNews />}
-        {show === "education" && <EducationNews />}
-        {show === "special_news" && <SepcialNews />}
       </div>
     </div>
   );

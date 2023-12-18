@@ -1,0 +1,6 @@
+.liveNewsBanner {
+  background-image: url(../../../../assets/images/news_image.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
