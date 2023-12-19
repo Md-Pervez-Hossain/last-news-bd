@@ -12,7 +12,7 @@ const Navigation = () => {
   return (
     <div className='  py-3 bg-[#F5F5F5]'>
       <Container>
-        <div className='flex justify-between gap-5 flex-wrap'>
+        <div className='flex  justify-between gap-5 flex-wrap'>
           <div className='flex items-center gap-10'>
             <div className='flex items-center gap-3'>
               <Image alt='image' width={20} height={20} src={paperIcon} />
@@ -25,7 +25,7 @@ const Navigation = () => {
           </div>
           <div className='flex items-center gap-3'>
             <h2>Follow Us : </h2>
-            <div className='flex items-center gap-3'>
+            <div className='flex flex-wrap items-center gap-3'>
               <Image alt='image' width={30} height={30} src={faceBookIcon} />
               <Image alt='image' width={30} height={30} src={linkedinIcon} />
               <Image alt='image' width={30} height={30} src={twitterIcon} />

@@ -10,7 +10,7 @@ const Footer = () => {
   return (
     <div className='bg-primary py-10 '>
       <Container>
-        <div className='grid grid-cols-4 gap-10 text-white my-8'>
+        <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-10 text-white my-8'>
           <div>
             <div className='flex items-center gap-3 mb-5 '>
               <Image alt='image' width={30} height={30} src={newsIcon} />
@@ -46,8 +46,8 @@ const Footer = () => {
           <div>
             <h4 className='text-[24px] font-[500] mb-5'>Newsletter</h4>
             <p>Get the latest creative news from Anacker News</p>
-            <div className='flex items-center my-5'>
-              <input placeholder='write Your Email' className='px-4 py-2 rounded-lg' />
+            <div className='flex  items-center my-5'>
+              <input placeholder='write Your Email' className='   lg:w-[200px]  px-4 py-2 rounded-lg' />
               <PrimaryButtonWithIcons icon={<IoSend />} className="bg-secondary text-white px-4 py-3 -ms-5" ></PrimaryButtonWithIcons >
             </div>
           </div>

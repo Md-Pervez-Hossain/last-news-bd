@@ -6,6 +6,7 @@ const Title = ({ children, className }) => {
     <div className={twMerge("text-[32px] font-[600]", className)} >
       {children}
     </div>
+
   )
 }
 export default Title

@@ -57,7 +57,7 @@ const MediaGallery = () => {
       <Container>
         <Title>Media Gallery</Title>
         <div className='w-56 h-1 bg-secondary'></div>
-        <div className='grid grid-cols-3 gap-10 my-10'>
+        <div className='grid md:grid-cols-2 xl:grid-cols-3 gap-10 my-10'>
           {
             mediaGalleryArray?.map(media => {
               return (

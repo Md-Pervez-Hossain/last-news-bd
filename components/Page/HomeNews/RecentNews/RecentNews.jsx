@@ -7,7 +7,7 @@ const RecentNews = () => {
     <div >
       <Title>Recent News</Title>
       <div className='w-56 h-1 bg-secondary'></div>
-      <div className='grid grid-cols-2 gap-10 my-5'>
+      <div className='grid lg:grid-cols-2 gap-10 my-5'>
         <Image
           src={image}
           alt="Picture of the author"

@@ -8,7 +8,7 @@ const ContactInfo = () => {
   return (
     <div className='mt-16'>
       <Container>
-        <div className='grid grid-cols-3 gap-10'>
+        <div className='grid lg:grid-cols-3 gap-10'>
           <div className=' border-b-[10px] border-b-secondary shadow-xl p-5'>
             <Image
               src={addressIcon}

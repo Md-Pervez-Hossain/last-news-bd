@@ -41,21 +41,22 @@ const PhotoGallery = ({ show, setShow }) => {
   return (
     <div className='my-5'>
       <div className='mb-5'>
-        <div className='flex items-center justify-between'>
-          <Title >Photo Gallery</Title>
+        <div className='flex items-center flex-wrap gap-5 justify-between'>
+          <div> <Title >Photo Gallery</Title>
+            <div className='w-56 h-1 bg-secondary'></div></div>
           <Link href="/home-photo-gallery">
             <button className='text-[24px] font-[600] border-2 rounded-full px-8 py-2'>Visit Gallery</button>
           </Link>
         </div>
 
-        <div className='w-56 h-1 bg-secondary'></div>
+
       </div>
       <Swiper navigation={true} modules={[Navigation]} slidesPerView={3}
         spaceBetween={30}
         centeredSlides={true}
         breakpoints={{
           640: {
-            slidesPerView: 2,
+            slidesPerView: 1,
             spaceBetween: 20,
           },
           768: {

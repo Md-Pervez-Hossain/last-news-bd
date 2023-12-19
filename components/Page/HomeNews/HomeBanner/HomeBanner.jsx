@@ -10,7 +10,7 @@ const HomeBanner = () => {
     setImageVisible(false);
   };
   return (
-    <div>
+    <div >
       <Container>
         {
           imageVisible && <div className='relative'>

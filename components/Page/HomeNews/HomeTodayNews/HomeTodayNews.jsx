@@ -57,7 +57,7 @@ const HomeTodayNews = () => {
     <div>
       <Title>Todays News</Title>
       <div className='w-56 h-1 bg-secondary'></div>
-      <div >
+      <div>
         {
           specialNews?.map(news => {
             return (
@@ -65,13 +65,10 @@ const HomeTodayNews = () => {
                 <div className='flex flex-col gap-5 my-5' key={news.id}>
                   <h2 className='text-[18px]'>{`${news.title.slice(0, 50)}...`}</h2>
 
-                  <div className='grid grid-cols-2 gap-5 items-center'>
+                  <div className='grid lg:grid-cols-2 gap-5 items-center'>
                     <p className='text-[16px] text-[#646464]'>{`${news?.description.slice(0, 70)} ...`}</p>
-                    <div className='newsBanner h-[100px] '></div>
+                    <div className='newsBanner h-[300px] lg:h-[100px] '></div>
                   </div>
-
-
-
                 </div>
               </>
             )

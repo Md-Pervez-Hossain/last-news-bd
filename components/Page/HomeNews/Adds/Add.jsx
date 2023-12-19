@@ -16,6 +16,7 @@ const Add = () => {
             src={addImage}
             alt="Picture of the author"
             style={{ objectFit: "contain" }}
+            width={1000}
           />
           <span className='bg-white p-3 shadow-lg absolute top-2 right-2 rounded-full cursor-pointer' onClick={handleCloseClick}>
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">

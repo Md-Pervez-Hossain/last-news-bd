@@ -9,7 +9,7 @@ const MiddleMenu = () => {
   return (
     <div className='' >
       <Container>
-        <div className='flex justify-between gap-5 items-center py-5'>
+        <div className='flex justify-between gap-5 flex-wrap items-center py-5'>
           <div className='flex items-center gap-3'>
             <Image alt='image' width={20} height={20} src={globeIcon} />
             <h2>Monday, December 11, 2023</h2>
@@ -18,7 +18,8 @@ const MiddleMenu = () => {
             <Image alt='image' width={30} height={30} src={newsIcon} />
             <h2>Last News BD</h2>
           </div>
-          <div className='flex items-center gap-3'>
+          <div className='flex items-center flex-wrap gap-3'>
+            <input placeholder='search' className='px-4 py-2 rounded-full border-2 border-[#F5F5F5]' />
             <PrimaryButton >Search</PrimaryButton>
           </div>
         </div>

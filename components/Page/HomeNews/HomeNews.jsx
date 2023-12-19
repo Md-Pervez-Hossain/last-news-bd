@@ -25,22 +25,21 @@ const HomeNews = () => {
         <Title> Latest News</Title>
         <div className='w-52 h-1 bg-secondary'></div>
         <div className='grid grid-cols-3 gap-10'>
-          <div className='col-span-2'>
+          <div className='lg:col-span-2 col-span-3'>
             <LatestNews />
             <HomeSpecialNews />
           </div>
-          <div className='col-span-1 '>
+          <div className='lg:col-span-1 col-span-3 '>
             <NewsTitle />
-            <Add />
             <Add />
           </div>
         </div>
         <PhotoGallery />
         <div className='grid grid-cols-3 my-10 gap-10'>
-          <div className='col-span-2'>
+          <div className='lg:col-span-2 col-span-3'>
             <HomeLiveNews />
           </div>
-          <div className='col-span-1'>
+          <div className='lg:col-span-1 col-span-3'>
             <HomeTodayNews />
           </div>
         </div>

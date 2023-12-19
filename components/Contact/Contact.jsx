@@ -14,6 +14,7 @@ import gmailIcon from "../../assets/icons/email.png"
 import Title from '../ui/Title/Title';
 import ContactForm from './ContactForm';
 
+
 const Contact = () => {
   return (
     <div className='my-16'>
@@ -23,8 +24,8 @@ const Contact = () => {
         <div className='my-10'>
           <Title>Social Network</Title>
           <div className='w-56 h-1 bg-secondary'></div>
-          <div className='grid grid-cols-2 gap-5 my-10'>
-            <div className='grid grid-cols-2 gap-10'>
+          <div className='grid lg:grid-cols-2 gap-10 my-10'>
+            <div className='grid lg:grid-cols-2 gap-10'>
               <SocialNetwork image={faceBookIcon} title="Facebook" className="bg-gray-100 shadow-xl" />
               <SocialNetwork image={linkedenIcon} title="Linkeden" className="bg-gray-100 shadow-xl" />
               <SocialNetwork image={twitterIcon} title="Twitter" className="bg-gray-100 shadow-xl" />
@@ -35,7 +36,7 @@ const Contact = () => {
               <SocialNetwork image={gmailIcon} title="Gmail" className="bg-gray-100 shadow-xl" />
             </div>
             <div>
-              {/* <ContactForm /> */}
+              <ContactForm />
             </div>
           </div>
         </div>

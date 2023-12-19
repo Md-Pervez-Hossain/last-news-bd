@@ -22,12 +22,12 @@ const HomeVideoGallary = () => {
       <Container>
         <Title>Media Gallery</Title>
         <div className='w-56 h-1 bg-secondary'></div>
-        <div className='grid grid-cols-3  my-10'>
+        <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-10  my-10'>
           {
             videos?.map(video => {
               return (
                 <div key={video?.id}>
-                  <iframe width="400px" height="250px" src={`${video?.link}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  <iframe width="300px" height="250px" src={`${video?.link}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
               )
             })

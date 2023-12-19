@@ -41,26 +41,26 @@ const HomeOtherNews = () => {
   ]
   return (
     <div>
-      <Container>
-        <Title>Others News</Title>
-        <div className='w-56 h-1 bg-secondary'></div>
-        <div className='grid grid-cols-4 gap-10 my-8'>
-          {
-            specialNews?.map(news => {
-              return (
-                <>
-                  <div className='flex flex-col gap-5' key={news.id}>
-                    <div className='newsBanner h-[250px]'></div>
-                    <h2 className='text-[18px]'>{`${news.title.slice(0, 30)}...`}</h2>
-                    {/* <p className='text-[16px] text-[#646464]'>{`${news?.description.slice(0, 70)} ...`}</p> */}
-                    <span className='text-[#646464] text-[14px]'>{news?.time}</span>
-                  </div>
-                </>
-              )
-            })
-          }
-        </div>
-      </Container>
+
+      <Title>Others News</Title>
+      <div className='w-56 h-1 bg-secondary'></div>
+      <div className='grid md:grid-cols-2 xl:grid-cols-4 gap-10 my-8'>
+        {
+          specialNews?.map(news => {
+            return (
+              <>
+                <div className='flex flex-col gap-5' key={news.id}>
+                  <div className='newsBanner h-[250px]'></div>
+                  <h2 className='text-[18px]'>{`${news.title.slice(0, 30)}...`}</h2>
+                  {/* <p className='text-[16px] text-[#646464]'>{`${news?.description.slice(0, 70)} ...`}</p> */}
+                  <span className='text-[#646464] text-[14px]'>{news?.time}</span>
+                </div>
+              </>
+            )
+          })
+        }
+      </div>
+
     </div>
   );
 };

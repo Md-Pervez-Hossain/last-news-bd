@@ -11,7 +11,7 @@ const HomeAllPhotoGallery = () => {
       <MediaGallery />
       <div className='mb-10'> <HomeBanner /></div>
       <HomeVideoGallary />
-      <HomeOtherNews />
+      <Container> <HomeOtherNews /></Container>
     </div>
   );
 };
