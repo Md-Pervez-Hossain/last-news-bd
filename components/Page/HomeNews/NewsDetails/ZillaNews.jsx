@@ -1,11 +1,7 @@
-import Container from '@/components/ui/Container/Container';
-import Title from '@/components/ui/Title/Title';
 import React from 'react';
-import image1 from "../../../../assets/images/images1.png"
-import "./HomeSepicalNews.css"
 import Link from "next/link"
-const HomeSpecialNews = () => {
-
+import image1 from "../../../../assets/images/news_image.png"
+const ZillaNews = () => {
   const specialNews = [
     {
       id: 1,
@@ -59,26 +55,27 @@ const HomeSpecialNews = () => {
   ]
   return (
     <div>
-      <Title>Special News</Title>
-      <div className='w-56 h-1 bg-secondary'></div>
-      <div className='grid md:grid-cols-2 3 xl:grid-cols-3 gap-10 my-8'>
-        {
-          specialNews?.map(news => {
-            return (
-              <>
-                <div className='flex flex-col gap-5' key={news?.id}>
-                  <div className='newsBanner h-[250px]'></div>
-                  <Link href={`/news-details/${news?.id}`}> <h2 className='text-[18px]'>{`${news.title.slice(0, 30)}...`}</h2></Link>
-                  <p className='text-[16px] text-[#646464]'>{`${news?.description.slice(0, 70)} ...`}</p>
-                  <span className='text-[#646464] text-[14px]'>{news?.time}</span>
+      <h2>জেলা থেকে আরও পড়ুন</h2>
+      {
+        specialNews?.map(news => {
+          return (
+            <>
+              <div key={news?.id}>
+                <div className='grid grid-cols-2 gap-5 items-center'>
+                  <div >
+                    <Link href={`/news-details/${news?.id}`}> <h2 className='text-[18px] mb-3'>{`${news.title}`}</h2></Link>
+                    <p className='text-[16px] text-[#646464] mb-3'>{news?.description}</p>
+                    <span className='text-[#646464] text-[14px]'>{news?.time}</span>
+                  </div>
+                  <div className='newsBanner h-[200px] mb-5'></div>
                 </div>
-              </>
-            )
-          })
-        }
-      </div>
+              </div>
+            </>
+          )
+        })
+      }
     </div>
   );
 };
 
-export default HomeSpecialNews;
+export default ZillaNews;

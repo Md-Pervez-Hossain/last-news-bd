@@ -84,7 +84,7 @@ const Menubar = () => {
       <div className='bg-primary py-8 '>
         <Container>
           <div className='' >
-            <div>
+            <div className=' sticky top-0'>
               <Title className="text-white mb-5  text-end lg:flex">News</Title>
               <div className=' '>
                 <div className='hidden lg:flex items-center justify-between flex-wrap text-white'>
@@ -99,26 +99,23 @@ const Menubar = () => {
                   }
                 </div>
               </div>
-              <div className='lg:hidden flex justify-end  '>
-                <button onClick={() => setIsOpen(!isOpen)}>{isOpen ? <IoClose className='text-white text-3xl' /> : <IoMdMenu className='text-white text-3xl' />}</button>
+            </div>
+            <div className='lg:hidden flex justify-end  '>
+              <button onClick={() => setIsOpen(!isOpen)}>{isOpen ? <IoClose className='text-white text-3xl' /> : <IoMdMenu className='text-white text-3xl' />}</button>
+            </div>
+            <div className={`md:hidden  z-50  w-[200px] h-full  text-start    absolute top-0    transition-all duration-500 ease-in-out   ${isOpen ? "left-0" : "-left-[250px]"}`}>
+
+              <div className='flex flex-col gap-5 text-white bg-primary h-screen py-8 px-4'>
+                {
+                  menubarArray?.map(item => {
+                    return (
+                      <>
+                        <Link href={item?.path} className={`${pathname === item?.path ? "text-secondary border-b-2 border-b-secondary" : "text-white"}`}>{item?.title}</Link>
+                      </>
+                    )
+                  })
+                }
               </div>
-
-
-              <div className={`md:hidden  z-50  w-[200px] h-full  text-start    absolute top-0    transition-all duration-500 ease-in-out   ${isOpen ? "left-0" : "-left-[250px]"}`}>
-
-                <div className='flex flex-col gap-5 text-white bg-primary h-screen py-8 px-4'>
-                  {
-                    menubarArray?.map(item => {
-                      return (
-                        <>
-                          <Link href={item?.path} className={`${pathname === item?.path ? "text-secondary border-b-2 border-b-secondary" : "text-white"}`}>{item?.title}</Link>
-                        </>
-                      )
-                    })
-                  }
-                </div>
-              </div>
-
             </div>
           </div>
         </Container>
