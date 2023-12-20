@@ -1,7 +1,7 @@
 import React from 'react';
 
-const LatestNewsTitle = () => {
 
+const LatestNewsTitle = () => {
   const latestNewsTitleArray = [
     {
       id: 1,
@@ -48,6 +48,7 @@ const LatestNewsTitle = () => {
       title: "আসিফ নজরুলের কলাম ফুটবলার আমিনুল কি ভয়ঙ্কর অপরাধী?"
     },
   ]
+
   return (
     <div>
       {

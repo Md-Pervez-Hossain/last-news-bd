@@ -8,10 +8,10 @@ import whatsAppIcon from "../../../assets/icons/whatsup.svg"
 import shareIcon from "../../../assets/icons/sharelink.png"
 import youtubeIcon from "../../../assets/icons/icons8-youtube 1.svg"
 import gmailIcon from "../../../assets/icons/email.png"
-const SocialMediaIcons = () => {
+const FixedSocialMedia = () => {
   return (
     <div>
-      <div className='flex items-center gap-3 cursor-pointer'>
+      <div className='flex flex-col items-center gap-3 cursor-pointer'>
         <Image
           src={faceBookIcon}
           alt="Picture of the Email"
@@ -73,4 +73,4 @@ const SocialMediaIcons = () => {
   );
 };
 
-export default SocialMediaIcons;
+export default FixedSocialMedia;

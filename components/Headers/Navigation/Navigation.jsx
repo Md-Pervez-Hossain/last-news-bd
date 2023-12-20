@@ -25,12 +25,12 @@ const Navigation = () => {
           </div>
           <div className='flex items-center gap-3'>
             <h2>Follow Us : </h2>
-            <div className='flex flex-wrap items-center gap-3'>
-              <Image alt='image' width={30} height={30} src={faceBookIcon} />
-              <Image alt='image' width={30} height={30} src={linkedinIcon} />
-              <Image alt='image' width={30} height={30} src={twitterIcon} />
-              <Image alt='image' width={30} height={30} src={instagramIcon} />
-              <Image alt='image' width={30} height={30} src={youtubeIcon} />
+            <div className='flex flex-wrap items-center gap-3 cursor-pointer'>
+              <Image alt='image' width={30} height={30} src={faceBookIcon} className='transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300 ' />
+              <Image alt='image' width={30} height={30} src={linkedinIcon} className='transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300 ' />
+              <Image alt='image' width={30} height={30} src={twitterIcon} className='transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300 ' />
+              <Image alt='image' width={30} height={30} src={instagramIcon} className='transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300 ' />
+              <Image alt='image' width={30} height={30} src={youtubeIcon} className='transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300 ' />
             </div>
           </div>
         </div>

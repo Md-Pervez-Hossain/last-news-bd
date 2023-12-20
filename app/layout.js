@@ -2,6 +2,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import Headers from '@/components/Headers/Headers'
 import Footer from '@/components/Footer/Footer'
+import FixedSocialMedia from '@/components/Share/FixedSocialMedia/FixedSocialMedia'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,6 +17,9 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <div >
           <Headers />
+          <div className=" fixed right-0 lg:top-32 bottom-0   p-3 z-50 ">
+            <FixedSocialMedia />
+          </div>
           {children}
           <Footer />
         </div>

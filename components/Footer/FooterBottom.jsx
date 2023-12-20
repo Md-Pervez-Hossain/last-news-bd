@@ -11,7 +11,9 @@ const FooterBottom = () => {
             <Link href="/contact">Contact</Link>
           </li>
           <span className='w-2 h-2 bg-[#8B8B8B] rounded-full'></span> <li>Media Gallery</li>
-          <span className='w-2 h-2 bg-[#8B8B8B] rounded-full'></span> <li>Advertisement</li>
+          <span className='w-2 h-2 bg-[#8B8B8B] rounded-full'></span> <li>
+            <Link href="/advertisement">Advertisement</Link>
+          </li>
         </ul>
       </div>
       <div className='flex items-center flex-wrap justify-center  text-[#8B8B8B] my-5'>

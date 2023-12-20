@@ -1,8 +1,11 @@
+"use client"
+
 import Container from '@/components/ui/Container/Container';
 import Title from '@/components/ui/Title/Title';
 import React from 'react';
 import image1 from "../../../../../assets/images/news_image.png"
 import Image from 'next/image'
+import { motion } from "framer-motion";
 const MediaGallery = () => {
 
   const mediaGalleryArray = [
@@ -62,14 +65,15 @@ const MediaGallery = () => {
             mediaGalleryArray?.map(media => {
               return (
                 <>
-                  <div>
+                  <motion.div whileHover={{ scale: [null, 1.1, 1.1] }}
+                    transition={{ duration: 0.7 }} className='cursor-pointer'>
                     <Image
                       src={media?.image}
                       alt="Picture of the author"
                       style={{ objectFit: "contain" }}
                       width={1000}
                     />
-                  </div>
+                  </motion.div>
                 </>
               )
             })

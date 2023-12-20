@@ -1,6 +1,8 @@
+"use client"
 import Container from '@/components/ui/Container/Container';
 import Title from '@/components/ui/Title/Title';
 import React from 'react';
+import { motion } from "framer-motion";
 const HomeVideoGallary = () => {
   const videos = [
     {
@@ -26,9 +28,10 @@ const HomeVideoGallary = () => {
           {
             videos?.map(video => {
               return (
-                <div key={video?.id}>
-                  <iframe width="300px" height="250px" src={`${video?.link}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
+                <motion.div whileHover={{ scale: [null, 1.1, 1.1] }}
+                  transition={{ duration: 0.7 }} key={video?.id}>
+                  <iframe width="400px" height="250px" src={`${video?.link}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </motion.div>
               )
             })
           }

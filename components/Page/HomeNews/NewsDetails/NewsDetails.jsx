@@ -12,10 +12,10 @@ const NewsDetails = () => {
       <HomeBanner />
       <Container>
         <div className='grid grid-cols-3 gap-10 my-8'>
-          <div className='col-span-2'>
+          <div className='lg:col-span-2 col-span-3'>
             <SingleNewsPostDetails />
           </div>
-          <div className='col-span-1'>
+          <div className='lg:col-span-1 col-span-3'>
             <HomeTodayNews />
             <NewsTitle />
           </div>

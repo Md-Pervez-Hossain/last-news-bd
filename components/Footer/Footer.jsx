@@ -6,6 +6,7 @@ import newsIcon from "../../assets/icons/News_Paper_white_icon 1 (1).svg"
 import { PrimaryButton, PrimaryButtonWithIcons } from '../Share/Buttons/Buttons';
 import FooterBottom from './FooterBottom';
 import { IoSend } from "react-icons/io5";
+import Link from "next/link"
 const Footer = () => {
   return (
     <div className='bg-primary mt-16 '>
@@ -27,21 +28,25 @@ const Footer = () => {
             <div>
               <h4 className='text-[24px] font-[500] mb-5'>News</h4>
               <ul className='flex flex-col gap-5 flex-wrap cursor-pointer'>
-                <li>Home</li>
-                <li>Politics</li>
-                <li>World</li>
-                <li>Crime</li>
-                <li>Business</li>
+                <li className='hover:text-secondary transition-all duration-500 ease-in-out'> <Link href="/">Home</Link></li>
+                <li className='hover:text-secondary transition-all duration-500 ease-in-out'><Link href="/politics">Politics</Link></li>
+                <li className='hover:text-secondary transition-all duration-500 ease-in-out'><Link href="/world">World</Link></li>
+                <li className='hover:text-secondary transition-all duration-500 ease-in-out'><Link href="/crime">Crime</Link></li>
+                <li className='hover:text-secondary transition-all duration-500 ease-in-out'><Link href="/business">Business</Link></li>
               </ul>
             </div>
             <div>
               <h4 className='text-[24px] font-[500] mb-5'>Company</h4>
-              <ul className='flex flex-col gap-5 flex-wrap cursor-pointer' >
-                <li>Terms & Condition</li>
-                <li>Privacy Policy</li>
-                <li>Cookies Policy</li>
-                <li>Manage Cookies</li>
-                <li>About  Us</li>
+              <ul className='flex flex-col gap-5 flex-wrap cursor-pointer ' >
+                <li className='hover:text-secondary transition-all duration-500 ease-in-out'>
+                  <Link href="/terms-condition">Terms & Condition</Link>
+                </li>
+                <li className='hover:text-secondary transition-all duration-500 ease-in-out'>
+                  <Link href="/privacy-policy">Privacy Policy</Link>
+                </li>
+                <li className='hover:text-secondary transition-all duration-500 ease-in-out'> <Link href="/cookies-policy">Cookies Policy</Link></li>
+                <li className='hover:text-secondary transition-all duration-500 ease-in-out'> <Link href="/manage-cookies">Manage Cookies</Link> </li>
+                <li className='hover:text-secondary transition-all duration-500 ease-in-out'>  <Link href="/about-us">About  Us</Link> </li>
               </ul>
             </div>
             <div>

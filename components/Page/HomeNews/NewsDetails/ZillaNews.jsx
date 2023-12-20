@@ -56,24 +56,26 @@ const ZillaNews = () => {
   return (
     <div>
       <h2>জেলা থেকে আরও পড়ুন</h2>
-      {
-        specialNews?.map(news => {
-          return (
-            <>
-              <div key={news?.id}>
-                <div className='grid grid-cols-2 gap-5 items-center'>
-                  <div >
-                    <Link href={`/news-details/${news?.id}`}> <h2 className='text-[18px] mb-3'>{`${news.title}`}</h2></Link>
-                    <p className='text-[16px] text-[#646464] mb-3'>{news?.description}</p>
-                    <span className='text-[#646464] text-[14px]'>{news?.time}</span>
+      <div>
+        {
+          specialNews?.map(news => {
+            return (
+              <>
+                <div key={news?.id}>
+                  <div className='grid md:grid-cols-2 gap-5 items-center'>
+                    <div >
+                      <Link href={`/news-details/${news?.id}`}> <h2 className='text-[18px] mb-3'>{`${news.title}`}</h2></Link>
+                      <p className='text-[16px] text-[#646464] mb-3'>{news?.description}</p>
+                      <span className='text-[#646464] text-[14px]'>{news?.time}</span>
+                    </div>
+                    <div className='newsBanner h-[200px] mb-5'></div>
                   </div>
-                  <div className='newsBanner h-[200px] mb-5'></div>
                 </div>
-              </div>
-            </>
-          )
-        })
-      }
+              </>
+            )
+          })
+        }
+      </div>
     </div>
   );
 };
