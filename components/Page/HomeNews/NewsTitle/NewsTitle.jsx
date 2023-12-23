@@ -14,14 +14,14 @@ const NewsTitle = () => {
       <div className='flex items-center justify-between pb-3 '>
         <button onClick={() => setShow("latest_news")} className={
           show === "latest_news"
-            ? "border-b-[3px]  border-b-secondary text-secondary font-[600] "
+            ? "border-b-[3px]  border-b-secondary text-secondary font-[600] transition-all ease-in-out duration-500 "
             : " py-5  "
-        }>Latest News</button>
+        }>সদ্যপ্রাপ্ত সংবাদ</button>
         <button onClick={() => setShow("trending_news")} className={
           show === "trending_news"
-            ? "border-b-[3px]  border-b-secondary text-secondary font-[600] "
+            ? "border-b-[3px]  border-b-secondary text-secondary font-[600] transition-all ease-in-out duration-500  "
             : " py-5  "
-        }>Trending News</button>
+        }>সর্বশেষ সংবাদ</button>
       </div>
       <div>
         {show === "latest_news" && <LatestNewsTitle />}

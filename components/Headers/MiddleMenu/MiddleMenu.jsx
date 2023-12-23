@@ -12,7 +12,7 @@ const MiddleMenu = () => {
         <div className='flex justify-between gap-5 flex-wrap items-center py-5'>
           <div className='flex items-center gap-3'>
             <Image alt='image' width={20} height={20} src={globeIcon} />
-            <h2>Monday, December 11, 2023</h2>
+            <h2>শুক্রবার, ২২ ডিসেম্বর ২০২৩</h2>
           </div>
           <div className='flex items-center gap-3'>
             <Image alt='image' width={30} height={30} src={newsIcon} />

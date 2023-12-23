@@ -11,7 +11,7 @@ const HomeBanner = () => {
   };
   return (
     <div >
-      <Container>
+      <>
         {
           imageVisible && <div className='relative'>
             <Image
@@ -28,7 +28,7 @@ const HomeBanner = () => {
         }
 
 
-      </Container>
+      </>
     </div>
   );
 };

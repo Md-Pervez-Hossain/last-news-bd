@@ -56,7 +56,7 @@ const TrendingNewsTitle = () => {
           return (
             <>
               <ul>
-                <li className='mb-5'> {item?.id} . {item.title}
+                <li className='mb-5'> <span className='text-secondary font-[600]'>{item?.id} .</span>  {item.title}
                   <hr className='w-full h-[2px] bg-[#222222] opacity-10 mt-3' />
                 </li>
 

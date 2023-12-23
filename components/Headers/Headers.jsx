@@ -5,7 +5,7 @@ import Menubar from './Menubar/Menubar';
 
 const Headers = () => {
   return (
-    <div>
+    <div className=''>
       <Navigation />
       <MiddleMenu />
       <Menubar />

@@ -1,6 +1,10 @@
 import Title from '@/components/ui/Title/Title';
 import React from 'react';
-import image1 from "../../../../assets/images/news_image.png"
+import image1 from "../../../../assets/images/today_news_1.png"
+import image2 from "../../../../assets/images/today_news_2.png"
+import image3 from "../../../../assets/images/today_news_3.png"
+import image4 from "../../../../assets/images/today_news_4.png"
+import Image from "next/image"
 const HomeTodayNews = () => {
   const specialNews = [
     {
@@ -15,7 +19,7 @@ const HomeTodayNews = () => {
       id: 2,
       tag: "গান",
       title: "ভ্যাট প্রদানে উদ্বুদ্ধ করতে মমতাজের গান",
-      image: image1,
+      image: image2,
       description: "গানের শিল্পী ও সংসদ সদস্য মমতাজ বেগমের এখনকার ব্যস্ততা আগামী সংসদ নির্বাচন নিয়ে। মাসের বেশির ভাগ সময় এখন তাই নিজ এলাকার মানুষের সঙ্গে কাটে। এই ",
       time: "২ ঘণ্টা আগে"
     },
@@ -23,7 +27,7 @@ const HomeTodayNews = () => {
       id: 3,
       tag: "সুস্থতা",
       title: "গাড়িতে উঠলেই শিশু বমি করে, কী করবেন",
-      image: image1,
+      image: image3,
       description: "চলে এসেছে ডিসেম্বর, শিশুদের পরীক্ষা শেষ। সপরিবার বেড়াতে যাওয়ার এটাই উপযুক্ত সময়। কিন্তু বেড়াতে যাওয়ার ক্ষেত্রে অনেক সময়ই পিছিয়ে যেতে হয় ভ্রমণে শিশু ",
       time: "২ ঘণ্টা আগে"
     },
@@ -31,23 +35,23 @@ const HomeTodayNews = () => {
       id: 4,
       tag: "মধ্যপ্রাচ্য",
       title: "জম্মু-কাশ্মীরের বিশেষ মর্যাদা খারিজ বৈধ, সেপ্টেম্বরের মধ্যে ভোট করার তাগিদ",
-      image: image1,
+      image: image4,
       description: "ভারতের জম্মু-কাশ্মীরের বিশেষ মর্যাদা প্রত্যাহারের কেন্দ্রীয় সিদ্ধান্ত সাংবিধানিক দিক থেকে বৈধ। ২০১৯ সালের ৫ আগস্ট এই রাজ্যের জন্য নির্ধারিত সংবিধানের ৩৭০ অনু",
       time: "২ ঘণ্টা আগে"
     },
     {
-      id: 4,
+      id: 5,
       tag: "মধ্যপ্রাচ্য",
       title: "ইতিহাসের এই দিনে: জাতিসংঘে চের ঐতিহাসিক ভাষণ",
-      image: image1,
+      image: image2,
       description: "গানের শিল্পী ও সংসদ সদস্য মমতাজ বেগমের এখনকার ব্যস্ততা আগামী সংসদ নির্বাচন নিয়ে। মাসের বেশির ভাগ সময় এখন তাই নিজ এলাকার মানুষের সঙ্গে কাটে। এই ",
       time: "২ ঘণ্টা আগে"
     },
     {
-      id: 4,
+      id: 6,
       tag: "মধ্যপ্রাচ্য",
       title: "গাড়িতে উঠলেই শিশু বমি করে, কী করবেন",
-      image: image1,
+      image: image3,
       description: "ইউক্রেনের প্রেসিডেন্ট ভলোদিমির জেলেনস্কিকে হোয়াইট হাউসে আমন্ত্রণ জানিয়েছেন যুক্তরাষ্ট্রের প্রেসিডেন্ট জো বাইডেন। সেখানে আগামীকাল মঙ্গলবার বৈঠক করবেন দুই নেতা। মস্কোর বিরুদ্ধে চল",
       time: "২ ঘণ্টা আগে",
     },
@@ -56,7 +60,6 @@ const HomeTodayNews = () => {
   return (
     <div>
       <Title>Todays News</Title>
-      <div className='w-56 h-1 bg-secondary'></div>
       <div>
         {
           specialNews?.map(news => {
@@ -67,7 +70,10 @@ const HomeTodayNews = () => {
 
                   <div className='grid lg:grid-cols-2 gap-5 items-center'>
                     <p className='text-[16px] text-[#646464]'>{`${news?.description.slice(0, 70)} ...`}</p>
-                    <div className='newsBanner h-[300px] lg:h-[100px] '></div>
+                    <Image src={news?.image}
+                      alt="Picture "
+                      style={{ objectFit: "contain" }}
+                    />
                   </div>
                 </div>
               </>

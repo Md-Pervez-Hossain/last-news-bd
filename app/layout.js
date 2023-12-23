@@ -1,10 +1,11 @@
-import { Inter } from 'next/font/google'
+import { Inter, Tiro_Bangla } from 'next/font/google'
 import './globals.css'
 import Headers from '@/components/Headers/Headers'
 import Footer from '@/components/Footer/Footer'
 import FixedSocialMedia from '@/components/Share/FixedSocialMedia/FixedSocialMedia'
 
 const inter = Inter({ subsets: ['latin'] })
+const tiro = Tiro_Bangla({ subsets: ["bengali"], weight: ["400"] })
 
 export const metadata = {
   title: 'Create Next App',
@@ -13,8 +14,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="en"  >
+      <body className={`${inter.className} ${tiro}`}>
         <div >
           <Headers />
           <div className=" fixed right-0 lg:top-32 bottom-0   p-3 z-50 ">
