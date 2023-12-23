@@ -17,11 +17,65 @@ import AddTwo from './Adds/AddTwo';
 import AddThree from './Adds/AddThree';
 import AddFour from './Adds/AddFour';
 import MoreBreakingNews from './MoreBreakingNews/MoreBreakingNews';
+import { usePathname } from 'next/navigation';
+import InterNationalNews from '../InterNationalNews/InterNationalNews';
 const HomeNews = () => {
+
+  const pathname = usePathname()
   return (
     <div>
+      {
+        pathname === "/international" && <> <Container>
+          <div className='grid grid-cols-3 gap-10 '>
+            <div className='lg:col-span-2 col-span-3'>
+              <AddThree />
+            </div>
+            <div className='lg:col-span-1 col-span-3 '>
+              <AddFour />
+            </div>
+          </div>
+          <div className='my-5'>
+            <Title> আন্তর্জাতিক</Title>
+          </div>
+          <div className='grid grid-cols-3 gap-10 '>
+            <div className='lg:col-span-2 col-span-3'>
+              {/* <LatestNews />
+              <HomeSpecialNews /> */}
+              <InterNationalNews />
+            </div>
+            <div className='lg:col-span-1 col-span-3 '>
+              <Add />
+              <NewsTitle />
+              <AddTwo />
+            </div>
+          </div>
 
-      <Container>
+          {/* <PhotoGallery /> */}
+
+          {/* <RecentNews /> */}
+          <div className='my-8'>
+            <HomeBanner />
+          </div>
+          {/* <div>
+            <MoreBreakingNews />
+          </div> */}
+          <div className='my-8'>
+            <HomeOtherNews />
+          </div>
+          <div className='grid grid-cols-3 my-10 gap-10'>
+            <div className='lg:col-span-2 col-span-3'>
+              <HomeLiveNews />
+            </div>
+            <div className='lg:col-span-1 col-span-3'>
+              <HomeTodayNews />
+            </div>
+          </div>
+          {/* <div className='py-8'>
+            <BreakingNews />
+          </div> */}
+        </Container></>
+      }
+      {pathname === "/" && <> <Container>
         <HomeBanner />
         <div className='my-5'>
           <Title> সর্বশেষ সংবাদ</Title>
@@ -67,7 +121,10 @@ const HomeNews = () => {
         <div className='my-8'>
           <HomeOtherNews />
         </div>
-      </Container>
+      </Container></>
+
+      }
+
 
     </div>
   );

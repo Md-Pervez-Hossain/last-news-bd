@@ -23,15 +23,14 @@ const HomeVideoGallary = () => {
     <div >
       <Container>
         <Title>Media Gallery</Title>
-        <div className='w-56 h-1 bg-secondary'></div>
         <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-10  my-10'>
           {
             videos?.map(video => {
               return (
-                <motion.div whileHover={{ scale: [null, 1.1, 1.1] }}
+                <div whileHover={{ scale: [null, 1.1, 1.1] }}
                   transition={{ duration: 0.7 }} key={video?.id}>
                   <iframe width="400px" height="250px" src={`${video?.link}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </motion.div>
+                </div>
               )
             })
           }

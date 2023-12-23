@@ -28,25 +28,25 @@ const Footer = () => {
             <div>
               <h4 className='text-[24px] font-[500] mb-5'>News</h4>
               <ul className='flex flex-col gap-5 flex-wrap cursor-pointer'>
-                <li className='hover:text-secondary transition-all duration-500 ease-in-out'> <Link href="/">Home</Link></li>
-                <li className='hover:text-secondary transition-all duration-500 ease-in-out'><Link href="/politics">Politics</Link></li>
-                <li className='hover:text-secondary transition-all duration-500 ease-in-out'><Link href="/world">World</Link></li>
-                <li className='hover:text-secondary transition-all duration-500 ease-in-out'><Link href="/crime">Crime</Link></li>
-                <li className='hover:text-secondary transition-all duration-500 ease-in-out'><Link href="/business">Business</Link></li>
+                <li className='hover:text-secondary hover:ps-2 transition-all duration-300 ease-in-out'> <Link href="/">Home</Link></li>
+                <li className='hover:text-secondary hover:ps-2 transition-all duration-300 ease-in-out'><Link href="/politics">Politics</Link></li>
+                <li className='hover:text-secondary hover:ps-2 transition-all duration-300 ease-in-out'><Link href="/world">World</Link></li>
+                <li className='hover:text-secondary hover:ps-2 transition-all duration-300 ease-in-out'><Link href="/crime">Crime</Link></li>
+                <li className='hover:text-secondary hover:ps-2 transition-all duration-300 ease-in-out'><Link href="/business">Business</Link></li>
               </ul>
             </div>
             <div>
               <h4 className='text-[24px] font-[500] mb-5'>Company</h4>
               <ul className='flex flex-col gap-5 flex-wrap cursor-pointer ' >
-                <li className='hover:text-secondary transition-all duration-500 ease-in-out'>
+                <li className='hover:text-secondary  hover:ps-2 transition-all duration-300 ease-in-out'>
                   <Link href="/terms-condition">Terms & Condition</Link>
                 </li>
-                <li className='hover:text-secondary transition-all duration-500 ease-in-out'>
+                <li className='hover:text-secondary  hover:ps-2 transition-all duration-300 ease-in-out'>
                   <Link href="/privacy-policy">Privacy Policy</Link>
                 </li>
-                <li className='hover:text-secondary transition-all duration-500 ease-in-out'> <Link href="/cookies-policy">Cookies Policy</Link></li>
-                <li className='hover:text-secondary transition-all duration-500 ease-in-out'> <Link href="/manage-cookies">Manage Cookies</Link> </li>
-                <li className='hover:text-secondary transition-all duration-500 ease-in-out'>  <Link href="/about-us">About  Us</Link> </li>
+                <li className='hover:text-secondary  hover:ps-2 transition-all duration-300 ease-in-out'> <Link href="/cookies-policy">Cookies Policy</Link></li>
+                <li className='hover:text-secondary  hover:ps-2 transition-all duration-300 ease-in-out'> <Link href="/manage-cookies">Manage Cookies</Link> </li>
+                <li className='hover:text-secondary  hover:ps-2 transition-all duration-300 ease-in-out'>  <Link href="/about-us">About  Us</Link> </li>
               </ul>
             </div>
             <div>

@@ -37,7 +37,7 @@ const PhotoGallery = ({ show, setShow }) => {
       <div className='mb-5'>
         <div className='flex items-center flex-wrap gap-5 justify-between'>
           <Title >ফটো গ্যালারি</Title>
-          <Link href="/home-photo-gallery">
+          <Link href="/photo-gallery">
             <button className='text-[24px] font-[600] border-2 rounded-full px-8 py-2'>Visit Gallery</button>
           </Link>
         </div>

@@ -67,13 +67,14 @@ const HomeTodayNews = () => {
               <>
                 <div className='flex flex-col gap-5 my-5' key={news.id}>
                   <h2 className='text-[18px]'>{`${news.title.slice(0, 50)}...`}</h2>
-
-                  <div className='grid lg:grid-cols-2 gap-5 items-center'>
+                  <div className='grid lg:grid-cols-2 gap-5 items-center overflow-hidden  group'>
                     <p className='text-[16px] text-[#646464]'>{`${news?.description.slice(0, 70)} ...`}</p>
-                    <Image src={news?.image}
-                      alt="Picture "
-                      style={{ objectFit: "contain" }}
-                    />
+                    <div className='group-hover:scale-105 transition-all duration-300 cursor-pointer '>
+                      <Image src={news?.image}
+                        alt="Picture "
+                        style={{ objectFit: "contain" }}
+                      />
+                    </div>
                   </div>
                 </div>
               </>

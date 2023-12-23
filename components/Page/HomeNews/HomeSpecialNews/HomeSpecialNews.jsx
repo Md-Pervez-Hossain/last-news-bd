@@ -98,11 +98,13 @@ const HomeSpecialNews = () => {
           specialNews?.map(news => {
             return (
               <>
-                <div className='flex flex-col gap-5' key={news?.id}>
-                  <Image src={news?.image}
-                    alt="Picture of the author"
-                    style={{ objectFit: "contain" }}
-                  />
+                <div className='flex flex-col gap-5 overflow-hidden group' key={news?.id}>
+                  <div className=' group-hover:scale-105 transition-all duration-300 cursor-pointer'>
+                    <Image src={news?.image}
+                      alt="Picture of the author"
+                      style={{ objectFit: "contain" }}
+                    />
+                  </div>
                   <Link href={`/news-details/${news?.id}`}> <h2 className='text-[18px]'>{`${news.title.slice(0, 30)}...`}</h2></Link>
                   <p className='text-[16px] text-[#646464]'>{`${news?.description.slice(0, 70)} ...`}</p>
                   <div className='flex items-center justify-between gap-5 flex-wrap text-[#646464] text-[14px]'>

@@ -55,8 +55,8 @@ const LatestNewsTitle = () => {
         latestNewsTitleArray?.map(item => {
           return (
             <>
-              <ul>
-                <li className='mb-5'> <span className='text-secondary font-[600]'>{item?.id} .</span>  {item.title}
+              <ul className='cursor-pointer'>
+                <li className='mb-5 hover:text-secondary transition-all duration-300 hover:ps-2 '> <span className='text-secondary font-[600]  '>{item?.id} .</span>  {item.title}
                   <hr className='w-full h-[2px] bg-[#222222] opacity-10 mt-3' />
                 </li>
 

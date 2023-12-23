@@ -5,13 +5,13 @@ const FooterBottom = () => {
     <div>
       <div className='flex items-center flex-wrap justify-center mt-8'>
         <ul className='flex items-center flex-wrap text-white gap-5'>
-          <span className='w-2 h-2 bg-[#8B8B8B] rounded-full'></span> <li>  Main Page</li>
-          <span className='w-2 h-2 bg-[#8B8B8B] rounded-full'></span> <li>Archive</li>
-          <span className='w-2 h-2 bg-[#8B8B8B] rounded-full'></span> <li>
+          <span className='w-2 h-2 bg-[#8B8B8B] rounded-full'></span> <li className='hover:text-secondary  cursor-pointer transition-all duration-300 ease-in-out'>  Main Page</li>
+          <span className='w-2 h-2 bg-[#8B8B8B] rounded-full'></span> <li className='hover:text-secondary  cursor-pointer transition-all duration-300 ease-in-out'>Archive</li>
+          <span className='w-2 h-2 bg-[#8B8B8B] rounded-full'></span> <li className='hover:text-secondary  cursor-pointer transition-all duration-300 ease-in-out'>
             <Link href="/contact">Contact</Link>
           </li>
-          <span className='w-2 h-2 bg-[#8B8B8B] rounded-full'></span> <li>Media Gallery</li>
-          <span className='w-2 h-2 bg-[#8B8B8B] rounded-full'></span> <li>
+          <span className='w-2 h-2 bg-[#8B8B8B] rounded-full'></span> <li className='hover:text-secondary  cursor-pointer transition-all duration-300 ease-in-out'>Media Gallery</li>
+          <span className='w-2 h-2 bg-[#8B8B8B] rounded-full'></span> <li className='hover:text-secondary  cursor-pointer transition-all duration-300 ease-in-out'>
             <Link href="/advertisement">Advertisement</Link>
           </li>
         </ul>

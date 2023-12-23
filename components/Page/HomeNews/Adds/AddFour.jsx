@@ -1,3 +1,4 @@
+"use client"
 import React, { useState } from 'react';
 import Image from 'next/image';
 import imageAddFour from "../../../../assets/images/Add_Four_image.png"

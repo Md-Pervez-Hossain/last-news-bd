@@ -9,22 +9,24 @@ const RecentNews = () => {
     <div >
       <Title>Recent News</Title>
       <div className='grid lg:grid-cols-2 gap-10 my-5 cursor-pointer'>
-        <motion.div whileHover={{ scale: [null, 1.1, 1] }}
-          transition={{ duration: 0.7 }}>
-          <Image
-            src={image1}
-            alt="Picture of the author"
-            style={{ objectFit: "contain" }}
-          />
-        </motion.div>
-        <motion.div whileHover={{ scale: [null, 1.1, 1.1] }}
-          transition={{ duration: 0.7 }}>
-          <Image
-            src={image2}
-            alt="Picture of the author"
-            style={{ objectFit: "contain" }}
-          />
-        </motion.div>
+        <div className=' overflow-hidden group'>
+          <div className='  group-hover:scale-105 transition-all duration-300'>
+            <Image
+              src={image1}
+              alt="Picture of the author"
+              style={{ objectFit: "contain" }}
+            />
+          </div>
+        </div>
+        <div className=' overflow-hidden group'>
+          <div className='group-hover:scale-105 transition-all duration-300'>
+            <Image
+              src={image2}
+              alt="Picture of the author"
+              style={{ objectFit: "contain" }}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );

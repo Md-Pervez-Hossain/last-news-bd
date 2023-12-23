@@ -34,7 +34,7 @@ const Menubar = () => {
     {
       id: 5,
       title: "আন্তর্জাতিক",
-      path: "/আন্তর্জাতিক"
+      path: "/international"
     },
     {
       id: 6,
@@ -98,7 +98,7 @@ const Menubar = () => {
                 menubarArray?.map(item => {
                   return (
                     <>
-                      <Link href={item?.path} className={`${pathname === item?.path ? "text-secondary border-b-2 border-b-secondary" : "text-white hover:text-secondary transition-all duration-500 ease-in-out"}`}>{item?.title}</Link>
+                      <Link href={item?.path} className={`${pathname === item?.path ? "text-secondary border-b-2 border-b-secondary" : "text-white hover:text-secondary hover:border-b-2 hover:border-b-secondary transition-all duration-300 ease-in-out"}`}>{item?.title}</Link>
                     </>
                   )
                 })
@@ -109,7 +109,6 @@ const Menubar = () => {
             <button onClick={() => setIsOpen(!isOpen)}>{isOpen ? <IoClose className='text-white text-3xl' /> : <IoMdMenu className='text-white text-3xl' />}</button>
           </div>
           <div className={`md:hidden  z-50  w-[200px] h-full  text-start    absolute top-0    transition-all duration-500 ease-in-out   ${isOpen ? "left-0" : "-left-[250px]"}`}>
-
             <div className='flex flex-col gap-5 text-white bg-primary h-screen py-8 px-4'>
               {
                 menubarArray?.map(item => {
