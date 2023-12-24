@@ -1,11 +1,8 @@
 "use client"
-import Container from '@/components/ui/Container/Container';
+
 import React, { useState } from 'react';
-import SearchInternationalNews from '../InterNationalNews/SearchInternationalNews';
-import Title from '@/components/ui/Title/Title';
-import { PrimaryButton } from '@/components/Share/Buttons/Buttons';
-import NationalNewsTags from './NationalNewsTags';
-import NewsTags from './NationalNewsTags';
+import Search from '@/components/Share/Search/Search';
+import NewsTags from '@/components/Share/NewsTags/NewsTags';
 
 const NationalNews = () => {
   const [show, setShow] = useState("জাতীয়")
@@ -41,13 +38,8 @@ const NationalNews = () => {
   ]
   return (
     <div>
-      <Title>খুজুন</Title>
-      <div className='flex  items-center my-8'>
-        <input placeholder='write Your Email' className='    w-full  px-4 py-3 border-2 ' />
-        <PrimaryButton className="bg-secondary border-2 border-secondary text-white -ms-2 px-4 py-3 rounded-none focus:outline-none " >অনুসন্ধান</PrimaryButton >
-      </div>
+      <Search />
       <NewsTags show={show} setShow={setShow} tagData={NationalNewsTag} />
-
       {show === "জাতীয়" && <p>জাতীয় News here</p>}
       {show === "অবরোধ" && <p>অবরোধ News here</p>}
       {show === "নির্বাচন" && <p>নির্বাচন News here</p>}

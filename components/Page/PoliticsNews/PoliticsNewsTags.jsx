@@ -1,7 +1,6 @@
-
 import React from 'react';
-const NewsTags = ({ show, setShow, tagData }) => {
 
+const PoliticsNewsTags = ({ show, setShow, tagData }) => {
   return (
     <div>
       <div className='flex items-center flex-wrap  gap-5  my-5'>
@@ -21,4 +20,4 @@ const NewsTags = ({ show, setShow, tagData }) => {
   );
 };
 
-export default NewsTags;
+export default PoliticsNewsTags; 

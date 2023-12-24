@@ -101,7 +101,7 @@ const HomeNews = () => {
               <div className='grid grid-cols-3 gap-10 my-8'>
                 <div className='lg:col-span-2 col-span-3'>
                   {
-                    pathname === "/national" && <NationalNews /> || pathname === "/politics" && <PoliticsNews /> || pathname === "/economy" && <EconomyNews /> || pathname === "/sports" && <SportsNews /> || pathname === "/law-justice" && <LawAndJustice /> || pathname === "/capital" && <CapitalNews /> || pathname === "/administration" && <AdministratorNews /> || pathname === "/education" && <EducationNews /> || pathname === "/district-news" && <DistrictNews /> || pathname === "/abroad" && <AbroadNews /> || pathname === "/information-technology" && <InformationTechnology /> || pathname === "/islam" && <IslamNews /> || pathname === "/job-news" && <JobNews />
+                    pathname === "/international" && <InterNationalNews /> || pathname === "/national" && <NationalNews /> || pathname === "/politics" && <PoliticsNews /> || pathname === "/economy" && <EconomyNews /> || pathname === "/sports" && <SportsNews /> || pathname === "/law-justice" && <LawAndJustice /> || pathname === "/capital" && <CapitalNews /> || pathname === "/administration" && <AdministratorNews /> || pathname === "/education" && <EducationNews /> || pathname === "/district-news" && <DistrictNews /> || pathname === "/abroad" && <AbroadNews /> || pathname === "/information-technology" && <InformationTechnology /> || pathname === "/islam" && <IslamNews /> || pathname === "/job-news" && <JobNews />
                   }
                 </div>
                 <div className='lg:col-span-1 col-span-3 '>
