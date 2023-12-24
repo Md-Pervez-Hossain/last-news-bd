@@ -73,6 +73,7 @@ const HomeTodayNews = () => {
                       <Image src={news?.image}
                         alt="Picture "
                         style={{ objectFit: "contain" }}
+                        width={500}
                       />
                     </div>
                   </div>

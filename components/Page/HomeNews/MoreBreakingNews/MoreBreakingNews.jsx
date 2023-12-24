@@ -63,7 +63,7 @@ const MoreBreakingNews = () => {
 
 
       </div>
-      <div className='grid grid-cols-4 gap-5'>
+      <div className='grid md:grid-cols-2 xl:grid-cols-4 gap-5'>
         <div className=' cursor-pointer'>
           <div className=' relative overflow-hidden group'>
             <div className='group-hover:scale-105 transition-all duration-300'>
@@ -116,6 +116,7 @@ const MoreBreakingNews = () => {
                 src={image2}
                 alt="Picture of the Breaking News"
                 style={{ objectFit: "contain" }}
+                width={500}
               />
             </div>
             <div className='bg-primary h-16 text-white absolute p-3  bottom-0 w-full  opacity-75'>

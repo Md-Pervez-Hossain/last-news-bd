@@ -13,6 +13,14 @@ import image9 from "../../../../assets/images/latest_news-9.png"
 import "./HomeSepicalNews.css"
 import Link from "next/link"
 import Image from 'next/image'
+import { motion } from "framer-motion";
+const visible = { opacity: 1, y: 0, transition: { duration: 0.5 } };
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 10 },
+  visible
+};
+
 const HomeSpecialNews = () => {
 
   const specialNews = [
@@ -98,20 +106,30 @@ const HomeSpecialNews = () => {
           specialNews?.map(news => {
             return (
               <>
-                <div className='flex flex-col gap-5 overflow-hidden group' key={news?.id}>
+                <motion.div initial="hidden"
+                  animate="visible"
+                  exit={{ opacity: 0, transition: { duration: 1 } }}
+                  variants={{ visible: { transition: { staggerChildren: 0.3 } } }} className='flex flex-col gap-5 overflow-hidden group' key={news?.id}>
                   <div className=' group-hover:scale-105 transition-all duration-300 cursor-pointer'>
                     <Image src={news?.image}
                       alt="Picture of the author"
                       style={{ objectFit: "contain" }}
+                      width={500}
                     />
                   </div>
-                  <Link href={`/news-details/${news?.id}`}> <h2 className='text-[18px]'>{`${news.title.slice(0, 30)}...`}</h2></Link>
+                  <Link href={`/news-details/${news?.id}`}>
+                    <motion.h2 variants={{
+                      hidden: { opacity: 0, y: -20 },
+                      visible
+                    }}
+                      className='text-[18px]'>{`${news.title.slice(0, 30)}...`}</motion.h2>
+                  </Link>
                   <p className='text-[16px] text-[#646464]'>{`${news?.description.slice(0, 70)} ...`}</p>
                   <div className='flex items-center justify-between gap-5 flex-wrap text-[#646464] text-[14px]'>
                     <span >{news?.time}</span>
                     <span className=' cursor-pointer'>আরও পড়ুন</span>
                   </div>
-                </div>
+                </motion.div>
               </>
             )
           })

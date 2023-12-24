@@ -1,10 +1,11 @@
 import EducationNews from '@/components/Page/EducationNews/EducationNews';
+import HomeNews from '@/components/Page/HomeNews/HomeNews';
 import React from 'react';
 
 const EducationNewsPage = () => {
   return (
     <div>
-      <EducationNews />
+      <HomeNews />
     </div>
   );
 };

@@ -1,8 +1,8 @@
 import HomeNews from '@/components/Page/HomeNews/HomeNews';
-import PoliticsNews from '@/components/Page/PoliticsNews/PoliticsNews';
+import JobNews from '@/components/Page/JobNews/JobNews';
 import React from 'react';
 
-const PoliticsPage = () => {
+const JobNewsPage = () => {
   return (
     <div>
       <HomeNews />
@@ -10,4 +10,4 @@ const PoliticsPage = () => {
   );
 };
 
-export default PoliticsPage;
+export default JobNewsPage;

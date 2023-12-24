@@ -17,7 +17,6 @@ const ContactForm = () => {
   return (
     <div  >
       <Title>Get in Touch</Title>
-      <div className='w-52 h-1 bg-secondary'></div>
       <form onSubmit={handleSubmit(handleContact)}>
         <div className='my-5'>
           <div className='flex flex-col mb-3'>

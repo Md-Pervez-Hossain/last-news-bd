@@ -19,17 +19,17 @@ const Menubar = () => {
     {
       id: 2,
       title: "জাতীয়",
-      path: "/জাতীয়"
+      path: "/national"
     },
     {
       id: 3,
       title: "রাজনীতি",
-      path: "/রাজনীতি"
+      path: "/politics"
     },
     {
       id: 4,
       title: "অর্থনীতি",
-      path: "/অর্থনীতি"
+      path: "/economy"
     },
     {
       id: 5,
@@ -39,52 +39,52 @@ const Menubar = () => {
     {
       id: 6,
       title: "খেলা",
-      path: "/খেলা"
+      path: "/sports"
     },
     {
       id: 7,
       title: "আইন ও আদালত",
-      path: "/আইন-আদালত"
+      path: "/law-justice"
     },
     {
       id: 8,
       title: "রাজধানী",
-      path: "/রাজধানী"
+      path: "/capital"
     },
     {
       id: 9,
       title: "প্রশাসন",
-      path: "/প্রশাসন"
+      path: "/administration"
     },
     {
       id: 10,
       title: "শিক্ষা",
-      path: "/শিক্ষা"
+      path: "/education"
     },
     {
       id: 11,
       title: "জেলার খবর",
-      path: "/জেলার-খবর"
+      path: "/district-news"
     },
     {
       id: 12,
       title: "প্রবাস",
-      path: "/প্রবাস"
+      path: "/abroad"
     },
     {
       id: 13,
       title: "তথ্য প্রযুক্তি",
-      path: "/তথ্য-প্রযুক্তি"
+      path: "/information-technology"
     },
     {
       id: 14,
       title: "ইসলাম",
-      path: "/ইসলাম"
+      path: "/islam"
     },
     {
       id: 15,
       title: "চাকরির খবর",
-      path: "/চাকরির-খবর"
+      path: "/job-news"
     },
   ]
   return (

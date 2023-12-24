@@ -23,7 +23,7 @@ const Navigation = () => {
               <h2>E-Paper</h2>
             </div>
           </div>
-          <div className='flex items-center gap-4'>
+          <div className='flex flex-wrap items-center gap-4'>
             <h3 className='bg-secondary px-4 py-2 rounded-md text-white'>সরকার অনুমোদিত পোর্টাল</h3>
             <h2>আমাদের অনুসরণ করো: </h2>
             <div className='flex flex-wrap items-center gap-3 cursor-pointer'>

@@ -8,6 +8,7 @@ import image5 from "../../../assets/images/international_image_5.png"
 import image6 from "../../../assets/images/international_image_6.png"
 import Image from "next/image"
 import Link from "next/link"
+import Title from '@/components/ui/Title/Title';
 const InterNationalNews = () => {
   const specialNews = [
     {
@@ -67,7 +68,7 @@ const InterNationalNews = () => {
         specialNews?.map(news => {
           return (
             <>
-              <div className='flex  items-center gap-5 mb-8 group overflow-hidden' key={news?.id}>
+              <div className='flex  flex-wrap lg:flex-nowrap items-center gap-5 mb-8 group overflow-hidden' key={news?.id}>
                 <div className=' cursor-pointer group-hover:scale-105 transition-all ease-in-out duration-500'>
                   <Image src={news?.image}
                     alt="Picture of the author"
@@ -76,9 +77,9 @@ const InterNationalNews = () => {
                 </div>
                 <div>
                   <Link href={`/news-details/${news?.id}`}>
-                    <h2 className=' mb-3 text-[24px]'>{`${news.title.slice(0, 30)}...`}</h2>
+                    <h2 className=' mb-3 text-[22px]'>{`${news.title.slice(0, 30)}...`}</h2>
                   </Link>
-                  <p className='text-[16px] text-[#646464] mb-3'>{`${news?.description.slice(0, 150)} ...`}</p>
+                  <p className='text-[16px] text-[#646464] mb-3'>{`${news?.description.slice(0, 120)} ...`}</p>
                   <span className=' cursor-pointer text-[#646464] text-[14px]'>আরও পড়ুন</span>
                 </div>
               </div>
@@ -90,5 +91,4 @@ const InterNationalNews = () => {
   );
 };
 
-export default InterNationalNews; <Container>
-  <h2>International News</h2></Container>
+export default InterNationalNews;

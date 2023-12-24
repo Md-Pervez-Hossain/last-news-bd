@@ -1,13 +1,12 @@
 import Container from '@/components/ui/Container/Container';
 import React from 'react';
 
-
-const EducationNews = () => {
+const InformationTechnology = () => {
   return (
     <div>
-      <h2>Education News</h2>
+      <h2>Information Technology</h2>
     </div>
   );
 };
 
-export default EducationNews;
+export default InformationTechnology;

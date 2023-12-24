@@ -1,15 +1,14 @@
 import Container from '@/components/ui/Container/Container';
 import React from 'react';
 
-
-const JobsNews = () => {
+const CapitalNews = () => {
   return (
     <div>
-      <Container>
-        <h2>Jobs News</h2>
-      </Container>
+
+      <h2>Capital News</h2>
+
     </div>
   );
 };
 
-export default JobsNews;
+export default CapitalNews;

@@ -5,9 +5,9 @@ import React from 'react';
 const PoliticsNews = () => {
   return (
     <div>
-      <Container>
-        <h2> Politics News </h2>
-      </Container>
+
+      <h2> Politics News </h2>
+
     </div>
   );
 };
