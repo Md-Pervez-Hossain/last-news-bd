@@ -1,14 +1,17 @@
-import React from 'react';
-import Navigation from './Navigation/Navigation';
-import MiddleMenu from './MiddleMenu/MiddleMenu';
-import Menubar from './Menubar/Menubar';
+import React from "react";
+import Navigation from "./Navigation/Navigation";
+import MiddleMenu from "./MiddleMenu/MiddleMenu";
+import Menubar from "./Menubar/Menubar";
+import { fetchData } from "@/app/libs/fetchData";
 
-const Headers = () => {
+const Headers = async () => {
+  const menuData = await fetchData();
+  // console.log(menuData);
   return (
-    <div className=''>
+    <div className="">
       <Navigation />
       <MiddleMenu />
-      <Menubar />
+      <Menubar menuData={menuData} />
     </div>
   );
 };

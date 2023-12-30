@@ -2,7 +2,6 @@
 import NewsTags from '@/components/Share/NewsTags/NewsTags';
 import Search from '@/components/Share/Search/Search';
 import React, { useState } from 'react';
-
 const JobNews = () => {
   const [show, setShow] = useState("চাকরির-খবর")
   const NationalNewsTag = [
