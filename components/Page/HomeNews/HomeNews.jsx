@@ -18,8 +18,8 @@ import AddThree from "./Adds/AddThree";
 import AddFour from "./Adds/AddFour";
 import MoreBreakingNews from "./MoreBreakingNews/MoreBreakingNews";
 import { usePathname } from "next/navigation";
-import IslamNews from "../IslamNews/IslamNews";
-import AbroadNews from "../AbroadNews/AbroadNews";
+import SportsNews from "../SportsNews/SportsNews";
+
 const HomeNews = ({ newsCategoryData }) => {
   console.log(newsCategoryData);
   const [show, setShow] = useState("আন্তর্জাতিক");
@@ -43,24 +43,21 @@ const HomeNews = ({ newsCategoryData }) => {
             {pathname === "/home" && (
               <>
                 <LatestNews />
-                <HomeSpecialNews />
+                <HomeSpecialNews newsCategoryData={newsCategoryData} />
               </>
             )}
-            {pathname === "/islam" && (
-              <IslamNews newsCategoryData={newsCategoryData} />
-            )}
-            {pathname === "/abroad" && (
-              <AbroadNews newsCategoryData={newsCategoryData} />
+            {pathname !== "/home" && (
+              <SportsNews newsCategoryData={newsCategoryData} />
             )}
           </div>
           <div className="lg:col-span-1 col-span-3 ">
             <Add />
-            <NewsTitle />
+            <NewsTitle newsCategoryData={newsCategoryData} />
             <AddTwo />
           </div>
         </div>
         <div className="py-8">
-          <BreakingNews />
+          <BreakingNews newsCategoryData={newsCategoryData} />
         </div>
         <div className="grid grid-cols-3 gap-10 ">
           <div className="lg:col-span-2 col-span-3">
@@ -73,7 +70,7 @@ const HomeNews = ({ newsCategoryData }) => {
         <PhotoGallery />
         <div className="grid grid-cols-3 my-10 gap-10">
           <div className="lg:col-span-2 col-span-3">
-            <HomeLiveNews />
+            <HomeLiveNews newsCategoryData={newsCategoryData} />
           </div>
           <div className="lg:col-span-1 col-span-3">
             <HomeTodayNews />

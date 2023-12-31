@@ -1,39 +1,41 @@
-"use client"
-import NewsTags from '@/components/Share/NewsTags/NewsTags';
-import Search from '@/components/Share/Search/Search';
-import React, { useState } from 'react';
-const JobNews = () => {
-  const [show, setShow] = useState("চাকরির-খবর")
+"use client";
+import NewsTags from "@/components/Share/NewsTags/NewsTags";
+import Search from "@/components/Share/Search/Search";
+import React, { useState } from "react";
+
+const JobNews = ({ newsCategoryData }) => {
+  console.log(newsCategoryData);
+  const [show, setShow] = useState("চাকরির-খবর");
   const NationalNewsTag = [
     {
       id: 1,
-      title: "চাকরির-খবর"
+      title: "চাকরির-খবর",
     },
     {
       id: 2,
-      title: "অবরোধ"
+      title: "অবরোধ",
     },
     {
       id: 3,
-      title: "নির্বাচন"
+      title: "নির্বাচন",
     },
     {
       id: 4,
-      title: "ইসরায়েল-ফিলিস্তিন"
+      title: "ইসরায়েল-ফিলিস্তিন",
     },
     {
       id: 5,
-      title: "সংঘাতচাকরির-খবর"
+      title: "সংঘাতচাকরির-খবর",
     },
     {
       id: 6,
-      title: "নামাজের-সময়সূচি"
+      title: "নামাজের-সময়সূচি",
     },
     {
       id: 7,
-      title: "আবহাওয়া"
+      title: "আবহাওয়া",
     },
-  ]
+  ];
   return (
     <div>
       <Search />

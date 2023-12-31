@@ -1,51 +1,44 @@
-"use client"
-import NewsTags from '@/components/Share/NewsTags/NewsTags';
-import Search from '@/components/Share/Search/Search';
-import React, { useState } from 'react';
+"use client";
+import NewsTags from "@/components/Share/NewsTags/NewsTags";
+import Search from "@/components/Share/Search/Search";
+import React, { useState } from "react";
+import Link from "next/link";
+const InformationTechnology = ({ newsCategoryData }) => {
+  console.log(newsCategoryData);
+  const [show, setShow] = useState("তথ্য-প্রযুক্তি");
 
-const InformationTechnology = () => {
-  const [show, setShow] = useState("তথ্য-প্রযুক্তি")
-  const NationalNewsTag = [
-    {
-      id: 1,
-      title: "তথ্য-প্রযুক্তি"
-    },
-    {
-      id: 2,
-      title: "অবরোধ"
-    },
-    {
-      id: 3,
-      title: "নির্বাচন"
-    },
-    {
-      id: 4,
-      title: "ইসরায়েল-ফিলিস্তিন"
-    },
-    {
-      id: 5,
-      title: "সংঘাতচাকরির-খবর"
-    },
-    {
-      id: 6,
-      title: "নামাজের-সময়সূচি"
-    },
-    {
-      id: 7,
-      title: "আবহাওয়া"
-    },
-  ]
   return (
     <div>
       <Search />
-      <NewsTags show={show} setShow={setShow} tagData={NationalNewsTag} />
-      {show === "প্রশাসন" && <p>জাতীয় News here</p>}
-      {show === "অবরোধ" && <p>অবরোধ News here</p>}
-      {show === "নির্বাচন" && <p>নির্বাচন News here</p>}
-      {show === "ইসরায়েল-ফিলিস্তিন" && <p>ইসরায়েল-ফিলিস্তিন News here</p>}
-      {show === "সংঘাতচাকরির-খবর" && <p>সংঘাতচাকরির-খবর News here</p>}
-      {show === "নামাজের-সময়সূচি" && <p>নামাজের-সময়সূচি News here</p>}
-      {show === "আবহাওয়া" && <p>আবহাওয়া News here</p>}
+
+      {newsCategoryData?.data?.map((news) => {
+        return (
+          <>
+            <div>
+              <img
+                src={news?.post_img}
+                alt="Picture of the author"
+                style={{ objectFit: "contain" }}
+              />
+              <div>
+                <div>
+                  <h4>{news?.title}</h4>
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: news?.content,
+                    }}
+                  />
+                  <Link
+                    href={`/news-details/${news?.slug}?post_no=${news?.post_no}`}
+                  >
+                    <p>আরও পড়ুন </p>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </>
+        );
+      })}
     </div>
   );
 };

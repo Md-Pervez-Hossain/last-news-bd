@@ -1,91 +1,21 @@
-import React from 'react';
-import Image from "next/image"
-import starIcon from "../../../../assets/icons/start_icon.svg"
-import starFillIcon from "../../../../assets/icons/fillStar_icon.svg"
-import commentIcon from "../../../../assets/icons/comments_icon.svg"
-import newsPic from "../../../../assets/images/news_image.png"
-import SocialMediaIcons from '@/components/Share/SocialMediaIcons/SocialMediaIcons';
-import ZillaNews from './ZillaNews';
-const SingleNewsPostDetails = () => {
+import React from "react";
+import Image from "next/image";
+import starIcon from "../../../../assets/icons/start_icon.svg";
+import starFillIcon from "../../../../assets/icons/fillStar_icon.svg";
+import commentIcon from "../../../../assets/icons/comments_icon.svg";
+import newsPic from "../../../../assets/images/news_image.png";
+import SocialMediaIcons from "@/components/Share/SocialMediaIcons/SocialMediaIcons";
+import ZillaNews from "./ZillaNews";
+const SingleNewsPostDetails = ({ postDetails }) => {
+  console.log(postDetails);
   return (
     <div>
-      <h2 className='text-[32px] mb-5'>কেঁচো সার বিক্রির টাকায় নারীদের কেউ কিনেছেন গরু, কেউ বানালেন শৌচাগার</h2>
-      <div className='flex justify-between items-center gap-5 flex-wrap'>
-        <p>প্রকাশ: ১১ ডিসেম্বর ২০২৩, ১৪: ০৮</p>
-        <SocialMediaIcons />
-      </div>
-      <div className='my-5'>
-        <Image
-          src={newsPic}
-          alt="Picture of the Email"
-          style={{ objectFit: "contain" }}
-          width={1000}
-        />
-        <p className='my-4 text-[12px]'>ফটিকছড়ি উপজেলার রাঙ্গাপানি গ্রামের বাসিন্দা ছালমা বেগমের বাড়িতে চলছে সার তৈরির কর্মযজ্ঞ। সম্প্রতি তোলা ছবি: জুয়েল শীল</p>
-        <h2 className="mb-4 font-[600]">
-          নারীদের দিনবদল :</h2>
-        <p className="mb-4">সম্প্রতি রাঙ্গাপানি গ্রামের দিলীপ মিস্ত্রি পাড়ার সরু মেঠো পথ ধরে যেতে যেতে চোখে পড়ল বেশ কিছু মাটির ও বেড়ার ঘর। পাড়ায় ঢোকার মুখে রাস্তার ওপর রাখা ছিল বস্তায় বস্তায় কেঁচো সার। কথা বলে জানা গেল, এসব সার বিক্রির জন্য স্তূপ করে রেখেছেন উষা বালা নাথ। ক্রেতা এলে গাড়িতে তুলে দেবেন তিনি।
-        </p>
-        <p className="mb-4">
-          পাড়ার একেবারে শেষ প্রান্তে উষা বালার বাড়ি। সেখানে গিয়ে কেঁচো সার তৈরির কর্মযজ্ঞ দেখা গেল। তাঁদের উঠানের এক কোনায় বেড়া আর টিনের ছাউনিতে বানানো হয়েছে একচালা ঘর। ঘরের ভেতর বসানো হয়েছে ১৫টি চাড়ি (সিমেন্টের রিং)। এসব চাড়ির কোনোটিতে গোবর, কোনোটিতে কেঁচো রাখা হয়েছে। ঘরের সামনেই সার ছেঁকে আলাদা করার যন্ত্র। সেখানে একমনে কাজ করে যাচ্ছিলেন উষা বালা নাথ।
-
-        </p>
-        <p className="mb-4">
-          কাজের ফাঁকে তিনি প্রথম আলোকে বললেন, দুই বছর ধরে গড়ে ৬০ হাজার থেকে ৭০ হাজার টাকা আয় হচ্ছে। প্রথম বছর ক্রেতা কম থাকায় আয় কম হয়েছে। এরপর ধীরে ধীরে বেড়েছে।
-
-        </p>
-        <p className="mb-4">কেঁচো তৈরির প্রক্রিয়া তুলে ধরেন উষা বালা। কেঁচো সার তৈরির পদ্ধতি হলো একটি রিং বা চাড়ির মধ্যে দুই ভাগ গোবর ও এক ভাগ সবজির উচ্ছিষ্টাংশ রেখে দিতে হবে। কলাগাছের টুকরাও দেওয়া যায়। এক সপ্তাহ পর এর মধ্যে কেঁচো দিতে হবে। এই কেঁচোর মল থেকেই তৈরি হবে সার। কেঁচোও ওরই মধ্যে বংশ বৃদ্ধি করে। পরে কেঁচো ও সার আলাদা করে ফেলা হয়। কোনো রিংয়ে আড়াই শ গ্রাম কেঁচো দিলে ১৫ থেকে ১৮ দিনের মধ্যে এক কেজি কেঁচো তৈরি হয়। প্রতি কেজি সার বিক্রি হয় ১০ থেকে ১২ টাকায়।
-        </p>
-        <Image
-          src={newsPic}
-          alt="Picture of the Email"
-          style={{ objectFit: "contain" }}
-          width={1000}
-        />
-        <p className='my-4 text-[12px]'>ফটিকছড়ি উপজেলার রাঙ্গাপানি গ্রামের বাসিন্দা ছালমা বেগমের বাড়িতে চলছে সার তৈরির কর্মযজ্ঞ। সম্প্রতি তোলা ছবি: জুয়েল শীল</p>
-        <h2 className="mb-4 font-[600]">
-          নারীদের দিনবদল :</h2>
-        <p className="mb-4">সম্প্রতি রাঙ্গাপানি গ্রামের দিলীপ মিস্ত্রি পাড়ার সরু মেঠো পথ ধরে যেতে যেতে চোখে পড়ল বেশ কিছু মাটির ও বেড়ার ঘর। পাড়ায় ঢোকার মুখে রাস্তার ওপর রাখা ছিল বস্তায় বস্তায় কেঁচো সার। কথা বলে জানা গেল, এসব সার বিক্রির জন্য স্তূপ করে রেখেছেন উষা বালা নাথ। ক্রেতা এলে গাড়িতে তুলে দেবেন তিনি।
-        </p>
-        <p className="mb-4">
-          পাড়ার একেবারে শেষ প্রান্তে উষা বালার বাড়ি। সেখানে গিয়ে কেঁচো সার তৈরির কর্মযজ্ঞ দেখা গেল। তাঁদের উঠানের এক কোনায় বেড়া আর টিনের ছাউনিতে বানানো হয়েছে একচালা ঘর। ঘরের ভেতর বসানো হয়েছে ১৫টি চাড়ি (সিমেন্টের রিং)। এসব চাড়ির কোনোটিতে গোবর, কোনোটিতে কেঁচো রাখা হয়েছে। ঘরের সামনেই সার ছেঁকে আলাদা করার যন্ত্র। সেখানে একমনে কাজ করে যাচ্ছিলেন উষা বালা নাথ।
-
-        </p>
-        <p className="mb-4">
-          কাজের ফাঁকে তিনি প্রথম আলোকে বললেন, দুই বছর ধরে গড়ে ৬০ হাজার থেকে ৭০ হাজার টাকা আয় হচ্ছে। প্রথম বছর ক্রেতা কম থাকায় আয় কম হয়েছে। এরপর ধীরে ধীরে বেড়েছে।
-
-        </p>
-        <p className="mb-4">কেঁচো তৈরির প্রক্রিয়া তুলে ধরেন উষা বালা। কেঁচো সার তৈরির পদ্ধতি হলো একটি রিং বা চাড়ির মধ্যে দুই ভাগ গোবর ও এক ভাগ সবজির উচ্ছিষ্টাংশ রেখে দিতে হবে। কলাগাছের টুকরাও দেওয়া যায়। এক সপ্তাহ পর এর মধ্যে কেঁচো দিতে হবে। এই কেঁচোর মল থেকেই তৈরি হবে সার। কেঁচোও ওরই মধ্যে বংশ বৃদ্ধি করে। পরে কেঁচো ও সার আলাদা করে ফেলা হয়। কোনো রিংয়ে আড়াই শ গ্রাম কেঁচো দিলে ১৫ থেকে ১৮ দিনের মধ্যে এক কেজি কেঁচো তৈরি হয়। প্রতি কেজি সার বিক্রি হয় ১০ থেকে ১২ টাকায়।
-        </p>
-      </div>
-      <hr />
-      <div className='my-5 flex items-center justify-between gap-5  flex-wrap'>
-        <SocialMediaIcons />
-        <div className='flex items-center flex-wrap gap-4'>
-          <Image
-            src={starIcon}
-            alt="Picture of the star"
-            style={{ objectFit: "contain" }}
-            width={30}
-          />
-          <Image
-            src={starFillIcon}
-            alt="Picture of the Star"
-            style={{ objectFit: "contain" }}
-            width={30}
-          />
-          <Image
-            src={commentIcon}
-            alt="Picture of the Comment"
-            style={{ objectFit: "contain" }}
-            width={30}
-          />
-          <h2 className='font-[600]'>120</h2>
-        </div>
-      </div>
-      <div>
-        <ZillaNews />
-      </div>
+      <h2>{postDetails?.data?.title}</h2>
+      <div
+        dangerouslySetInnerHTML={{
+          __html: postDetails?.data?.content,
+        }}
+      />
     </div>
   );
 };

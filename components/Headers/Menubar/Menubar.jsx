@@ -1,6 +1,5 @@
 "use client";
 import Container from "@/components/ui/Container/Container";
-import Title from "@/components/ui/Title/Title";
 import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -9,84 +8,6 @@ import { IoMdMenu } from "react-icons/io";
 const Menubar = ({ menuData }) => {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
-
-  // const menubarArray = [
-  //   {
-  //     id: 1,
-  //     title: "প্রথম পাতা",
-  //     path: "/",
-  //   },
-  //   {
-  //     id: 2,
-  //     title: "জাতীয়",
-  //     path: "/national",
-  //   },
-  //   {
-  //     id: 3,
-  //     title: "রাজনীতি",
-  //     path: "/politics",
-  //   },
-  //   {
-  //     id: 4,
-  //     title: "অর্থনীতি",
-  //     path: "/economy",
-  //   },
-  //   {
-  //     id: 5,
-  //     title: "আন্তর্জাতিক",
-  //     path: "/international",
-  //   },
-  //   {
-  //     id: 6,
-  //     title: "খেলা",
-  //     path: "/sports",
-  //   },
-  //   {
-  //     id: 7,
-  //     title: "আইন ও আদালত",
-  //     path: "/law-justice",
-  //   },
-  //   {
-  //     id: 8,
-  //     title: "রাজধানী",
-  //     path: "/capital",
-  //   },
-  //   {
-  //     id: 9,
-  //     title: "প্রশাসন",
-  //     path: "/administration",
-  //   },
-  //   {
-  //     id: 10,
-  //     title: "শিক্ষা",
-  //     path: "/education",
-  //   },
-  //   {
-  //     id: 11,
-  //     title: "জেলার খবর",
-  //     path: "/district-news",
-  //   },
-  //   {
-  //     id: 12,
-  //     title: "প্রবাস",
-  //     path: "/abroad",
-  //   },
-  //   {
-  //     id: 13,
-  //     title: "তথ্য প্রযুক্তি",
-  //     path: "/information-technology",
-  //   },
-  //   {
-  //     id: 14,
-  //     title: "ইসলাম",
-  //     path: "/islam",
-  //   },
-  //   {
-  //     id: 15,
-  //     title: "চাকরির খবর",
-  //     path: "/job-news",
-  //   },
-  // ];
   return (
     <div className="mb-16">
       <div className="bg-primary py-8 ">
@@ -101,12 +22,7 @@ const Menubar = ({ menuData }) => {
                   <>
                     <Link
                       key={item?.id}
-                      href={{
-                        pathname: `${item.slug}`,
-                        query: {
-                          name: `${item?.category_no}`,
-                        },
-                      }}
+                      href={`/${item.slug}?name=${item?.category_no}`}
                       className={`${
                         pathname === item?.slug
                           ? "text-secondary border-b-2 border-b-secondary"
