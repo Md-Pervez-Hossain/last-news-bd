@@ -9,8 +9,9 @@ const Headers = async () => {
   // console.log(menuData);
   return (
     <div className="">
-      <Navigation />
-      <MiddleMenu />
+      <div>
+        <Navigation />
+      </div>
       <Menubar menuData={menuData} />
     </div>
   );

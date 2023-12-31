@@ -14,10 +14,6 @@ const MiddleMenu = () => {
             <Image alt='image' width={20} height={20} src={globeIcon} />
             <h2>শুক্রবার, ২২ ডিসেম্বর ২০২৩</h2>
           </div>
-          <div className='flex items-center gap-3'>
-            <Image alt='image' width={30} height={30} src={newsIcon} />
-            <h2>Last News BD</h2>
-          </div>
           <div className='flex items-center flex-wrap gap-3'>
             <input placeholder='search' className='px-4 py-2 rounded-full border-2 border-[#F5F5F5]' />
             <PrimaryButton className='transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300 '>Search</PrimaryButton>

@@ -3,7 +3,7 @@ import Image from 'next/image'
 import image1 from "../../../../assets/images/recent_news_1.png"
 import image2 from "../../../../assets/images/recent_news_2.png"
 import Title from '@/components/ui/Title/Title';
-import { motion } from "framer-motion";
+
 const RecentNews = () => {
   return (
     <div >

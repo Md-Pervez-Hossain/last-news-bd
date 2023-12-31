@@ -10,11 +10,11 @@ import youtubeIcon from "../../../assets/icons/icons8-youtube 1.svg"
 import Container from '@/components/ui/Container/Container';
 const Navigation = () => {
   return (
-    <div className='  py-3 bg-[#F5F5F5]'>
+    <div className=' hidden md:flex  py-5 bg-[#F5F5F5]'>
       <Container>
-        <div className='flex  justify-between gap-5 flex-wrap'>
-          <div className='flex items-center gap-10'>
-            <div className='flex items-center gap-3'>
+        <div className='flex flex-wrap  justify-between gap-5 ]'>
+          <div className='flex items-center flex-wrap gap-10'>
+            <div className='flex items-center flex-wrap gap-3'>
               <Image alt='image' width={20} height={20} src={paperIcon} />
               <h2>ই-পেপার</h2>
             </div>

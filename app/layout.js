@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
       <body className={`${inter.className} ${tiro}`}>
         <div >
           <Headers />
-          <div className=" fixed right-0 lg:top-32 bottom-0   p-3 z-50 ">
+          <div className=" hidden lg:flex fixed right-0 lg:top-32 bottom-0   p-3 z-50 ">
             <FixedSocialMedia />
           </div>
           {children}

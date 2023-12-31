@@ -1,6 +1,6 @@
 import Title from '@/components/ui/Title/Title';
 import React from 'react';
-import { motion } from "framer-motion";
+
 import Image from "next/image"
 import image1 from "../../../../assets/images/more_breaking_news-2.png"
 import image2 from "../../../../assets/images/more_news_1.png"
