@@ -1,16 +1,30 @@
-import Container from '@/components/ui/Container/Container';
-import React from 'react';
-import HomeBanner from '../HomeNews/HomeBanner/HomeBanner';
-import CompanyStory from './CompanyStory';
-import TeamMember from './TeamMember';
+"use client";
+import Container from "@/components/ui/Container/Container";
+import React from "react";
+import NoDataFound from "@/components/Share/NoDataFound/NoDataFound";
 
-const AboutUs = () => {
+const AboutUs = ({ aboutUsData }) => {
+  console.log(aboutUsData);
   return (
     <div>
       <Container>
-        <HomeBanner />
-        <CompanyStory />
-        <TeamMember />
+        {aboutUsData?.data?.length > 0 ? (
+          aboutUsData?.data?.map((about) => {
+            return (
+              <>
+                {
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: about?.content,
+                    }}
+                  />
+                }
+              </>
+            );
+          })
+        ) : (
+          <NoDataFound />
+        )}
       </Container>
     </div>
   );

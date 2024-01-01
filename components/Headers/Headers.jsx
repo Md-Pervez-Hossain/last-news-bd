@@ -6,7 +6,6 @@ import { fetchData } from "@/app/libs/fetchData";
 
 const Headers = async () => {
   const menuData = await fetchData();
-  // console.log(menuData);
   return (
     <div className="">
       <div>

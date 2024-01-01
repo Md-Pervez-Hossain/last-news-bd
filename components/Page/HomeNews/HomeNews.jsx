@@ -18,7 +18,7 @@ import AddThree from "./Adds/AddThree";
 import AddFour from "./Adds/AddFour";
 import MoreBreakingNews from "./MoreBreakingNews/MoreBreakingNews";
 import { usePathname } from "next/navigation";
-import SportsNews from "../SportsNews/SportsNews";
+import News from "../News/News";
 
 const HomeNews = ({ newsCategoryData }) => {
   console.log(newsCategoryData);
@@ -42,12 +42,12 @@ const HomeNews = ({ newsCategoryData }) => {
           <div className="lg:col-span-2 col-span-3">
             {pathname === "/home" && (
               <>
-                <LatestNews />
+                <LatestNews newsCategoryData={newsCategoryData} />
                 <HomeSpecialNews newsCategoryData={newsCategoryData} />
               </>
             )}
             {pathname !== "/home" && (
-              <SportsNews newsCategoryData={newsCategoryData} />
+              <News newsCategoryData={newsCategoryData} />
             )}
           </div>
           <div className="lg:col-span-1 col-span-3 ">
@@ -67,24 +67,25 @@ const HomeNews = ({ newsCategoryData }) => {
             <AddFour />
           </div>
         </div>
-        <PhotoGallery />
+        {pathname === "/home" && <PhotoGallery />}
+
         <div className="grid grid-cols-3 my-10 gap-10">
           <div className="lg:col-span-2 col-span-3">
             <HomeLiveNews newsCategoryData={newsCategoryData} />
           </div>
           <div className="lg:col-span-1 col-span-3">
-            <HomeTodayNews />
+            <HomeTodayNews newsCategoryData={newsCategoryData} />
           </div>
         </div>
-        <RecentNews />
+        <RecentNews newsCategoryData={newsCategoryData} />
         <div className="my-8">
           <HomeBanner />
         </div>
         <div>
-          <MoreBreakingNews />
+          <MoreBreakingNews newsCategoryData={newsCategoryData} />
         </div>
         <div className="my-8">
-          <HomeOtherNews />
+          <HomeOtherNews newsCategoryData={newsCategoryData} />
         </div>
       </Container>
     </div>

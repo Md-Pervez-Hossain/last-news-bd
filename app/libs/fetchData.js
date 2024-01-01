@@ -37,3 +37,48 @@ export const fetchCategoryNewsData = async (query) => {
 
   }
 }
+
+export const fetchTermAndConditionData = async () => {
+  try {
+    const res = await fetch(`https://news-server-8hnz.onrender.com/api/v1/settings/terms_conditions/list`, {
+      cache: "no-store"
+    })
+    // if (!res.ok) {
+    //   throw new Error('Failed to fetch data')
+    // }
+    return res.json();
+  } catch (error) {
+    console.log(error);
+
+  }
+}
+
+export const fetchAboutUsData = async () => {
+  try {
+    const res = await fetch(`https://news-server-8hnz.onrender.com/api/v1/settings/about_us/list`, {
+      cache: "no-store"
+    })
+    // if (!res.ok) {
+    //   throw new Error('Failed to fetch data')
+    // }
+    return res.json();
+  } catch (error) {
+    console.log(error);
+
+  }
+}
+
+export const fetchPhotoData = async () => {
+  try {
+    const res = await fetch(`https://news-server-8hnz.onrender.com/api/v1/media/list/image?deleted=0`, {
+      cache: "no-store"
+    })
+    // if (!res.ok) {
+    //   throw new Error('Failed to fetch data')
+    // }
+    return res.json();
+  } catch (error) {
+    console.log(error);
+
+  }
+}

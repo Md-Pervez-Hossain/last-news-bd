@@ -1,10 +1,12 @@
 import TermsAndConditions from '@/components/Page/TermsAndConditions/TermsAndConditions';
 import React from 'react';
+import { fetchTermAndConditionData } from '../libs/fetchData';
 
-const TermsAndConditionPage = () => {
+const TermsAndConditionPage = async () => {
+  const temsAndCondition = await fetchTermAndConditionData()
   return (
     <div>
-      <TermsAndConditions />
+      <TermsAndConditions temsAndCondition={temsAndCondition} />
     </div>
   );
 };
