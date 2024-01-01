@@ -22,29 +22,27 @@ const BreakingNews = ({ newsCategoryData }) => {
                   alt="Picture of the author"
                   style={{ objectFit: "contain" }}
                 />
-
-
               </div>
               <div className=" h-16 text-white  w-full p-5 opacity-75"></div>
-
             </div>
           </div>
         </div>
         <div className=" bg-gray-200 col-span-3 lg:col-span-1 row-span-4 grid md:grid-cols-2 gap-5  cursor-pointer">
-          {newsCategoryData?.data?.map((news) => {
-            return (
-              <>
-                <div>
-                  <img
-                    src={image1}
-                    alt="Picture of the author"
-                    style={{ objectFit: "contain" }}
-                  />
-                  <h2>{news?.title}</h2>
-                </div>
-              </>
-            );
-          })}
+          {newsCategoryData?.data?.length > 0 &&
+            newsCategoryData?.data?.map((news) => {
+              return (
+                <>
+                  <div>
+                    <img
+                      src={image1}
+                      alt="Picture of the author"
+                      style={{ objectFit: "contain" }}
+                    />
+                    <h2>{news?.title}</h2>
+                  </div>
+                </>
+              );
+            })}
         </div>
       </div>
     </div>

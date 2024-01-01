@@ -100,37 +100,38 @@ const HomeLiveNews = ({ newsCategoryData }) => {
     <div>
       <Title>সর্বশেষ সংবাদ</Title>
       <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-10 my-8">
-        {newsCategoryData?.data?.map((news) => {
-          return (
-            <>
-              <div
-                className="flex flex-col gap-5 overflow-hidden group shadow-xl"
-                key={news.id}
-              >
-                <div className=" group-hover:scale-105 transition-all duration-300">
-                  {/* <Image
+        {newsCategoryData?.data?.length > 0 &&
+          newsCategoryData?.data?.map((news) => {
+            return (
+              <>
+                <div
+                  className="flex flex-col gap-5 overflow-hidden group shadow-xl"
+                  key={news.id}
+                >
+                  <div className=" group-hover:scale-105 transition-all duration-300">
+                    {/* <Image
                     src={news?.image}
                     alt="Picture of the author"
                     style={{ objectFit: "contain" }}
                   /> */}
-                  <img
-                    src={news?.post_img}
-                    alt="Picture of the author"
-                    style={{ objectFit: "contain" }}
-                  />
+                    <img
+                      src={news?.post_img}
+                      alt="Picture of the author"
+                      style={{ objectFit: "contain" }}
+                    />
+                  </div>
+                  <div className="p-3">
+                    <h2 className="text-[18px] mb-3">{`${news.title}`}</h2>
+                    <Link
+                      href={`/news-details/${news?.slug}?post_no=${news?.post_no}`}
+                    >
+                      <span className=" cursor-pointer">আরও পড়ুন</span>
+                    </Link>
+                  </div>
                 </div>
-                <div className="p-3">
-                  <h2 className="text-[18px] mb-3">{`${news.title}`}</h2>
-                  <Link
-                    href={`/news-details/${news?.slug}?post_no=${news?.post_no}`}
-                  >
-                    <span className=" cursor-pointer">আরও পড়ুন</span>
-                  </Link>
-                </div>
-              </div>
-            </>
-          );
-        })}
+              </>
+            );
+          })}
       </div>
     </div>
   );

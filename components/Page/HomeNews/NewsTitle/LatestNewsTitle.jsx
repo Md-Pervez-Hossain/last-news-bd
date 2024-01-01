@@ -53,20 +53,21 @@ const LatestNewsTitle = ({ newsCategoryData }) => {
 
   return (
     <div>
-      {newsCategoryData?.data
-        ?.filter((news) => news?.breaking_news === "true")
-        .map((item) => {
-          return (
-            <>
-              <ul className="cursor-pointer">
-                <li className="mb-5 hover:text-secondary transition-all duration-300 hover:ps-2 ">
-                  {item.title}
-                  <hr className="w-full h-[2px] bg-[#222222] opacity-10 mt-3" />
-                </li>
-              </ul>
-            </>
-          );
-        })}
+      {newsCategoryData?.data?.length > 0 &&
+        newsCategoryData?.data
+          ?.filter((news) => news?.breaking_news === "true")
+          .map((item) => {
+            return (
+              <>
+                <ul className="cursor-pointer">
+                  <li className="mb-5 hover:text-secondary transition-all duration-300 hover:ps-2 ">
+                    {item.title}
+                    <hr className="w-full h-[2px] bg-[#222222] opacity-10 mt-3" />
+                  </li>
+                </ul>
+              </>
+            );
+          })}
     </div>
   );
 };

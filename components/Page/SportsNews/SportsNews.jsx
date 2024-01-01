@@ -10,48 +10,49 @@ const SportsNews = ({ newsCategoryData }) => {
   console.log(newsCategoryData);
   const [slicedContent, setSlicedContent] = useState("");
 
-  useEffect(() => {
-    if (newsCategoryData?.data) {
-      const contentToSlice = newsCategoryData?.data.map(
-        (sports) => sports?.content
-      );
-      console.log(contentToSlice);
-      const sliced = contentToSlice.map((content) => content.slice(0, 200)); // Slicing the content to first 100 characters
-      console.log(sliced);
-      setSlicedContent(sliced);
-    }
-  }, [newsCategoryData]);
+  // useEffect(() => {
+  //   if (newsCategoryData?.data) {
+  //     const contentToSlice = newsCategoryData?.data.map(
+  //       (sports) => sports?.content
+  //     );
+  //     console.log(contentToSlice);
+  //     const sliced = contentToSlice.map((content) => content.slice(0, 200)); // Slicing the content to first 100 characters
+  //     console.log(sliced);
+  //     setSlicedContent(sliced);
+  //   }
+  // }, [newsCategoryData]);
   console.log(slicedContent);
   return (
     <div>
       <Search />
 
-      {newsCategoryData?.data?.map((sports) => {
-        return (
-          <>
-            <div>
-              <img
-                src={sports?.post_img}
-                alt="Picture of the author"
-                style={{ objectFit: "contain" }}
-              />
+      {newsCategoryData?.data.length > 0 &&
+        newsCategoryData?.data?.map((sports) => {
+          return (
+            <>
               <div>
-                <h4>{sports?.title}</h4>
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: sports?.content,
-                  }}
+                <img
+                  src={sports?.post_img}
+                  alt="Picture of the author"
+                  style={{ objectFit: "contain" }}
                 />
-                <Link
-                  href={`/news-details/${sports?.slug}?post_no=${sports?.post_no}`}
-                >
-                  <p>আরও পড়ুন </p>
-                </Link>
+                <div>
+                  <h4>{sports?.title}</h4>
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: sports?.content,
+                    }}
+                  />
+                  <Link
+                    href={`/news-details/${sports?.slug}?post_no=${sports?.post_no}`}
+                  >
+                    <p>আরও পড়ুন </p>
+                  </Link>
+                </div>
               </div>
-            </div>
-          </>
-        );
-      })}
+            </>
+          );
+        })}
       {/* <NewsTags show={show} setShow={setShow} tagData={NationalNewsTag} />
       {show === "জাতীয়" && <p>জাতীয় News here</p>}
       {show === "অবরোধ" && <p>অবরোধ News here</p>}
