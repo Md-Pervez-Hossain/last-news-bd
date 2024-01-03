@@ -81,7 +81,7 @@ const Footer = () => {
               <div className="flex  items-center  lg:my-5 mt-6 ">
                 <input
                   placeholder="write Your Email"
-                  className=" w-full   lg:w-[200px]  px-4 py-2 rounded-lg"
+                  className=" w-full   lg:w-[200px]  px-4 py-2 rounded-lg focus:outline-none text-primary"
                 />
                 <PrimaryButtonWithIcons
                   icon={<IoSend />}
