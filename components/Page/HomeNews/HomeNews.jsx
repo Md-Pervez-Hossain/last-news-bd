@@ -20,9 +20,8 @@ import MoreBreakingNews from "./MoreBreakingNews/MoreBreakingNews";
 import { usePathname } from "next/navigation";
 import News from "../News/News";
 
-const HomeNews = ({ newsCategoryData }) => {
+const HomeNews = ({ newsCategoryData, adsData }) => {
   console.log(newsCategoryData);
-  const [show, setShow] = useState("আন্তর্জাতিক");
   const pathname = usePathname();
   console.log(pathname);
   return (
@@ -51,7 +50,7 @@ const HomeNews = ({ newsCategoryData }) => {
             )}
           </div>
           <div className="lg:col-span-1 col-span-3 ">
-            <Add />
+            <Add adsData={adsData} />
             <NewsTitle newsCategoryData={newsCategoryData} />
             <AddTwo />
           </div>

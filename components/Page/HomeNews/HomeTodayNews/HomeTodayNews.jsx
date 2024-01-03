@@ -6,14 +6,17 @@ import NoDataFound from "@/components/Share/NoDataFound/NoDataFound";
 
 const HomeTodayNews = ({ newsCategoryData }) => {
   const currentDate = new Date();
-  const filteredNews = newsCategoryData?.data?.filter((news) => {
-    const newsDate = new Date(news.created_at);
-    return (
-      newsDate.getFullYear() === currentDate.getFullYear() &&
-      newsDate.getMonth() === currentDate.getMonth() &&
-      newsDate.getDate() === currentDate.getDate()
-    );
-  });
+  let filteredNews;
+  if (newsCategoryData?.data?.length > 0) {
+    filteredNews = newsCategoryData?.data?.filter((news) => {
+      const newsDate = new Date(news.created_at);
+      return (
+        newsDate.getFullYear() === currentDate.getFullYear() &&
+        newsDate.getMonth() === currentDate.getMonth() &&
+        newsDate.getDate() === currentDate.getDate()
+      );
+    });
+  }
 
   return (
     <div>

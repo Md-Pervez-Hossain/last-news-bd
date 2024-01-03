@@ -1,13 +1,9 @@
 "use client";
 import Container from "@/components/ui/Container/Container";
 import React from "react";
-import MediaGallery from "./MediaGallery/MediaGallery";
-import HomeBanner from "../HomeBanner/HomeBanner";
-import HomeVideoGallary from "./HomeVideoGallery/HomeVideoGallery";
 import HomeOtherNews from "../HomeOtherNews/HomeOtherNews";
 import AddThree from "../Adds/AddThree";
 import AddFour from "../Adds/AddFour";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const HomeAllPhotoGallery = ({ photoData, category }) => {
