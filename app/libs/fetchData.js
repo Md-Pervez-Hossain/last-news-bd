@@ -112,3 +112,18 @@ export const fetchSocialData = async () => {
 
   }
 }
+
+export const fetchLogoData = async () => {
+  try {
+    const res = await fetch(`https://news-server-8hnz.onrender.com/api/v1/settings/logo/list?deleted=0&status=0&page=${1}&perpage=${100}`, {
+      cache: "no-store"
+    })
+    // if (!res.ok) {
+    //   throw new Error('Failed to fetch data')
+    // }
+    return res.json();
+  } catch (error) {
+    console.log(error);
+
+  }
+}

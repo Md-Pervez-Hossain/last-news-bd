@@ -2,17 +2,22 @@ import React from "react";
 import Navigation from "./Navigation/Navigation";
 import MiddleMenu from "./MiddleMenu/MiddleMenu";
 import Menubar from "./Menubar/Menubar";
-import { fetchData, fetchSocialData } from "@/app/libs/fetchData";
+import {
+  fetchData,
+  fetchLogoData,
+  fetchSocialData,
+} from "@/app/libs/fetchData";
 
 const Headers = async () => {
   const menuData = await fetchData();
   const socialData = await fetchSocialData();
+  const logo = await fetchLogoData();
   return (
     <div className="">
       <div>
         <Navigation socialData={socialData} />
       </div>
-      <Menubar menuData={menuData} />
+      <Menubar menuData={menuData} logo={logo} />
     </div>
   );
 };

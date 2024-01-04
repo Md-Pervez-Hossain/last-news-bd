@@ -1,16 +1,37 @@
 /* eslint-disable react/no-unescaped-entities */
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Container from "../ui/Container/Container";
 import Image from "next/image";
 import newsIcon from "../../assets/icons/News_Paper_white_icon 1 (1).svg";
-import {
-  PrimaryButton,
-  PrimaryButtonWithIcons,
-} from "../Share/Buttons/Buttons";
+import toast from "react-hot-toast";
+import { PrimaryButtonWithIcons } from "../Share/Buttons/Buttons";
 import FooterBottom from "./FooterBottom";
 import { IoSend } from "react-icons/io5";
 import Link from "next/link";
+
 const Footer = () => {
+  const [email, setEmail] = useState("");
+  const handleNewsletter = async (e) => {
+    e.preventDefault();
+    const response = await fetch(
+      "https://news-server-8hnz.onrender.com/api/v1/subscribe/create",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      }
+    );
+    if (response.status === 200) {
+      toast.success("Successfully Added!");
+      setEmail("");
+    } else {
+      toast.error("Subscription Failed!");
+    }
+  };
+
   return (
     <div className="bg-primary mt-16 ">
       <Container>
@@ -78,16 +99,21 @@ const Footer = () => {
             <div>
               <h4 className="text-[24px] font-[500] mb-5">Newsletter</h4>
               <p>Get the latest creative news from Anacker News</p>
-              <div className="flex  items-center  lg:my-5 mt-6 ">
-                <input
-                  placeholder="write Your Email"
-                  className=" w-full   lg:w-[200px]  px-4 py-2 rounded-lg focus:outline-none text-primary"
-                />
-                <PrimaryButtonWithIcons
-                  icon={<IoSend />}
-                  className="bg-secondary text-white px-4 py-3 -ms-5"
-                ></PrimaryButtonWithIcons>
-              </div>
+              <form onSubmit={handleNewsletter}>
+                <div className="flex  items-center  lg:my-5 mt-6 ">
+                  <input
+                    type="email"
+                    required
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="write Your Email"
+                    className=" w-full   lg:w-[200px]  px-4 py-2 rounded-lg focus:outline-none text-primary"
+                  />
+                  <PrimaryButtonWithIcons
+                    icon={<IoSend />}
+                    className="bg-secondary text-white px-4 py-3 -ms-5"
+                  ></PrimaryButtonWithIcons>
+                </div>
+              </form>
             </div>
           </div>
           <hr className="hidden lg:flex" />

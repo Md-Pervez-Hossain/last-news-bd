@@ -9,7 +9,8 @@ import { PrimaryButton } from "@/components/Share/Buttons/Buttons";
 import Image from "next/image";
 import globeIcon from "../../../assets/icons/Globe Icon.svg";
 import NoDataFound from "@/components/Share/NoDataFound/NoDataFound";
-const Menubar = ({ menuData }) => {
+const Menubar = ({ menuData, logo }) => {
+  console.log(logo);
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
   const [banglaDate, setBanglaDate] = useState("");
@@ -34,9 +35,26 @@ const Menubar = ({ menuData }) => {
         <Container>
           <div>
             <div className="flex flex-col lg:flex-row row lg:items-center lg:justify-between justify-end lg:py-6">
-              <h2 className="text-white  text-end lg:flex text-[32px] font-[600]">
-                নিউজ
-              </h2>
+              {logo?.data?.length > 0 ? (
+                <>
+                  {logo?.data?.map((logo) => {
+                    return (
+                      <>
+                        <img
+                          src={logo?.logo}
+                          alt="logo"
+                          style={{ objectFit: "contain" }}
+                          className="group-hover:scale-105 transition-all duration-300"
+                        />
+                      </>
+                    );
+                  })}
+                </>
+              ) : (
+                <>
+                  <p>No Logo Found</p>
+                </>
+              )}
               <h2 className="text-white text-end lg:flex py-3 lg:py-0">
                 {banglaDate}
               </h2>
