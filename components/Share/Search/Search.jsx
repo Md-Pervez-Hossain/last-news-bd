@@ -9,11 +9,11 @@ const Search = () => {
       <div className="flex  items-center my-8">
         <input
           placeholder="খুজুন"
-          className="    w-full  px-4 py-3 border-2 focus:outline-none "
+          className="    w-full  px-4 py-2 rounded-md border-2 focus:outline-none "
         />
-        <PrimaryButton className="bg-secondary border-2 border-secondary text-white -ms-2 px-4 py-3 rounded-none focus:outline-none ">
+        <button className="bg-secondary border-2 border-secondary text-white -ms-2 px-4 py-2  rounded-e-lg focus:outline-none ">
           অনুসন্ধান
-        </PrimaryButton>
+        </button>
       </div>
     </div>
   );

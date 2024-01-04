@@ -34,17 +34,15 @@ const HomeSpecialNews = ({ newsCategoryData }) => {
                         style={{ objectFit: "contain" }}
                       />
                     </div>
-                    <div className="p-3">
-                      <h2 className="text-[18px] mb-3">{`${news.title}`}</h2>
-                      {/* <div
-                      dangerouslySetInnerHTML={{
-                        __html: news?.content,
-                      }}
-                    /> */}
+                    <div className="p-4 flex flex-col h-full">
+                      <h2 className="text-base font-[600] text-gray-700 mb-3 line-clamp-2">{`${news.title}`}</h2>
                       <Link
                         href={`/news-details/${news?.slug}?post_no=${news?.post_no}`}
+                        className="mt-auto"
                       >
-                        <span className=" cursor-pointer">আরও পড়ুন</span>
+                        <span className=" cursor-pointer text-[13px] text-gray-500">
+                          আরও পড়ুন
+                        </span>
                       </Link>
                     </div>
                   </div>

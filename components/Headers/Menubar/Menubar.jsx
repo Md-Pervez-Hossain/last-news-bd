@@ -66,7 +66,7 @@ const Menubar = ({ menuData, logo, socialData }) => {
                   placeholder="খুজুন"
                   className="px-4 py-[4px] rounded-lg border-2 border-[#F5F5F5] focus:outline-none"
                 />
-                <PrimaryButton className="transition ease-in-out delay-150 rounded-lg  hover:-translate-y-1 hover:scale-110 text-white border-2 border-secondary duration-300 bg-secondary py-[4px] ">
+                <PrimaryButton className="transition ease-in-out delay-150 rounded-lg   hover:scale-105 text-white border-2 border-secondary duration-300 bg-secondary py-[4px] px-3 ">
                   অনুসন্ধান
                 </PrimaryButton>
               </div>
