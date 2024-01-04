@@ -36,7 +36,6 @@ const HomeNews = ({ newsCategoryData, adsData }) => {
             </div>
           </>
         )}
-
         <div className="grid grid-cols-3 gap-10 ">
           <div className="lg:col-span-2 col-span-3">
             {pathname === "/home" && (
@@ -67,7 +66,6 @@ const HomeNews = ({ newsCategoryData, adsData }) => {
           </div>
         </div>
         {pathname === "/home" && <PhotoGallery />}
-
         <div className="grid grid-cols-3 my-10 gap-10">
           <div className="lg:col-span-2 col-span-3">
             <HomeLiveNews newsCategoryData={newsCategoryData} />

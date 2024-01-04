@@ -85,7 +85,22 @@ export const fetchPhotoData = async () => {
 
 export const fetchAdsData = async () => {
   try {
-    const res = await fetch(`https://news-server-8hnz.onrender.com/api/v1/ads/list?deleted=0`, {
+    const res = await fetch(`https://news-server-8hnz.onrender.com/api/v1/ads/list?deleted=0&status=0&page=${1}&perpage=${100}`, {
+      cache: "no-store"
+    })
+    // if (!res.ok) {
+    //   throw new Error('Failed to fetch data')
+    // }
+    return res.json();
+  } catch (error) {
+    console.log(error);
+
+  }
+}
+
+export const fetchSocialData = async () => {
+  try {
+    const res = await fetch(`https://news-server-8hnz.onrender.com/api/v1/social/list?deleted=0&status=0&page=${1}&perpage=${100}`, {
       cache: "no-store"
     })
     // if (!res.ok) {
