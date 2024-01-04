@@ -1,4 +1,4 @@
-import { Inter, Tiro_Bangla } from 'next/font/google'
+import { Inter, Noto_Sans_Bengali } from 'next/font/google'
 import './globals.css'
 import Headers from '@/components/Headers/Headers'
 import Footer from '@/components/Footer/Footer'
@@ -6,7 +6,7 @@ import FixedSocialMedia from '@/components/Share/FixedSocialMedia/FixedSocialMed
 import ToastRapper from '@/components/Share/ToastRapper/ToastRapper'
 
 const inter = Inter({ subsets: ['latin'] })
-const tiro = Tiro_Bangla({ subsets: ["bengali"], weight: ["400"] })
+const noto = Noto_Sans_Bengali({ subsets: ["bengali"], weight: ["400", "500", "600"] })
 
 export const metadata = {
   title: 'The Last News',
@@ -16,16 +16,16 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en"  >
-      <body className={`${inter.className} ${tiro}`}>
-        <div >
-          <Headers />
-          <div className=" hidden lg:flex fixed right-0 lg:top-32 bottom-0   p-3 z-50 ">
-            <FixedSocialMedia />
-          </div>
-          {children}
-          <ToastRapper />
-          <Footer />
+      <body className={`${inter.className}${noto.className}`}>
+
+        <Headers />
+        <div className=" hidden lg:flex fixed right-0 top-1/2 -translate-y-1/2   p-3 z-50 ">
+          <FixedSocialMedia />
         </div>
+        {children}
+        <ToastRapper />
+        <Footer />
+
       </body>
     </html>
   )

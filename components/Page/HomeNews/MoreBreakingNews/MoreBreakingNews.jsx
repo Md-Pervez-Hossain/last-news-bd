@@ -34,7 +34,7 @@ const MoreBreakingNews = ({ newsCategoryData }) => {
             newsCategoryData?.data?.map((news) => {
               return (
                 <>
-                  <div className="overflow-hidden group shadow-xl rounded-lg ">
+                  <div className="overflow-hidden group shadow-xl rounded-lg">
                     <img
                       src={image1}
                       alt="Picture of the author"

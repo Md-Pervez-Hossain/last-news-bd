@@ -13,7 +13,7 @@ const Headers = async () => {
   const socialData = await fetchSocialData();
   const logo = await fetchLogoData();
   return (
-    <div className="">
+    <div className=" sticky -top-[59.5px] z-[1000] ">
       <div>
         <Navigation socialData={socialData} />
       </div>

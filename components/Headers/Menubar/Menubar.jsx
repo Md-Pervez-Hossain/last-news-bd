@@ -9,7 +9,8 @@ import { PrimaryButton } from "@/components/Share/Buttons/Buttons";
 import Image from "next/image";
 import globeIcon from "../../../assets/icons/Globe Icon.svg";
 import NoDataFound from "@/components/Share/NoDataFound/NoDataFound";
-const Menubar = ({ menuData, logo }) => {
+import Navigation from "../Navigation/Navigation";
+const Menubar = ({ menuData, logo, socialData }) => {
   console.log(logo);
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
@@ -31,7 +32,7 @@ const Menubar = ({ menuData, logo }) => {
   }, []); // Run this effect only once on initial render
   return (
     <div className="mb-16 ">
-      <div className="bg-primary py-10 ">
+      <div className="bg-primary pb-6 ">
         <Container>
           <div>
             <div className="flex flex-col lg:flex-row row lg:items-center lg:justify-between justify-end lg:py-6">
@@ -40,12 +41,17 @@ const Menubar = ({ menuData, logo }) => {
                   {logo?.data?.map((logo) => {
                     return (
                       <>
-                        <img
-                          src={logo?.logo}
-                          alt="logo"
-                          style={{ objectFit: "contain" }}
-                          className="group-hover:scale-105 transition-all duration-300"
-                        />
+                        <div className="flex items-center  justify-end gap-5">
+                          <img
+                            src={logo?.logo}
+                            alt="logo"
+                            style={{ objectFit: "contain" }}
+                            className="group-hover:scale-105 transition-all duration-300"
+                          />
+                          <h2 className="text-white text-end lg:flex py-3 lg:py-0 text-[13px]">
+                            {banglaDate}
+                          </h2>
+                        </div>
                       </>
                     );
                   })}
@@ -55,20 +61,17 @@ const Menubar = ({ menuData, logo }) => {
                   <p>No Logo Found</p>
                 </>
               )}
-              <h2 className="text-white text-end lg:flex py-3 lg:py-0">
-                {banglaDate}
-              </h2>
-              <div className=" hidden lg:flex  items-center justify-end flex-wrap gap-3 py-3">
+              <div className=" hidden lg:flex  items-center justify-end flex-wrap gap-3 py-2">
                 <input
                   placeholder="খুজুন"
-                  className="px-4 py-2 rounded-full border-2 border-[#F5F5F5] focus:outline-none"
+                  className="px-4 py-[4px] rounded-lg border-2 border-[#F5F5F5] focus:outline-none"
                 />
-                <PrimaryButton className="transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 text-white border-2 border-secondary duration-300 bg-secondary  ">
+                <PrimaryButton className="transition ease-in-out delay-150 rounded-lg  hover:-translate-y-1 hover:scale-110 text-white border-2 border-secondary duration-300 bg-secondary py-[4px] ">
                   অনুসন্ধান
                 </PrimaryButton>
               </div>
             </div>
-            <div className="hidden lg:flex justify-between items-center  gap-5 flex-wrap text-white">
+            <div className="hidden lg:flex  items-center  gap-5 flex-wrap text-white">
               {menuData?.data?.length > 0 ? (
                 menuData?.data?.map((item) => {
                   return (

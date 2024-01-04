@@ -15,7 +15,7 @@ const HomeOtherNews = ({ newsCategoryData }) => {
               return (
                 <>
                   <div
-                    className="flex flex-col gap-5 overflow-hidden group shadow-xl"
+                    className="flex flex-col gap-5 overflow-hidden group shadow-xl rounded-lg"
                     key={news.id}
                   >
                     <div className=" group-hover:scale-105 transition-all duration-300">

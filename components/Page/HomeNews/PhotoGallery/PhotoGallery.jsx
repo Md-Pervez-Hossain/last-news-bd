@@ -47,7 +47,7 @@ const PhotoGallery = ({ photos }) => {
       <Swiper
         navigation={true}
         modules={[Navigation]}
-        slidesPerView={4}
+        slidesPerView={3}
         spaceBetween={30}
         centeredSlides={true}
         breakpoints={{

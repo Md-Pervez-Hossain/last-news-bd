@@ -9,7 +9,7 @@ import NoDataFound from "@/components/Share/NoDataFound/NoDataFound";
 const Navigation = ({ socialData }) => {
   console.log(socialData?.data);
   return (
-    <div className=" hidden xl:flex  py-5 bg-[#F5F5F5]">
+    <div className=" hidden xl:flex  py-3 bg-[#F5F5F5]">
       <Container>
         <div className="flex flex-wrap  justify-between gap-5 ]">
           <div className="flex items-center flex-wrap gap-10">
@@ -22,7 +22,7 @@ const Navigation = ({ socialData }) => {
               <h2>E-Paper</h2>
             </div>
           </div>
-          <div className="flex flex-wrap items-center gap-4">
+          <div className="flex flex-wrap items-center gap-4 text-[13px]">
             <h3 className="bg-secondary px-4 py-2 rounded-md text-white">
               সরকার অনুমোদিত পোর্টাল
             </h3>

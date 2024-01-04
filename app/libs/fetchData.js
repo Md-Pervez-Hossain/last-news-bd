@@ -127,3 +127,17 @@ export const fetchLogoData = async () => {
 
   }
 }
+export const fetchDashboardInfoData = async () => {
+  try {
+    const res = await fetch(`https://news-server-8hnz.onrender.com/api/v1/dashboard/info`, {
+      cache: "no-store"
+    })
+    // if (!res.ok) {
+    //   throw new Error('Failed to fetch data')
+    // }
+    return res.json();
+  } catch (error) {
+    console.log(error);
+
+  }
+}

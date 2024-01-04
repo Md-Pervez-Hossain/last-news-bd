@@ -29,11 +29,13 @@ const News = ({ newsCategoryData }) => {
                     />
                   </div>
                   <div className="p-3">
-                    <h4 className="text-[16px] mb-3">{sports?.title}</h4>
+                    <h4 className="text-base mb-3 font-[600] text-gray-700">
+                      {sports?.title}
+                    </h4>
                     <Link
                       href={`/news-details/${sports?.slug}?post_no=${sports?.post_no}`}
                     >
-                      <p>আরও পড়ুন </p>
+                      <p className="text-gray-500 text-sm">আরও পড়ুন </p>
                     </Link>
                   </div>
                 </div>
