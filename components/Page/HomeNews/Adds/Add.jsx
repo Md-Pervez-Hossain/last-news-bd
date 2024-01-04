@@ -1,26 +1,64 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import addImage from "../../../../assets/images/add_image1.png";
 import Image from "next/image";
+import Link from "next/link";
+import NoDataFound from "@/components/Share/NoDataFound/NoDataFound";
 const Add = ({ adsData }) => {
-  console.log(adsData);
+  const [currentAdIndex, setCurrentAdIndex] = useState(0);
   const [imageVisible, setImageVisible] = useState(true);
+  const [filteredAds, setFilteredAds] = useState([]);
+
+  useEffect(() => {
+    const filtered = adsData?.data?.filter(
+      (ads) => ads?.ad_placement === "sidebar"
+    );
+    setFilteredAds(filtered || []);
+  }, [adsData]);
+
+  useEffect(() => {
+    if (filteredAds.length > 0) {
+      const interval = setInterval(() => {
+        setCurrentAdIndex((prevIndex) => (prevIndex + 1) % filteredAds.length);
+      }, 5000);
+
+      return () => clearInterval(interval);
+    }
+  }, [filteredAds]);
 
   const handleCloseClick = () => {
     setImageVisible(false);
   };
+
   return (
-    <div className="my-5">
+    <div className="py-8">
       {imageVisible && (
-        <div className="relative ">
-          <Image
-            src={addImage}
-            alt="Picture of the author"
-            style={{ objectFit: "contain" }}
-            width={1000}
-          />
+        <div className="relative">
+          {filteredAds.length > 0 ? (
+            <div className="transition-opacity duration-300 ease-in-out">
+              {filteredAds.map((ad, index) => (
+                <img
+                  key={index}
+                  src={ad.ads_img}
+                  alt={`img-${index}`}
+                  style={{
+                    objectFit: "contain",
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    opacity: index === currentAdIndex ? 1 : 0,
+                    transition: "opacity 0.5s ease-in-out",
+                    zIndex: index === currentAdIndex ? 1 : 0,
+                  }}
+                  className="group-hover:scale-105"
+                />
+              ))}
+            </div>
+          ) : (
+            <NoDataFound />
+          )}
           <span
-            className="bg-white p-3 shadow-lg absolute top-2 right-2 rounded-full cursor-pointer"
+            className="bg-white p-3 shadow-lg absolute top-0 right-0 rounded-full cursor-pointer"
             onClick={handleCloseClick}
           >
             <svg
@@ -33,9 +71,9 @@ const Add = ({ adsData }) => {
               <path
                 d="M1 13L13 1M1 1L13 13"
                 stroke="black"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </svg>
           </span>

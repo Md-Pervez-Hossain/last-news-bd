@@ -1,6 +1,6 @@
 export const fetchData = async (query) => {
   try {
-    const res = await fetch(`https://news-server-8hnz.onrender.com/api/v1/category/list?perpage=50&page=1&deleted=0`)
+    const res = await fetch(`https://news-server-8hnz.onrender.com/api/v1/category/list?deleted=0&status=0&page=${1}&perpage=${100}`)
     // if (!res.ok) {
     //   throw new Error('Failed to fetch data')
     // }
@@ -40,7 +40,7 @@ export const fetchCategoryNewsData = async (query) => {
 
 export const fetchTermAndConditionData = async () => {
   try {
-    const res = await fetch(`https://news-server-8hnz.onrender.com/api/v1/settings/terms_conditions/list`, {
+    const res = await fetch(`https://news-server-8hnz.onrender.com/api/v1/settings/terms_conditions/list?deleted=0&status=0&page=${1}&perpage=${100}`, {
       cache: "no-store"
     })
     // if (!res.ok) {
@@ -55,7 +55,7 @@ export const fetchTermAndConditionData = async () => {
 
 export const fetchAboutUsData = async () => {
   try {
-    const res = await fetch(`https://news-server-8hnz.onrender.com/api/v1/settings/about_us/list`, {
+    const res = await fetch(`https://news-server-8hnz.onrender.com/api/v1/settings/about_us/list?deleted=0&status=0&page=${1}&perpage=${100}`, {
       cache: "no-store"
     })
     // if (!res.ok) {
@@ -70,7 +70,7 @@ export const fetchAboutUsData = async () => {
 
 export const fetchPhotoData = async () => {
   try {
-    const res = await fetch(`https://news-server-8hnz.onrender.com/api/v1/media/list/image?deleted=0`, {
+    const res = await fetch(`https://news-server-8hnz.onrender.com/api/v1/media/list/image??deleted=0&status=0&page=${1}&perpage=${100}`, {
       cache: "no-store"
     })
     // if (!res.ok) {

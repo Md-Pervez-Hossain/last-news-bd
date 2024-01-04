@@ -43,7 +43,7 @@ const Menubar = ({ menuData }) => {
               <div className=" hidden lg:flex  items-center justify-end flex-wrap gap-3 py-3">
                 <input
                   placeholder="খুজুন"
-                  className="px-4 py-2 rounded-full border-2 border-[#F5F5F5]"
+                  className="px-4 py-2 rounded-full border-2 border-[#F5F5F5] focus:outline-none"
                 />
                 <PrimaryButton className="transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 text-white border-2 border-secondary duration-300 bg-secondary  ">
                   অনুসন্ধান
