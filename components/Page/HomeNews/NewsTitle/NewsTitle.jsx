@@ -7,7 +7,7 @@ import LatestNews from "../LatestNews/LatestNews";
 import LatestNewsTitle from "./LatestNewsTitle";
 import TrendingNewsTitle from "./TrendingNewsTitle";
 
-const NewsTitle = ({ newsCategoryData }) => {
+const NewsTitle = ({ newsCategoryData, category_no }) => {
   const [show, setShow] = useState("latest_news");
   return (
     <div className="bg-[#F5F5F5] mt-5 px-4 py-3 ">
@@ -35,10 +35,16 @@ const NewsTitle = ({ newsCategoryData }) => {
       </div>
       <div>
         {show === "latest_news" && (
-          <LatestNewsTitle newsCategoryData={newsCategoryData} />
+          <LatestNewsTitle
+            newsCategoryData={newsCategoryData}
+            category_no={category_no}
+          />
         )}
         {show === "trending_news" && (
-          <TrendingNewsTitle newsCategoryData={newsCategoryData} />
+          <TrendingNewsTitle
+            newsCategoryData={newsCategoryData}
+            category_no={category_no}
+          />
         )}
       </div>
     </div>

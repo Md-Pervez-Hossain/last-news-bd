@@ -17,48 +17,56 @@ import AddTwo from "./Adds/AddTwo";
 import AddThree from "./Adds/AddThree";
 import AddFour from "./Adds/AddFour";
 import MoreBreakingNews from "./MoreBreakingNews/MoreBreakingNews";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import News from "../News/News";
 
 const HomeNews = ({ newsCategoryData, adsData, photos }) => {
-  console.log(newsCategoryData);
+  const category_no = useSearchParams().get("name");
   const pathname = usePathname();
-  console.log(pathname);
   return (
     <div>
       <Container>
         {pathname === "/home" && (
           <>
             <HomeBanner adsData={adsData} />
-            <div className="my-5">
-              <Title> সর্বশেষ সংবাদ</Title>
-            </div>
           </>
         )}
         <div className="grid grid-cols-3 gap-10 ">
           <div className="lg:col-span-2 col-span-3">
             {pathname === "/home" && (
               <>
-                <LatestNews newsCategoryData={newsCategoryData} />
-                <HomeSpecialNews newsCategoryData={newsCategoryData} />
+                <LatestNews
+                  category_no={category_no}
+                  newsCategoryData={newsCategoryData}
+                />
+                <HomeSpecialNews
+                  category_no={category_no}
+                  newsCategoryData={newsCategoryData}
+                />
               </>
             )}
             {pathname !== "/home" && (
               <>
                 {" "}
                 <HomeBanner adsData={adsData} />
-                <News newsCategoryData={newsCategoryData} />
+                <News newsCategoryData={newsCategoryData} adsData={adsData} />
               </>
             )}
           </div>
           <div className="lg:col-span-1 col-span-3 ">
             <Add adsData={adsData} />
-            <NewsTitle newsCategoryData={newsCategoryData} />
+            <NewsTitle
+              category_no={category_no}
+              newsCategoryData={newsCategoryData}
+            />
             <AddTwo adsData={adsData} />
           </div>
         </div>
         <div className="py-8">
-          <BreakingNews newsCategoryData={newsCategoryData} />
+          <BreakingNews
+            category_no={category_no}
+            newsCategoryData={newsCategoryData}
+          />
         </div>
         <div className="grid grid-cols-3 gap-10 items-center my-8 ">
           <div className="lg:col-span-2 col-span-3">
@@ -68,26 +76,39 @@ const HomeNews = ({ newsCategoryData, adsData, photos }) => {
             <AddFour adsData={adsData} />
           </div>
         </div>
-        {(pathname === "/home" || pathname === "/") && (
-          <PhotoGallery photos={photos} />
-        )}
+        {pathname === "/home" && <PhotoGallery photos={photos} />}
         <div className="grid grid-cols-3 my-10 gap-10">
           <div className="lg:col-span-2 col-span-3">
-            <HomeLiveNews newsCategoryData={newsCategoryData} />
+            <HomeLiveNews
+              category_no={category_no}
+              newsCategoryData={newsCategoryData}
+            />
           </div>
           <div className="lg:col-span-1 col-span-3">
-            <HomeTodayNews newsCategoryData={newsCategoryData} />
+            <HomeTodayNews
+              category_no={category_no}
+              newsCategoryData={newsCategoryData}
+            />
           </div>
         </div>
-        <RecentNews newsCategoryData={newsCategoryData} />
-        {/* <div className="my-8">
-          <HomeBanner />
-        </div> */}
+        {pathname === "/home" ||
+          (pathname === "/" && (
+            <RecentNews
+              category_no={category_no}
+              newsCategoryData={newsCategoryData}
+            />
+          ))}
         <div>
-          <MoreBreakingNews newsCategoryData={newsCategoryData} />
+          <MoreBreakingNews
+            category_no={category_no}
+            newsCategoryData={newsCategoryData}
+          />
         </div>
         <div className="my-8">
-          <HomeOtherNews newsCategoryData={newsCategoryData} />
+          <HomeOtherNews
+            category_no={category_no}
+            newsCategoryData={newsCategoryData}
+          />
         </div>
       </Container>
     </div>

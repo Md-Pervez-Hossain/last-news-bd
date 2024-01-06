@@ -64,9 +64,9 @@ const Menubar = ({ menuData, logo, socialData }) => {
               <div className=" hidden lg:flex  items-center justify-end flex-wrap gap-3 py-2">
                 <input
                   placeholder="খুজুন"
-                  className="px-4 py-[4px] rounded-lg border-2 border-[#F5F5F5] focus:outline-none"
+                  className="px-4 py-[5px] rounded-lg border-2 border-[#F5F5F5] focus:outline-none"
                 />
-                <PrimaryButton className="transition ease-in-out delay-150 rounded-lg   hover:scale-105 text-white border-2 border-secondary duration-300 bg-secondary py-[4px] px-3 ">
+                <PrimaryButton className="transition ease-in-out delay-150 rounded-lg   hover:scale-105 text-white border-2 border-secondary duration-300 bg-secondary py-[5px] px-3 ">
                   অনুসন্ধান
                 </PrimaryButton>
               </div>

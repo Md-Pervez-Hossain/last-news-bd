@@ -3,7 +3,7 @@ import React from "react";
 
 import Link from "next/link";
 import NoDataFound from "@/components/Share/NoDataFound/NoDataFound";
-const HomeLiveNews = ({ newsCategoryData }) => {
+const HomeLiveNews = ({ newsCategoryData, category_no }) => {
   return (
     <div>
       <Title>সর্বশেষ সংবাদ</Title>
@@ -16,7 +16,7 @@ const HomeLiveNews = ({ newsCategoryData }) => {
                   className="flex flex-col gap-5 overflow-hidden group shadow-xl rounded-lg"
                   key={news.id}
                 >
-                  <div className=" group-hover:scale-105 transition-all duration-300">
+                  <div className=" group-hover:scale-105 transition-all duration-300 cursor-pointer">
                     {/* <Image
                     src={news?.image}
                     alt="Picture of the author"
@@ -24,16 +24,19 @@ const HomeLiveNews = ({ newsCategoryData }) => {
                   /> */}
                     <img
                       src={news?.post_img}
-                      alt="Picture of the author"
+                      alt="Picture"
                       style={{ objectFit: "contain" }}
                     />
                   </div>
-                  <div className="p-3">
-                    <h2 className="text-[18px] mb-3">{`${news.title}`}</h2>
+                  <div className="p-4 flex flex-col h-full">
+                    <h2 className="text-[18px] mb-3 line-clamp-2 text-base text-gray-700 font-[600]">{`${news.title}`}</h2>
                     <Link
-                      href={`/news-details/${news?.slug}?post_no=${news?.post_no}`}
+                      className="mt-auto "
+                      href={`/news-details/${news?.slug}?category_no=${category_no}&post_no=${news?.post_no}`}
                     >
-                      <span className=" cursor-pointer">আরও পড়ুন</span>
+                      <span className=" cursor-pointer text-[13px] text-gray-500">
+                        আরও পড়ুন
+                      </span>
                     </Link>
                   </div>
                 </div>

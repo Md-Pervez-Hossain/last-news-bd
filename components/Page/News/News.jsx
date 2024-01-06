@@ -6,14 +6,21 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import NoDataFound from "@/components/Share/NoDataFound/NoDataFound";
+import Title from "@/components/ui/Title/Title";
 
 const News = ({ newsCategoryData }) => {
+  const [title, setTitle] = useState("");
   console.log(newsCategoryData);
   const [slicedContent, setSlicedContent] = useState("");
   console.log(slicedContent);
   return (
     <div>
-      <Search />
+      {newsCategoryData?.data?.length > 0 && (
+        <Title className="my-5">
+          {newsCategoryData?.data?.[0].category_name}
+        </Title>
+      )}
+
       <div className="grid grid-cols-3 gap-5">
         {newsCategoryData?.data.length > 0 ? (
           newsCategoryData?.data?.map((sports) => {
@@ -23,7 +30,7 @@ const News = ({ newsCategoryData }) => {
                   <div className="group overflow-hidden cursor-pointer">
                     <img
                       src={sports?.post_img}
-                      alt="Picture of the author"
+                      alt="Picture "
                       style={{ objectFit: "contain" }}
                       className="group-hover:scale-105 transition-all duration-300"
                     />

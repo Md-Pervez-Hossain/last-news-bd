@@ -10,7 +10,7 @@ import image5 from "../../../../assets/images/breaking_news_5.png";
 import Image from "next/image";
 import Link from "next/link";
 import NoDataFound from "@/components/Share/NoDataFound/NoDataFound";
-const BreakingNews = ({ newsCategoryData }) => {
+const BreakingNews = ({ newsCategoryData, category_no }) => {
   return (
     <div>
       <Title>সদ্যপ্রাপ্ত সংবাদ</Title>
@@ -20,15 +20,20 @@ const BreakingNews = ({ newsCategoryData }) => {
             <div className=" group-hover:scale-105 transition-all duration-300">
               <img
                 src={image1}
-                alt="Picture of the author"
+                alt="Picture "
                 style={{ objectFit: "contain" }}
               />
-              {newsCategoryData?.data?.length > 0 ? (
-                newsCategoryData?.data?.[0].title
-              ) : (
-                <NoDataFound />
-              )}
             </div>
+            {newsCategoryData?.data?.length > 0 ? (
+              <Link
+                href={`/news-details/${newsCategoryData?.data?.[0]?.slug}?category_no=${category_no}&post_no=${newsCategoryData?.data?.[0]?.post_no}`}
+                className="text-gray-700 font-[600]  "
+              >
+                {newsCategoryData?.data?.[0].title}
+              </Link>
+            ) : (
+              <NoDataFound />
+            )}
             <div className=" h-16 text-white  w-full p-5 opacity-75"></div>
           </div>
         </div>
@@ -37,16 +42,19 @@ const BreakingNews = ({ newsCategoryData }) => {
             newsCategoryData?.data?.map((news) => {
               return (
                 <>
-                  <div className="overflow-hidden group shadow-xl rounded-lg ">
-                    <img
-                      src={image1}
-                      alt="Picture of the author"
-                      style={{ objectFit: "contain" }}
-                      className="group-hover:scale-105 transition-all duration-300"
-                    />
-                    <div className="p-3">
+                  <div className=" shadow-xl rounded-lg ">
+                    <div className="overflow-hidden group">
+                      <img
+                        src={image1}
+                        alt="Picture"
+                        style={{ objectFit: "contain" }}
+                        className="group-hover:scale-105 transition-all duration-300"
+                      />
+                    </div>
+                    <div className="p-4">
                       <Link
-                        href={`/news-details/${news?.slug}?post_no=${news?.post_no}`}
+                        className="text-gray-700 text-base font-[600] line-clamp-2"
+                        href={`/news-details/${news?.slug}?category_no=${category_no}&post_no=${news?.post_no}`}
                       >
                         {news?.title}
                       </Link>

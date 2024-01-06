@@ -1,4 +1,3 @@
-"use client";
 import Container from "@/components/ui/Container/Container";
 import React from "react";
 import HomeBanner from "../HomeBanner/HomeBanner";
@@ -6,23 +5,37 @@ import HomeTodayNews from "../HomeTodayNews/HomeTodayNews";
 import NewsTitle from "../NewsTitle/NewsTitle";
 import HomeOtherNews from "../HomeOtherNews/HomeOtherNews";
 import SingleNewsPostDetails from "./SingleNewsPostDetails";
+import Add from "../Adds/Add";
 
-const NewsDetails = ({ postDetails }) => {
-  console.log(postDetails);
+const NewsDetails = ({
+  postDetails,
+  adsData,
+  newsCategoryData,
+  socialData,
+}) => {
   return (
     <div>
-      <HomeBanner />
       <Container>
+        <HomeBanner adsData={adsData} />
         <div className="grid grid-cols-3 gap-10 my-8">
           <div className="lg:col-span-2 col-span-3">
-            <SingleNewsPostDetails postDetails={postDetails} />
+            <SingleNewsPostDetails
+              postDetails={postDetails}
+              socialData={socialData}
+            />
           </div>
           <div className="lg:col-span-1 col-span-3">
-            <HomeTodayNews />
-            <NewsTitle />
+            <Add adsData={adsData} />
+            <div className="my-5">
+              <HomeTodayNews newsCategoryData={newsCategoryData} />
+            </div>
+            <div className="my-5">
+              <NewsTitle newsCategoryData={newsCategoryData} />
+            </div>
+            <Add adsData={adsData} />
           </div>
         </div>
-        <HomeOtherNews />
+        <HomeOtherNews newsCategoryData={newsCategoryData} />
       </Container>
     </div>
   );

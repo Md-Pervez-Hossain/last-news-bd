@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import NoDataFound from "@/components/Share/NoDataFound/NoDataFound";
 
-const HomeTodayNews = ({ newsCategoryData }) => {
+const HomeTodayNews = ({ newsCategoryData, category_no }) => {
   const currentDate = new Date();
   let filteredNews;
   if (newsCategoryData?.data?.length > 0) {
@@ -31,14 +31,15 @@ const HomeTodayNews = ({ newsCategoryData }) => {
               <div className="group-hover:scale-105 transition-all duration-300">
                 <img
                   src={news?.post_img}
-                  alt="Picture of the author"
+                  alt="Picture "
                   style={{ objectFit: "contain" }}
                 />
               </div>
-              <div className="p-3">
-                <h2 className="text-[18px] mb-3">{`${news.title}`}</h2>
+              <div className="p-3 flex flex-col h-full">
+                <h2 className="text-base font-[600] text-gray-700 mb-3">{`${news.title}`}</h2>
                 <Link
-                  href={`/news-details/${news?.slug}?post_no=${news?.post_no}`}
+                  className="mt-auto text-[13px] text-gray-500"
+                  href={`/news-details/${news?.slug}?category_no=${category_no}&post_no=${news?.post_no}`}
                 >
                   <span className="cursor-pointer">আরও পড়ুন</span>
                 </Link>

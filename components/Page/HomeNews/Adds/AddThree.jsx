@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useEffect } from "react";
 import NoDataFound from "@/components/Share/NoDataFound/NoDataFound";
 
@@ -57,7 +58,7 @@ const HomeBanner = ({ adsData }) => {
             <NoDataFound />
           )}
           <span
-            className="bg-white p-3 shadow-lg absolute top-2 right-2 rounded-full cursor-pointer"
+            className="bg-white  shadow-lg absolute top-0 right-0 rounded-full cursor-pointer"
             onClick={handleCloseClick}
           >
             <svg

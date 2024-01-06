@@ -7,7 +7,6 @@ import Link from "next/link";
 import Container from "@/components/ui/Container/Container";
 import NoDataFound from "@/components/Share/NoDataFound/NoDataFound";
 const Navigation = ({ socialData }) => {
-  console.log(socialData?.data);
   return (
     <div className=" hidden xl:flex  py-3 bg-[#F5F5F5]">
       <Container>
