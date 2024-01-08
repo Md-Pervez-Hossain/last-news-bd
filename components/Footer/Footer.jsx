@@ -41,11 +41,21 @@ const Footer = async () => {
                 {footerInfo?.data?.length > 0 ? (
                   <>
                     <div className="flex flex-col lg:gap-5 gap-3 flex-wrap cursor-pointer">
-                      <p>সম্পাদক : {footerInfo?.data?.[0]?.editor}</p>
-                      <p>ফোন: : {footerInfo?.data?.[0]?.phone}</p>
-                      <p>নিউজরুম: {footerInfo?.data?.[0]?.newsroom}</p>
-                      <p>ইমেইল- : {footerInfo?.data?.[0]?.email}</p>
-                      <p>ইমেইল- : {footerInfo?.data?.[0]?.address}</p>
+                      <p className="hover:text-secondary  hover:ps-2 transition-all duration-300 ease-in-out">
+                        সম্পাদক : {footerInfo?.data?.[0]?.editor}
+                      </p>
+                      <p className="hover:text-secondary  hover:ps-2 transition-all duration-300 ease-in-out">
+                        ফোন: : {footerInfo?.data?.[0]?.phone}
+                      </p>
+                      <p className="hover:text-secondary  hover:ps-2 transition-all duration-300 ease-in-out">
+                        নিউজরুম: {footerInfo?.data?.[0]?.newsroom}
+                      </p>
+                      <p className="hover:text-secondary  hover:ps-2 transition-all duration-300 ease-in-out">
+                        ইমেইল- : {footerInfo?.data?.[0]?.email}
+                      </p>
+                      <p className="hover:text-secondary  hover:ps-2 transition-all duration-300 ease-in-out">
+                        {footerInfo?.data?.[0]?.address}
+                      </p>
                     </div>
                   </>
                 ) : (
