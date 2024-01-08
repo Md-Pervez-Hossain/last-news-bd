@@ -6,12 +6,12 @@ import HomeBanner from "../HomeNews/HomeBanner/HomeBanner";
 import Title from "@/components/ui/Title/Title";
 import NoDataFound from "@/components/Share/NoDataFound/NoDataFound";
 
-const TermsAndConditions = ({ temsAndCondition }) => {
+const TermsAndConditions = ({ temsAndCondition, adsData }) => {
   console.log(temsAndCondition);
   return (
     <div>
       <Container>
-        <HomeBanner />
+        <HomeBanner adsData={adsData} />
         <div className="my-5 flex items-center justify-center">
           <Title>Terms And Condition</Title>
         </div>

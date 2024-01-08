@@ -1,10 +1,13 @@
 import PrivacyPolicy from '@/components/Page/PrivacyPolicy/PrivacyPolicy';
 import React from 'react';
+import { fetchAdsData } from '../libs/fetchData';
 
-const PrivacyPolicyPage = () => {
+const PrivacyPolicyPage = async () => {
+
+  const adsData = await fetchAdsData()
   return (
     <div>
-      <PrivacyPolicy />
+      <PrivacyPolicy adsData={adsData} />
     </div>
   );
 };

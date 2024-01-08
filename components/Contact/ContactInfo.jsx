@@ -10,7 +10,7 @@ const ContactInfo = ({ contactInfo }) => {
   return (
     <div className="mt-16">
       <div className="grid lg:grid-cols-3 gap-10">
-        <div className=" border-b-[4px] border-b-secondary shadow-xl p-5">
+        <div className=" border-b-[4px] border-b-secondary shadow-xl p-5 rounded-lg">
           <Image
             src={addressIcon}
             alt="Picture"
@@ -26,7 +26,7 @@ const ContactInfo = ({ contactInfo }) => {
           </p>
         </div>
 
-        <div className=" border-b-[4px] border-b-secondary shadow-xl p-5">
+        <div className=" border-b-[4px] border-b-secondary shadow-xl p-5 rounded-lg">
           <Image
             src={emailIcon}
             alt="Picture of the Email"
@@ -39,7 +39,7 @@ const ContactInfo = ({ contactInfo }) => {
             <NoDataFound />
           )}
         </div>
-        <div className=" border-b-[4px] border-b-secondary shadow-xl p-5">
+        <div className=" border-b-[4px] border-b-secondary shadow-xl p-5 rounded-lg">
           <Image
             src={addressIcon}
             alt="Picture of the author"

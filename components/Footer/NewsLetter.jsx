@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { IoSend } from "react-icons/io5";
 import { PrimaryButtonWithIcons } from "../Share/Buttons/Buttons";
+import toast from "react-hot-toast";
 const NewsLetter = () => {
   const [email, setEmail] = useState("");
   const handleNewsletter = async (e) => {
