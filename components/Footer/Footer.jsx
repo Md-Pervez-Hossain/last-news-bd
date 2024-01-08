@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
-"use client";
-import React, { useState } from "react";
+
+import React from "react";
 import Container from "../ui/Container/Container";
 import Image from "next/image";
 import newsIcon from "../../assets/icons/News_Paper_white_icon 1 (1).svg";
@@ -9,29 +9,12 @@ import { PrimaryButtonWithIcons } from "../Share/Buttons/Buttons";
 import FooterBottom from "./FooterBottom";
 import { IoSend } from "react-icons/io5";
 import Link from "next/link";
+import { fetchContactInfoData } from "@/app/libs/fetchData";
+import NoDataFound from "../Share/NoDataFound/NoDataFound";
+import NewsLetter from "./NewsLetter";
 
-const Footer = () => {
-  const [email, setEmail] = useState("");
-  const handleNewsletter = async (e) => {
-    e.preventDefault();
-    const response = await fetch(
-      "https://news-server-8hnz.onrender.com/api/v1/subscribe/create",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email }),
-      }
-    );
-    if (response.status === 200) {
-      toast.success("Successfully Added!");
-      setEmail("");
-    } else {
-      toast.error("Subscription Failed!");
-    }
-  };
-
+const Footer = async () => {
+  const footerInfo = await fetchContactInfoData();
   return (
     <div className="bg-primary mt-16 ">
       <Container>
@@ -50,29 +33,25 @@ const Footer = () => {
                 প্রতিটি সকালে আপনার জন্য সরাসরি পাঠানো হবে।
               </p>
             </div>
-
             <div>
-              <h4 className="lg:text-[24px] text-[18px] font-[500] mb-5">
-                সংবাদ
-              </h4>
-              <ul className="flex flex-col lg:gap-5 gap-3 flex-wrap cursor-pointer">
-                <li className="hover:text-secondary hover:ps-2 transition-all duration-300 ease-in-out">
-                  {" "}
-                  <Link href="/">হোম</Link>
-                </li>
-                <li className="hover:text-secondary hover:ps-2 transition-all duration-300 ease-in-out">
-                  <Link href="/politics">রাজনীতি</Link>
-                </li>
-                <li className="hover:text-secondary hover:ps-2 transition-all duration-300 ease-in-out">
-                  <Link href="/world">বিশ্ব</Link>
-                </li>
-                <li className="hover:text-secondary hover:ps-2 transition-all duration-300 ease-in-out">
-                  <Link href="/crime">অপরাধ</Link>
-                </li>
-                <li className="hover:text-secondary hover:ps-2 transition-all duration-300 ease-in-out">
-                  <Link href="/business">ব্যবসা</Link>
-                </li>
-              </ul>
+              <h2 className="lg:text-[24px] text-[18px] mb-5">
+                আমাদের সম্পর্কে
+              </h2>
+              <div>
+                {footerInfo?.data?.length > 0 ? (
+                  <>
+                    <div className="flex flex-col lg:gap-5 gap-3 flex-wrap cursor-pointer">
+                      <p>সম্পাদক : {footerInfo?.data?.[0]?.editor}</p>
+                      <p>ফোন: : {footerInfo?.data?.[0]?.phone}</p>
+                      <p>নিউজরুম: {footerInfo?.data?.[0]?.newsroom}</p>
+                      <p>ইমেইল- : {footerInfo?.data?.[0]?.email}</p>
+                      <p>ইমেইল- : {footerInfo?.data?.[0]?.address}</p>
+                    </div>
+                  </>
+                ) : (
+                  <NoDataFound />
+                )}
+              </div>
             </div>
             <div>
               <h4 className="text-[24px] font-[500] mb-5">কোম্পানি</h4>
@@ -100,21 +79,7 @@ const Footer = () => {
             <div>
               <h4 className="text-[24px] font-[500] mb-5">নিউজলেটার</h4>
               <p>এনাকার নিউজ থেকে সর্বশেষ সৃজনশীল সংবাদ পান</p>
-              <form onSubmit={handleNewsletter}>
-                <div className="flex  items-center  lg:my-5 mt-6 ">
-                  <input
-                    type="email"
-                    required
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="আপনার ইমেইল লিখুন"
-                    className=" w-full   lg:w-[200px]  px-4 py-2 rounded-lg focus:outline-none text-primary"
-                  />
-                  <PrimaryButtonWithIcons
-                    icon={<IoSend />}
-                    className="bg-secondary text-white px-4 py-3 -ms-5"
-                  ></PrimaryButtonWithIcons>
-                </div>
-              </form>
+              <NewsLetter />
             </div>
           </div>
           <hr className="hidden lg:flex" />
