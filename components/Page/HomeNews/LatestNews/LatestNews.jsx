@@ -9,7 +9,7 @@ const LatestNews = ({ newsCategoryData, category_no }) => {
   console.log(newsCategoryData);
   return (
     <div className="my-8">
-      <Title> সর্বশেষ সংবাদ</Title>
+      {/* <Title> সর্বশেষ সংবাদ</Title> */}
       <div className="py-5 relative overflow-hidden  group ">
         <div className=" group-hover:scale-105 transition-all duration-300 cursor-pointer">
           {/* <Image

@@ -34,13 +34,39 @@ export const fetchCategoryNewsData = async (query) => {
     return res.json();
   } catch (error) {
     console.log(error);
+  }
+}
+export const fetchSearchCategoryNewsData = async (query, search) => {
+  try {
+    const res = await fetch(`https://news-server-8hnz.onrender.com/api/v1/post/list?deleted=0&status=0&page=${1}&perpage=${100}&category_no=${query}&search=${search}`, {
+      cache: "no-store"
+    })
+    // if (!res.ok) {
+    //   throw new Error('Failed to fetch data')
+    // }
+    return res.json();
+  } catch (error) {
+    console.log(error);
+  }
+}
+export const fetchHomeNewsData = async () => {
+  try {
+    const res = await fetch(`https://news-server-8hnz.onrender.com/api/v1/post/list?deleted=0&status=0&page=${1}&perpage=${100}&category_no=CTR1021&`, {
+      cache: "no-store"
+    })
+    // if (!res.ok) {
+    //   throw new Error('Failed to fetch data')
+    // }
+    return res.json();
+  } catch (error) {
+    console.log(error);
 
   }
 }
-export const fetchHomeNewsData = async (query) => {
-  console.log(query);
+export const fetchSearchNewsData = async (search) => {
+
   try {
-    const res = await fetch(`https://news-server-8hnz.onrender.com/api/v1/post/list?deleted=0&status=0&page=${1}&perpage=${100}&category_no=CTR1021`, {
+    const res = await fetch(`https://news-server-8hnz.onrender.com/api/v1/post/list?deleted=0&status=0&page=${1}&perpage=${100}&search=${search}`, {
       cache: "no-store"
     })
     // if (!res.ok) {

@@ -1,6 +1,6 @@
 import HomeNews from "@/components/Page/HomeNews/HomeNews";
 import ToastRapper from "@/components/Share/ToastRapper/ToastRapper";
-import { fetchAdsData, fetchHomeNewsData, fetchPhotoData } from "./libs/fetchData";
+import { fetchAdsData, fetchHomeNewsData, fetchPhotoData, fetchSearchNewsData } from "./libs/fetchData";
 import Container from "@/components/ui/Container/Container";
 import HomeBanner from "@/components/Page/HomeNews/Adds/AddThree";
 import Title from "@/components/ui/Title/Title";
@@ -18,9 +18,12 @@ import RecentNews from "@/components/Page/HomeNews/RecentNews/RecentNews";
 import MoreBreakingNews from "@/components/Page/HomeNews/MoreBreakingNews/MoreBreakingNews";
 import HomeOtherNews from "@/components/Page/HomeNews/HomeOtherNews/HomeOtherNews";
 import AddFour from "@/components/Page/HomeNews/Adds/AddFour";
-export default async function Home() {
-
+export default async function Home({ searchParams }) {
+  const search = searchParams?.search
+  console.log("saearch", search);
   const homeData = await fetchHomeNewsData()
+  const searchData = await fetchSearchNewsData(search)
+  console.log(homeData);
   const adsData = await fetchAdsData()
   const photos = await fetchPhotoData()
   return (
@@ -33,11 +36,11 @@ export default async function Home() {
           <div className="lg:col-span-2 col-span-3">
             <LatestNews
               category_no="CTR1021"
-              newsCategoryData={homeData}
+              newsCategoryData={search ? searchData : homeData}
             />
             <HomeSpecialNews
               category_no="CTR1021"
-              newsCategoryData={homeData}
+              newsCategoryData={search ? searchData : homeData}
             />
 
           </div>
@@ -45,7 +48,7 @@ export default async function Home() {
             <Add adsData={adsData} />
             <NewsTitle
               category_no="CTR1021"
-              newsCategoryData={homeData}
+              newsCategoryData={search ? searchData : homeData}
             />
             <AddTwo adsData={adsData} />
           </div>
@@ -53,7 +56,7 @@ export default async function Home() {
         <div className="py-8">
           <BreakingNews
             category_no="CTR1021"
-            newsCategoryData={homeData}
+            newsCategoryData={search ? searchData : homeData}
           />
         </div>
         <div className="grid grid-cols-3 gap-10 items-center my-8 ">
@@ -69,33 +72,34 @@ export default async function Home() {
           <div className="lg:col-span-2 col-span-3">
             <HomeLiveNews
               category_no="CTR1021"
-              newsCategoryData={homeData}
+              newsCategoryData={search ? searchData : homeData}
             />
           </div>
           <div className="lg:col-span-1 col-span-3">
             <HomeTodayNews
               category_no="CTR1021"
-              newsCategoryData={homeData}
+              newsCategoryData={search ? searchData : homeData}
             />
           </div>
         </div>
         <RecentNews
           category_no="CTR1021"
-          newsCategoryData={homeData}
+          newsCategoryData={search ? searchData : homeData}
         />
         <div>
           <MoreBreakingNews
             category_no="CTR1021"
-            newsCategoryData={homeData}
+            newsCategoryData={search ? searchData : homeData}
           />
         </div>
         <div className="my-8">
           <HomeOtherNews
             category_no="CTR1021"
-            newsCategoryData={homeData}
+            newsCategoryData={search ? searchData : homeData}
           />
         </div>
       </Container>
+
     </main>
   )
 }
