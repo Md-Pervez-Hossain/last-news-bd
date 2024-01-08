@@ -24,7 +24,7 @@ const Menubar = ({ menuData, logo, socialData }) => {
       params.delete("search");
     }
     replace(`${pathname}?${params}`);
-  }, 500);
+  }, 300);
   const [banglaDate, setBanglaDate] = useState("");
   useEffect(() => {
     const currentDate = new Date();
