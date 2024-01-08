@@ -20,10 +20,10 @@ const Contact = async () => {
         <HomeBanner adsData={adsData} />
         <ContactInfo contactInfo={contactInfo} />
         <div className="my-10 grid grid-cols-3 gap-10">
-          <div className="col-span-1">
+          <div className="lg:col-span-1 col-span-3">
             <SocialNetwork socialData={socialData} />
           </div>
-          <div className="col-span-2">
+          <div className="lg:col-span-2 col-span-3">
             <ContactForm />
           </div>
         </div>

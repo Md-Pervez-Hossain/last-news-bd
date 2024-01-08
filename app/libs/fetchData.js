@@ -197,3 +197,17 @@ export const fetchContactInfoData = async () => {
 
   }
 }
+export const fetchAdsPackageData = async () => {
+  try {
+    const res = await fetch(`https://news-server-8hnz.onrender.com/api/v1/package/list?deleted=0&status=0&page=${1}&perpage=${100}`, {
+      cache: "no-store"
+    })
+    // if (!res.ok) {
+    //   throw new Error('Failed to fetch data')
+    // }
+    return res.json();
+  } catch (error) {
+    console.log(error);
+
+  }
+}
