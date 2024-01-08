@@ -40,72 +40,73 @@ const Footer = () => {
             <div>
               <div className="flex items-center justify-center lg:justify-start gap-3 mb-5 ">
                 <Image alt="image" width={30} height={30} src={newsIcon} />
-                <h2 className="text-[24px]">Last News BD</h2>
+                <h2 className="lg:text-[24px] text-[18px] ">লাস্ট নিউজ বিডি</h2>
               </div>
               <h4 className="text-[18px] mb-3 font-[400]">
-                Subscribe and be informed first hand about the actual economic
-                news.
+                সাবস্ক্রাইব করুন এবং প্রথম হাতে আসা অর্থনৈতিক খবর জানুন।
               </h4>
               <p className="text-[14px] font-[300]">
-                All the day's headlines and highlights, direct to you every
-                morning
+                প্রতিদিনের সর্বশেষ শিরোনাম এবং উল্লেখযোগ্য ঘটনার সংক্ষেপ,
+                প্রতিটি সকালে আপনার জন্য সরাসরি পাঠানো হবে।
               </p>
             </div>
 
             <div>
-              <h4 className="text-[24px] font-[500] mb-5">News</h4>
+              <h4 className="lg:text-[24px] text-[18px] font-[500] mb-5">
+                সংবাদ
+              </h4>
               <ul className="flex flex-col lg:gap-5 gap-3 flex-wrap cursor-pointer">
                 <li className="hover:text-secondary hover:ps-2 transition-all duration-300 ease-in-out">
                   {" "}
-                  <Link href="/">Home</Link>
+                  <Link href="/">হোম</Link>
                 </li>
                 <li className="hover:text-secondary hover:ps-2 transition-all duration-300 ease-in-out">
-                  <Link href="/politics">Politics</Link>
+                  <Link href="/politics">রাজনীতি</Link>
                 </li>
                 <li className="hover:text-secondary hover:ps-2 transition-all duration-300 ease-in-out">
-                  <Link href="/world">World</Link>
+                  <Link href="/world">বিশ্ব</Link>
                 </li>
                 <li className="hover:text-secondary hover:ps-2 transition-all duration-300 ease-in-out">
-                  <Link href="/crime">Crime</Link>
+                  <Link href="/crime">অপরাধ</Link>
                 </li>
                 <li className="hover:text-secondary hover:ps-2 transition-all duration-300 ease-in-out">
-                  <Link href="/business">Business</Link>
+                  <Link href="/business">ব্যবসা</Link>
                 </li>
               </ul>
             </div>
             <div>
-              <h4 className="text-[24px] font-[500] mb-5">Company</h4>
+              <h4 className="text-[24px] font-[500] mb-5">কোম্পানি</h4>
               <ul className="flex flex-col lg:gap-5 gap-3 flex-wrap cursor-pointer ">
                 <li className="hover:text-secondary  hover:ps-2 transition-all duration-300 ease-in-out">
-                  <Link href="/terms-condition">Terms & Condition</Link>
+                  <Link href="/terms-condition">শর্তাবলী এবং শর্ত</Link>
                 </li>
                 <li className="hover:text-secondary  hover:ps-2 transition-all duration-300 ease-in-out">
-                  <Link href="/privacy-policy">Privacy Policy</Link>
-                </li>
-                <li className="hover:text-secondary  hover:ps-2 transition-all duration-300 ease-in-out">
-                  {" "}
-                  <Link href="/cookies-policy">Cookies Policy</Link>
+                  <Link href="/privacy-policy">গোপনীয় নীতি</Link>
                 </li>
                 <li className="hover:text-secondary  hover:ps-2 transition-all duration-300 ease-in-out">
                   {" "}
-                  <Link href="/manage-cookies">Manage Cookies</Link>{" "}
+                  <Link href="/cookies-policy">কুকিজ নীতি</Link>
                 </li>
                 <li className="hover:text-secondary  hover:ps-2 transition-all duration-300 ease-in-out">
                   {" "}
-                  <Link href="/about-us">About Us</Link>{" "}
+                  <Link href="/manage-cookies">কুকিজ পরিচালনা করুন</Link>{" "}
+                </li>
+                <li className="hover:text-secondary  hover:ps-2 transition-all duration-300 ease-in-out">
+                  {" "}
+                  <Link href="/about-us">আমাদের সম্পর্কে</Link>{" "}
                 </li>
               </ul>
             </div>
             <div>
-              <h4 className="text-[24px] font-[500] mb-5">Newsletter</h4>
-              <p>Get the latest creative news from Anacker News</p>
+              <h4 className="text-[24px] font-[500] mb-5">নিউজলেটার</h4>
+              <p>এনাকার নিউজ থেকে সর্বশেষ সৃজনশীল সংবাদ পান</p>
               <form onSubmit={handleNewsletter}>
                 <div className="flex  items-center  lg:my-5 mt-6 ">
                   <input
                     type="email"
                     required
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder="write Your Email"
+                    placeholder="আপনার ইমেইল লিখুন"
                     className=" w-full   lg:w-[200px]  px-4 py-2 rounded-lg focus:outline-none text-primary"
                   />
                   <PrimaryButtonWithIcons

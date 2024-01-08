@@ -14,8 +14,8 @@ const Advertisement = ({ addPackage, adsData }) => {
       <Container>
         <HomeBanner adsData={adsData} />
         <div className="my-12">
-          <h2 className="text-center text-[32px] font-[600]">
-            Choose Your Plan
+          <h2 className="text-center lg:text-[32px] text-[18px] font-[600]">
+            আপনার পছন্দ বাছাই করুন
           </h2>
         </div>
         <div className=" grid lg:grid-cols-3 gap-10">
@@ -30,8 +30,11 @@ const Advertisement = ({ addPackage, adsData }) => {
                         Ads Duration : {pac?.ad_limit} Days
                       </p>
                       <p className="text-base">Amount : {pac?.amount} BDT</p>
-                      <PrimaryButton className="my-4 text-base font-[600] ">
-                        Select
+                      <PrimaryButton
+                        disabled
+                        className="my-4 text-base font-[500] "
+                      >
+                        নির্বাচন করুন
                       </PrimaryButton>
                     </div>
                   </>

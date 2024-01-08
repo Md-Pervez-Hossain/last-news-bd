@@ -11,7 +11,7 @@ const Navigation = ({ socialData }) => {
     <div className=" hidden xl:flex  py-3 bg-[#F5F5F5]">
       <Container>
         <div className="flex flex-wrap  justify-between gap-5 ]">
-          <div className="flex items-center flex-wrap gap-10">
+          <div className="flex items-center flex-wrap gap-10 text-[13px]">
             <div className="flex items-center flex-wrap gap-3">
               <Image alt="image" width={20} height={20} src={paperIcon} />
               <h2>ই-পেপার</h2>

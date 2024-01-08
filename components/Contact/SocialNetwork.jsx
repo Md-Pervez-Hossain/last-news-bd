@@ -4,10 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { fetchSocialData } from "@/app/libs/fetchData";
 import Title from "../ui/Title/Title";
+import NoDataFound from "../Share/NoDataFound/NoDataFound";
 const SocialNetwork = async ({ socialData }) => {
   return (
     <div>
-      <Title>Social Network</Title>
+      <Title>সামাজিক নেটওয়ার্ক</Title>
       <div className="flex items-center gap-5 my-5">
         {socialData?.data?.length > 0 ? (
           <>

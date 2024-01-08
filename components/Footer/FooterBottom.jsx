@@ -8,33 +8,33 @@ const FooterBottom = () => {
           <span className="w-2 h-2 bg-[#8B8B8B] rounded-full hidden lg:flex "></span>{" "}
           <li className="hover:text-secondary  cursor-pointer transition-all duration-300 ease-in-out">
             {" "}
-            Main Page
+            মূল পৃষ্ঠা
           </li>
           <span className="w-2 h-2 bg-[#8B8B8B] rounded-full hidden lg:flex "></span>{" "}
           <li className="hover:text-secondary  cursor-pointer transition-all duration-300 ease-in-out">
-            Archive
+            আর্কাইভ
           </li>
           <span className="w-2 h-2 bg-[#8B8B8B] rounded-full hidden lg:flex "></span>{" "}
           <li className="hover:text-secondary  cursor-pointer transition-all duration-300 ease-in-out">
-            <Link href="/contact">Contact</Link>
+            <Link href="/contact">যোগাযোগ</Link>
           </li>
           <span className="w-2 h-2 bg-[#8B8B8B] rounded-full hidden lg:flex "></span>{" "}
           <li className="hover:text-secondary  cursor-pointer transition-all duration-300 ease-in-out">
-            Media Gallery
+            মিডিয়া গ্যালারি
           </li>
           <span className="w-2 h-2 bg-[#8B8B8B] rounded-full hidden lg:flex "></span>{" "}
           <li className="hover:text-secondary  cursor-pointer transition-all duration-300 ease-in-out">
-            <Link href="/advertisement">Advertisement</Link>
+            <Link href="/advertisement">বিজ্ঞাপন</Link>
           </li>
         </ul>
       </div>
       <div className="flex items-center  justify-center  text-[#8B8B8B] my-5">
         <div className="flex flex-col lg:flex-row items-center  lg:gap-5 gap-3 text-center  ">
-          <p>copyright © 2023 Last News BD</p>
+          <p>কপিরাইট © ২০২৩ লাস্ট নিউজ বিডি</p>
           <span className="w-[1px] h-[20px] bg-[#8B8B8B] hidden lg:flex "></span>
           <p>
-            Developed By :
-            <span className="text-white font-[600]">Silicornya Limited</span>
+            তৈরি করেছে :
+            <span className="text-white font-[600]"> Silicornya Limited</span>
           </p>
         </div>
       </div>
