@@ -1,6 +1,6 @@
 "use client";
 import Container from "@/components/ui/Container/Container";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { IoClose } from "react-icons/io5";
@@ -11,6 +11,8 @@ import { useDebouncedCallback } from "use-debounce";
 import NoDataFound from "@/components/Share/NoDataFound/NoDataFound";
 
 const Menubar = ({ menuData, logo, socialData }) => {
+  const myRef = useRef(null);
+  const [isOthersExpanded, setIsOthersExpanded] = useState(false);
   const [isOpen, setIsOpen] = useState("");
   const searchParams = useSearchParams();
   const pathname = usePathname();
@@ -35,6 +37,18 @@ const Menubar = ({ menuData, logo, socialData }) => {
     });
     setBanglaDate(formattedBanglaDate);
   }, []);
+
+  const handleMenuCollapse = () => {
+    let content = myRef.current;
+    if (!isOthersExpanded) {
+      setIsOthersExpanded(true);
+      content.style.height = content.scrollHeight + "px";
+    } else {
+      setIsOthersExpanded(false);
+      content.style.height = "30px";
+    }
+    console.log(myRef.current.style.height);
+  };
 
   return (
     <div className="mb-16 ">
@@ -81,30 +95,46 @@ const Menubar = ({ menuData, logo, socialData }) => {
                 </div>
               </div>
             </div>
-            <div className="hidden lg:flex  items-center  gap-5 flex-wrap text-white">
-              {menuData?.data?.length > 0 ? (
-                menuData?.data?.map((item) => {
-                  return (
-                    <>
-                      <Link
-                        key={item?.id}
-                        href={`/${item.slug}?name=${item?.category_no}`}
-                        className={`${
-                          pathname === `/${item.slug}` // Check if pathname matches the link
-                            ? "text-secondary " // Apply secondary color class for active link
-                            : "text-white hover:text-secondary transition-all duration-300 ease-in-out"
-                        }`}
-                      >
-                        {item?.name}
-                      </Link>
-                    </>
-                  );
-                })
-              ) : (
-                <NoDataFound />
-              )}
+            <div
+              ref={myRef}
+              className={` h-[30px] flex items-start transition-all duration-300 ease-in-out  overflow-hidden  gap-5`}
+            >
+              <div className="hidden grow lg:flex   items-center  gap-5 flex-wrap text-white">
+                {menuData?.data?.length > 0 ? (
+                  menuData?.data?.map((item) => {
+                    return (
+                      <>
+                        <Link
+                          key={item?.id}
+                          href={`/${item.slug}?name=${item?.category_no}`}
+                          className={`${
+                            pathname === `/${item.slug}` // Check if pathname matches the link
+                              ? "text-secondary " // Apply secondary color class for active link
+                              : "text-white hover:text-secondary transition-all duration-300 ease-in-out"
+                          }`}
+                        >
+                          {item?.name}
+                        </Link>
+                      </>
+                    );
+                  })
+                ) : (
+                  <NoDataFound />
+                )}
+              </div>
+              <div>
+                <h2
+                  onClick={handleMenuCollapse}
+                  className={`${
+                    myRef?.current?.scrollHeight > 30 ? "flex" : "hidden"
+                  } text-secondary hover:text-white cursor-pointer transition-all duration-300 ease-in-out`}
+                >
+                  অন্যান্য
+                </h2>
+              </div>
             </div>
           </div>
+
           <div className="lg:hidden flex justify-end  ">
             <button onClick={() => setIsOpen(!isOpen)}>
               {isOpen ? (
