@@ -55,7 +55,7 @@ const Menubar = ({ menuData, logo, socialData }) => {
       <div className="bg-primary pb-6 ">
         <Container>
           <div>
-            <div className="flex flex-col lg:flex-row row lg:items-center lg:justify-between justify-end lg:py-6">
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between justify-end lg:py-6">
               {logo?.data?.length > 0 ? (
                 <>
                   {logo?.data?.map((logo) => {
@@ -97,9 +97,9 @@ const Menubar = ({ menuData, logo, socialData }) => {
             </div>
             <div
               ref={myRef}
-              className={` h-[30px] flex items-start transition-all duration-300 ease-in-out  overflow-hidden  gap-5`}
+              className={` lg:h-[30px] flex transition-all duration-300 ease-in-out  overflow-hidden  gap-5`}
             >
-              <div className="hidden grow lg:flex   items-center  gap-5 flex-wrap text-white">
+              <div className="hidden lg:flex  gap-5 flex-wrap text-white">
                 {menuData?.data?.length > 0 ? (
                   menuData?.data?.map((item) => {
                     return (
@@ -108,8 +108,8 @@ const Menubar = ({ menuData, logo, socialData }) => {
                           key={item?.id}
                           href={`/${item.slug}?name=${item?.category_no}`}
                           className={`${
-                            pathname === `/${item.slug}` // Check if pathname matches the link
-                              ? "text-secondary " // Apply secondary color class for active link
+                            pathname === `/${item.slug}`
+                              ? "text-secondary "
                               : "text-white hover:text-secondary transition-all duration-300 ease-in-out"
                           }`}
                         >
@@ -127,7 +127,7 @@ const Menubar = ({ menuData, logo, socialData }) => {
                   onClick={handleMenuCollapse}
                   className={`${
                     myRef?.current?.scrollHeight > 30 ? "flex" : "hidden"
-                  } text-secondary hover:text-white cursor-pointer transition-all duration-300 ease-in-out`}
+                  } hidden lg:flex text-secondary hover:text-white cursor-pointer transition-all duration-300 ease-in-out`}
                 >
                   অন্যান্য
                 </h2>
