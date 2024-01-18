@@ -1,15 +1,10 @@
-import HomeNews from "@/components/Page/HomeNews/HomeNews";
-import ToastRapper from "@/components/Share/ToastRapper/ToastRapper";
+
 import { fetchAdsData, fetchHomeNewsData, fetchPhotoData, fetchSearchNewsData } from "./libs/fetchData";
 import Container from "@/components/ui/Container/Container";
-import HomeBanner from "@/components/Page/HomeNews/Adds/AddThree";
-import Title from "@/components/ui/Title/Title";
 import LatestNews from "@/components/Page/HomeNews/LatestNews/LatestNews";
 import HomeSpecialNews from "@/components/Page/HomeNews/HomeSpecialNews/HomeSpecialNews";
 import Add from "@/components/Page/HomeNews/Adds/Add";
 import NewsTitle from "@/components/Page/HomeNews/NewsTitle/NewsTitle";
-import AddTwo from "@/components/Page/HomeNews/Adds/AddTwo";
-import AddThree from "@/components/Page/HomeNews/Adds/AddThree";
 import BreakingNews from "@/components/Page/HomeNews/BreakingNews/BreakingNews";
 import PhotoGallery from "@/components/Page/HomeNews/PhotoGallery/PhotoGallery";
 import HomeLiveNews from "@/components/Page/HomeNews/HomeLiveNews/HomeLiveNews";
@@ -17,8 +12,8 @@ import HomeTodayNews from "@/components/Page/HomeNews/HomeTodayNews/HomeTodayNew
 import RecentNews from "@/components/Page/HomeNews/RecentNews/RecentNews";
 import MoreBreakingNews from "@/components/Page/HomeNews/MoreBreakingNews/MoreBreakingNews";
 import HomeOtherNews from "@/components/Page/HomeNews/HomeOtherNews/HomeOtherNews";
-import AddFour from "@/components/Page/HomeNews/Adds/AddFour";
 import { Suspense } from 'react';
+import HomeBanner from "@/components/Page/HomeNews/HomeBanner/HomeBanner";
 export default async function Home({ searchParams }) {
   const key = JSON.stringify(searchParams);
   const search = searchParams?.search
@@ -33,7 +28,7 @@ export default async function Home({ searchParams }) {
     <main>
       <Suspense key={key} fallback={p}>
         <Container>
-          <div className="py-5">
+          <div >
             <HomeBanner adsData={adsData} />
           </div>
           <div className="grid grid-cols-3 gap-10  ">
@@ -54,7 +49,7 @@ export default async function Home({ searchParams }) {
                 category_no="CTR1021"
                 newsCategoryData={search ? searchData : homeData}
               />
-              <AddTwo adsData={adsData} />
+              <Add adsData={adsData} />
             </div>
           </div>
           <div className="py-8">
@@ -63,13 +58,8 @@ export default async function Home({ searchParams }) {
               newsCategoryData={search ? searchData : homeData}
             />
           </div>
-          <div className="grid grid-cols-3 gap-10 items-center my-8 ">
-            <div className="lg:col-span-2 col-span-3">
-              <AddThree adsData={adsData} />
-            </div>
-            <div className="lg:col-span-1 col-span-3 ">
-              <AddFour adsData={adsData} />
-            </div>
+          <div className=" my-8 ">
+            <HomeBanner adsData={adsData} />
           </div>
           <PhotoGallery photos={photos} />
           <div className="grid grid-cols-3 my-10 gap-10">

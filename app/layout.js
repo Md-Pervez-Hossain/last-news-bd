@@ -1,4 +1,6 @@
 import { Inter, Noto_Sans_Bengali } from 'next/font/google'
+
+import '@splidejs/react-splide/css';
 import './globals.css'
 import Headers from '@/components/Headers/Headers'
 import Footer from '@/components/Footer/Footer'

@@ -10,29 +10,26 @@ const LatestNews = ({ newsCategoryData, category_no }) => {
   return (
     <div className="my-8">
       {/* <Title> সর্বশেষ সংবাদ</Title> */}
-      <div className="py-5 relative overflow-hidden  group ">
-        <div className=" group-hover:scale-105 transition-all duration-300 cursor-pointer">
-          {/* <Image
-            src={img}
-            alt="Picture of the author"
-            style={{ objectFit: "contain" }}
-            width={1200}
-          /> */}
-
-          <img
-            src={img}
+      <div className="py-5 relative ">
+        <div className=" overflow-hidden  group rounded-md  ">
+          <Image
+            src={
+              newsCategoryData?.data?.length > 0 &&
+              newsCategoryData?.data?.[0]?.post_img
+            }
             alt="Picture "
             style={{ objectFit: "contain" }}
-            width={1200}
+            width={600}
+            height={500}
+            className="group-hover:scale-105 transition-all duration-300 cursor-pointer rounded-md"
           />
         </div>
-
         {newsCategoryData?.data?.length > 0 ? (
           <Link
             href={`/news-details/${newsCategoryData?.data?.[0]?.slug}?category_no=${category_no}&post_no=${newsCategoryData?.data?.[0]?.post_no}`}
             className="text-gray-700 font-[600]  "
           >
-            {newsCategoryData?.data?.[0].title}
+            {newsCategoryData?.data?.[0]?.title}
           </Link>
         ) : (
           <NoDataFound />

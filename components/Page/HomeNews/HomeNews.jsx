@@ -13,9 +13,6 @@ import HomeOtherNews from "./HomeOtherNews/HomeOtherNews";
 import HomeLiveNews from "./HomeLiveNews/HomeLiveNews";
 import HomeTodayNews from "./HomeTodayNews/HomeTodayNews";
 import HomeSpecialNews from "./HomeSpecialNews/HomeSpecialNews";
-import AddTwo from "./Adds/AddTwo";
-import AddThree from "./Adds/AddThree";
-import AddFour from "./Adds/AddFour";
 import MoreBreakingNews from "./MoreBreakingNews/MoreBreakingNews";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import News from "../News/News";
@@ -47,7 +44,6 @@ const HomeNews = ({ newsCategoryData, adsData, photos }) => {
             )}
             {pathname !== "/home" && (
               <>
-                {" "}
                 <HomeBanner adsData={adsData} />
                 <News newsCategoryData={newsCategoryData} adsData={adsData} />
               </>
@@ -59,7 +55,7 @@ const HomeNews = ({ newsCategoryData, adsData, photos }) => {
               category_no={category_no}
               newsCategoryData={newsCategoryData}
             />
-            <AddTwo adsData={adsData} />
+            <Add adsData={adsData} />
           </div>
         </div>
         <div className="py-8">
@@ -68,13 +64,8 @@ const HomeNews = ({ newsCategoryData, adsData, photos }) => {
             newsCategoryData={newsCategoryData}
           />
         </div>
-        <div className="grid grid-cols-3 gap-10 items-center my-8 ">
-          <div className="lg:col-span-2 col-span-3">
-            <AddThree adsData={adsData} />
-          </div>
-          <div className="lg:col-span-1 col-span-3 ">
-            <AddFour adsData={adsData} />
-          </div>
+        <div className=" my-8 ">
+          <HomeBanner adsData={adsData} />
         </div>
         {pathname === "/home" && <PhotoGallery photos={photos} />}
         <div className="grid grid-cols-3 my-10 gap-10">

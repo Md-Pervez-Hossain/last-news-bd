@@ -1,4 +1,4 @@
-.swiper-button-next,
+/* .swiper-button-next,
 .swiper-rtl .swiper-button-prev {
   color: #fff !important;
   background-color: #ff7315 !important ;
@@ -23,4 +23,11 @@
 .swiper-button-prev:after,
 .swiper-button-next:after {
   font-size: 20px !important;
+} */
+
+.splide__arrow--next {
+  background-color: #ff7315 !important;
+}
+.splide__arrow--prev {
+  background-color: #ff7315 !important;
 }

@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.splide__pagination {
+  /* bottom: -40px !important; */
+
+  right: 0px !important;
+}
+
+.splide__pagination__page {
+  border: 2px solid white !important;
+  background-color: #222 !important;
+}
+
+.splide__pagination__page.is-active {
+  background-color: #ff7315 !important;
+}

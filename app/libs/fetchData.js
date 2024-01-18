@@ -1,6 +1,6 @@
 export const fetchData = async (query) => {
   try {
-    const res = await fetch(`https://news-server-8hnz.onrender.com/api/v1/category/list?deleted=0&status=0&page=${1}&perpage=${100}`)
+    const res = await fetch(`https://server.lastnewsbd.com/api/v1/category/list?deleted=0&status=0&page=${1}&perpage=${100}`)
     // if (!res.ok) {
     //   throw new Error('Failed to fetch data')
     // }
@@ -12,7 +12,7 @@ export const fetchData = async (query) => {
 }
 export const fetchPostDetails = async (query) => {
   try {
-    const res = await fetch(`https://news-server-8hnz.onrender.com/api/v1/post/details?post_no=${query}`)
+    const res = await fetch(`https://server.lastnewsbd.com/api/v1/post/details?post_no=${query}`)
     // if (!res.ok) {
     //   throw new Error('Failed to fetch data')
     // }
@@ -25,7 +25,7 @@ export const fetchPostDetails = async (query) => {
 export const fetchCategoryNewsData = async (query) => {
   console.log(query);
   try {
-    const res = await fetch(`https://news-server-8hnz.onrender.com/api/v1/post/list?deleted=0&status=0&page=${1}&perpage=${100}&category_no=${query}`, {
+    const res = await fetch(` https://server.lastnewsbd.com/api/v1/post/list?deleted=0&status=0&page=${1}&perpage=${100}&category_no=${query}`, {
       cache: "no-store"
     })
     // if (!res.ok) {
@@ -38,7 +38,7 @@ export const fetchCategoryNewsData = async (query) => {
 }
 export const fetchSearchCategoryNewsData = async (query, search) => {
   try {
-    const res = await fetch(`https://news-server-8hnz.onrender.com/api/v1/post/list?deleted=0&status=0&page=${1}&perpage=${100}&category_no=${query}&search=${search}`, {
+    const res = await fetch(`https://server.lastnewsbd.com/api/v1/post/list?deleted=0&status=0&page=${1}&perpage=${100}&category_no=${query}&search=${search}`, {
       cache: "no-store"
     })
     // if (!res.ok) {
@@ -51,7 +51,7 @@ export const fetchSearchCategoryNewsData = async (query, search) => {
 }
 export const fetchHomeNewsData = async () => {
   try {
-    const res = await fetch(`https://news-server-8hnz.onrender.com/api/v1/post/list?deleted=0&status=0&page=${1}&perpage=${100}&category_no=CTR1021&`, {
+    const res = await fetch(`https://server.lastnewsbd.com/api/v1/post/list?deleted=0&status=0&page=${1}&perpage=${100}&category_no=CTR1021&`, {
       cache: "no-store"
     })
     // if (!res.ok) {
@@ -66,7 +66,7 @@ export const fetchHomeNewsData = async () => {
 export const fetchSearchNewsData = async (search) => {
 
   try {
-    const res = await fetch(`https://news-server-8hnz.onrender.com/api/v1/post/list?deleted=0&status=0&page=${1}&perpage=${100}&search=${search}`, {
+    const res = await fetch(`https://server.lastnewsbd.com/api/v1/post/list?deleted=0&status=0&page=${1}&perpage=${100}&search=${search}`, {
       cache: "no-store"
     })
     // if (!res.ok) {
@@ -81,7 +81,7 @@ export const fetchSearchNewsData = async (search) => {
 
 export const fetchTermAndConditionData = async () => {
   try {
-    const res = await fetch(`https://news-server-8hnz.onrender.com/api/v1/settings/terms_conditions/list?deleted=0&status=0&page=${1}&perpage=${100}`, {
+    const res = await fetch(`https://server.lastnewsbd.com/api/v1/settings/terms_conditions/list?deleted=0&status=0&page=${1}&perpage=${100}`, {
       cache: "no-store"
     })
     // if (!res.ok) {
@@ -96,7 +96,7 @@ export const fetchTermAndConditionData = async () => {
 
 export const fetchAboutUsData = async () => {
   try {
-    const res = await fetch(`https://news-server-8hnz.onrender.com/api/v1/settings/about_us/list?deleted=0&status=0&page=${1}&perpage=${100}`, {
+    const res = await fetch(`https://server.lastnewsbd.com/api/v1/settings/about_us/list?deleted=0&status=0&page=${1}&perpage=${100}`, {
       cache: "no-store"
     })
     // if (!res.ok) {
@@ -111,7 +111,7 @@ export const fetchAboutUsData = async () => {
 
 export const fetchPhotoData = async () => {
   try {
-    const res = await fetch(`https://news-server-8hnz.onrender.com/api/v1/media/list/image??deleted=0&status=0&page=${1}&perpage=${100}`, {
+    const res = await fetch(`https://server.lastnewsbd.com/api/v1/media/list/image??deleted=0&status=0&page=${1}&perpage=${100}`, {
       cache: "no-store"
     })
     // if (!res.ok) {
@@ -126,7 +126,7 @@ export const fetchPhotoData = async () => {
 
 export const fetchAdsData = async () => {
   try {
-    const res = await fetch(`https://news-server-8hnz.onrender.com/api/v1/ads/list?deleted=0&status=0&page=${1}&perpage=${100}`, {
+    const res = await fetch(`https://server.lastnewsbd.com/api/v1/ads/list?deleted=0&status=0&page=${1}&perpage=${100}`, {
       cache: "no-store"
     })
     // if (!res.ok) {
@@ -141,7 +141,7 @@ export const fetchAdsData = async () => {
 
 export const fetchSocialData = async () => {
   try {
-    const res = await fetch(`https://news-server-8hnz.onrender.com/api/v1/social/list?deleted=0&status=0&page=${1}&perpage=${100}`, {
+    const res = await fetch(`https://server.lastnewsbd.com/api/v1/social/list?deleted=0&status=0&page=${1}&perpage=${100}`, {
       cache: "no-store"
     })
     // if (!res.ok) {
@@ -156,7 +156,7 @@ export const fetchSocialData = async () => {
 
 export const fetchLogoData = async () => {
   try {
-    const res = await fetch(`https://news-server-8hnz.onrender.com/api/v1/settings/logo/list?deleted=0&status=0&page=${1}&perpage=${100}`, {
+    const res = await fetch(`https://server.lastnewsbd.com/api/v1/settings/logo/list?deleted=0&status=0&page=${1}&perpage=${100}`, {
       cache: "no-store"
     })
     // if (!res.ok) {
@@ -170,7 +170,7 @@ export const fetchLogoData = async () => {
 }
 export const fetchDashboardInfoData = async () => {
   try {
-    const res = await fetch(`https://news-server-8hnz.onrender.com/api/v1/dashboard/info?deleted=0&status=0&page=${1}&perpage=${100}`, {
+    const res = await fetch(`https://server.lastnewsbd.com/api/v1/dashboard/info?deleted=0&status=0&page=${1}&perpage=${100}`, {
       cache: "no-store"
     })
     // if (!res.ok) {
@@ -185,7 +185,7 @@ export const fetchDashboardInfoData = async () => {
 
 export const fetchContactInfoData = async () => {
   try {
-    const res = await fetch(`https://news-server-8hnz.onrender.com/api/v1/settings/footer/info/details?deleted=0&status=0&page=${1}&perpage=${100}`, {
+    const res = await fetch(`https://server.lastnewsbd.com/api/v1/settings/footer/info/details?deleted=0&status=0&page=${1}&perpage=${100}`, {
       cache: "no-store"
     })
     // if (!res.ok) {
@@ -199,7 +199,7 @@ export const fetchContactInfoData = async () => {
 }
 export const fetchAdsPackageData = async () => {
   try {
-    const res = await fetch(`https://news-server-8hnz.onrender.com/api/v1/package/list?deleted=0&status=0&page=${1}&perpage=${100}`, {
+    const res = await fetch(`https://server.lastnewsbd.com/api/v1/package/list?deleted=0&status=0&page=${1}&perpage=${100}`, {
       cache: "no-store"
     })
     // if (!res.ok) {

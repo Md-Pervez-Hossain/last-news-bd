@@ -2,8 +2,7 @@
 import Container from "@/components/ui/Container/Container";
 import React from "react";
 import HomeOtherNews from "../HomeOtherNews/HomeOtherNews";
-import AddThree from "../Adds/AddThree";
-import AddFour from "../Adds/AddFour";
+
 import { usePathname } from "next/navigation";
 
 const HomeAllPhotoGallery = ({ photoData, category }) => {
@@ -13,14 +12,6 @@ const HomeAllPhotoGallery = ({ photoData, category }) => {
   return (
     <div>
       <Container>
-        <div className="grid grid-cols-3 gap-10 ">
-          <div className="lg:col-span-2 col-span-3">
-            <AddThree />
-          </div>
-          <div className="lg:col-span-1 col-span-3 ">
-            <AddFour />
-          </div>
-        </div>
         {/* <div className="hidden lg:flex justify-between items-center  gap-5 flex-wrap text-black bg-primary p-8">
           {category?.data?.map((item) => {
             return (

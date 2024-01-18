@@ -10,7 +10,7 @@ import TrendingNewsTitle from "./TrendingNewsTitle";
 const NewsTitle = ({ newsCategoryData, category_no }) => {
   const [show, setShow] = useState("latest_news");
   return (
-    <div className="bg-[#F5F5F5] mt-5 px-4 py-3 ">
+    <div className="bg-[#F5F5F5] my-8  px-4 py-3 rounded-md ">
       <div className="flex items-center justify-between pb-3 ">
         <button
           onClick={() => setShow("latest_news")}

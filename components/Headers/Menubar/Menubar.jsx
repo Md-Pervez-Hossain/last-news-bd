@@ -51,7 +51,7 @@ const Menubar = ({ menuData, logo, socialData }) => {
   };
 
   return (
-    <div className="mb-16 ">
+    <div className="mb-8 ">
       <div className="bg-primary pb-6 ">
         <Container>
           <div>
@@ -66,7 +66,7 @@ const Menubar = ({ menuData, logo, socialData }) => {
                             src={logo?.logo}
                             alt="logo"
                             style={{ objectFit: "contain" }}
-                            className="group-hover:scale-105 transition-all duration-300"
+                            className="group-hover:scale-105 transition-all duration-300 h-[30px] w-[30px]"
                           />
                           <h2 className="text-white text-end lg:flex py-3 lg:py-0 text-[13px]">
                             {banglaDate}
@@ -122,16 +122,14 @@ const Menubar = ({ menuData, logo, socialData }) => {
                   <NoDataFound />
                 )}
               </div>
-              <div>
-                <h2
-                  onClick={handleMenuCollapse}
-                  className={`${
-                    myRef?.current?.scrollHeight > 30 ? "flex" : "hidden"
-                  } hidden lg:flex text-secondary hover:text-white cursor-pointer transition-all duration-300 ease-in-out`}
-                >
-                  অন্যান্য
-                </h2>
-              </div>
+              <h2
+                onClick={handleMenuCollapse}
+                className={`${
+                  myRef?.current?.scrollHeight > 30 ? "flex" : "hidden"
+                } hidden lg:flex text-secondary hover:text-white cursor-pointer transition-all duration-300 ease-in-out`}
+              >
+                অন্যান্য
+              </h2>
             </div>
           </div>
 

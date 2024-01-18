@@ -34,11 +34,13 @@ const Navigation = ({ socialData }) => {
                       <>
                         <div>
                           <Link href={social?.url_link}>
-                            <img
+                            <Image
                               src={social?.custom_icon}
                               alt="img"
                               style={{ objectFit: "contain" }}
-                              className="group-hover:scale-105 transition-all duration-300"
+                              width={20}
+                              height={20}
+                              className="group-hover:scale-105 transition-all duration-300 "
                             />
                           </Link>
                         </div>
