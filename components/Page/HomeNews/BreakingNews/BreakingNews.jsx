@@ -21,9 +21,10 @@ const BreakingNews = ({ newsCategoryData, category_no }) => {
               <Image
                 src={
                   (newsCategoryData?.data?.length > 0) &
-                  newsCategoryData?.data?.[0]?.sports_img
+                  newsCategoryData?.data?.[0]?.post_img
                 }
-                fill
+                width={500}
+                height={500}
                 alt="Image"
                 className="rounded-md group-hover:scale-105 transition-all duration-300 cursor-pointer"
               />
@@ -46,19 +47,18 @@ const BreakingNews = ({ newsCategoryData, category_no }) => {
             newsCategoryData?.data?.map((news) => {
               return (
                 <>
-                  <div className=" shadow-xl rounded-lg ">
-                    <div className=" overflow-hidden group rounded-md ">
+                  <div className=" shadow-xl rounded-lg h-[250px] ">
+                    <div className="overflow-hidden group rounded-md">
                       <Image
-                        src={
-                          (newsCategoryData?.data?.length > 0) &
-                          newsCategoryData?.data?.[0]?.sports_img
-                        }
-                        fill
+                        src={news?.post_img}
                         alt="Image"
-                        className="rounded-md group-hover:scale-105 transition-all duration-300 cursor-pointer"
+                        width={250}
+                        height={220}
+                        objectFit="cover"
+                        className="aspect-[4/3] rounded-t group-hover:scale-105 transition-all duration-300 cursor-pointer"
                       />
                     </div>
-                    <div className="p-4">
+                    <div className="p-4 ">
                       <Link
                         className="text-gray-700 text-base font-[600] line-clamp-2"
                         href={`/news-details/${news?.slug}?category_no=${category_no}&post_no=${news?.post_no}`}

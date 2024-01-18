@@ -25,16 +25,16 @@ const HomeTodayNews = ({ newsCategoryData, category_no }) => {
         {filteredNews?.length > 0 ? (
           filteredNews.map((news) => (
             <div
-              className="flex flex-col gap-5 overflow-hidden group shadow-xl mb-5 rounded-lg"
+              className="flex flex-col gap-5 overflow-hidden group shadow-xl mb-5 rounded-lg "
               key={news.id}
             >
-              <div className=" overflow-hidden group rounded-md ">
+              <div className="overflow-hidden group rounded-md">
                 <Image
                   src={news?.post_img}
                   alt="Image"
-                  width={600}
-                  height={600}
-                  className="rounded-md group-hover:scale-105 transition-all duration-300 cursor-pointer"
+                  width={500}
+                  height={200}
+                  className="  rounded-t group-hover:scale-105 transition-all duration-300 cursor-pointer"
                 />
               </div>
               <div className="p-3 flex flex-col h-full">

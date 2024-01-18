@@ -11,7 +11,7 @@ const LatestNews = ({ newsCategoryData, category_no }) => {
     <div className="my-8">
       {/* <Title> সর্বশেষ সংবাদ</Title> */}
       <div className="py-5 relative ">
-        <div className=" relative h-[400px] overflow-hidden  group rounded-md  ">
+        <div className=" relative h-[600px] overflow-hidden  group rounded-md  ">
           <Image
             src={
               newsCategoryData?.data?.length > 0 &&
@@ -25,7 +25,7 @@ const LatestNews = ({ newsCategoryData, category_no }) => {
         {newsCategoryData?.data?.length > 0 ? (
           <Link
             href={`/news-details/${newsCategoryData?.data?.[0]?.slug}?category_no=${category_no}&post_no=${newsCategoryData?.data?.[0]?.post_no}`}
-            className="text-gray-700 font-[600]  "
+            className="text-gray-700 font-[600] my-4  "
           >
             {newsCategoryData?.data?.[0]?.title}
           </Link>

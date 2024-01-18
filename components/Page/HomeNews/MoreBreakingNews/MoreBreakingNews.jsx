@@ -22,8 +22,8 @@ const MoreBreakingNews = ({ newsCategoryData, category_no }) => {
                     newsCategoryData?.data?.[0]?.post_img
                   }
                   alt="Image"
-                  width={600}
-                  height={600}
+                  width={500}
+                  height={300}
                   className="rounded-md group-hover:scale-105 transition-all duration-300 cursor-pointer"
                 />
               </div>
@@ -32,7 +32,7 @@ const MoreBreakingNews = ({ newsCategoryData, category_no }) => {
               <Link
                 href={`/news-details/${newsCategoryData?.data?.[0]?.slug}?category_no=${category_no}&post_no=${newsCategoryData?.data?.[0]?.post_no}`}
               >
-                <h2 className="text-gray-700 font-[600]  line-clamp-2">
+                <h2 className="text-gray-700 font-[600]  line-clamp-2 my-3">
                   {newsCategoryData?.data?.[0].title}
                 </h2>
               </Link>
@@ -48,19 +48,20 @@ const MoreBreakingNews = ({ newsCategoryData, category_no }) => {
             newsCategoryData?.data?.map((news) => {
               return (
                 <>
-                  <div className="overflow-hidden group shadow-xl rounded-lg">
-                    <div className=" overflow-hidden group rounded-md ">
+                  <div className=" shadow-xl rounded-lg h-[250px]">
+                    <div className="overflow-hidden group rounded-md">
                       <Image
                         src={news?.post_img}
                         alt="Image"
-                        width={600}
-                        height={600}
-                        className="rounded-md group-hover:scale-105 transition-all duration-300 cursor-pointer"
+                        width={250}
+                        height={220}
+                        objectFit="cover"
+                        className="aspect-[4/3] rounded-t group-hover:scale-105 transition-all duration-300 cursor-pointer"
                       />
                     </div>
-                    <div className="p-4 flex flex-col h-full">
+                    <div className="p-4 flex flex-col justify-between h-[100px] ">
                       <Link
-                        className=" line-clamp-2 text-base font-[600] text-gray-700"
+                        className="text-gray-700 text-base font-[600] line-clamp-2"
                         href={`/news-details/${news?.slug}?category_no=${category_no}&post_no=${news?.post_no}`}
                       >
                         {news?.title}

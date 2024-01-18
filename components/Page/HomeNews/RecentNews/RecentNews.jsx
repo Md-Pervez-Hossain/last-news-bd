@@ -27,7 +27,7 @@ const RecentNews = ({ newsCategoryData, category_no }) => {
             <Link
               href={`/news-details/${newsCategoryData?.data?.[0]?.slug}?category_no=${category_no}&post_no=${newsCategoryData?.data?.[0]?.post_no}`}
             >
-              <h2 className="text-gray-700 font-[600]  line-clamp-2">
+              <h2 className="text-gray-700 font-[600]  line-clamp-2 my-4">
                 {newsCategoryData?.data?.[0].title}
               </h2>
             </Link>
@@ -52,8 +52,8 @@ const RecentNews = ({ newsCategoryData, category_no }) => {
             <Link
               href={`/news-details/${newsCategoryData?.data?.[0]?.slug}?category_no=${category_no}&post_no=${newsCategoryData?.data?.[0]?.post_no}`}
             >
-              <h2 className="text-gray-700 font-[600]  line-clamp-2">
-                {newsCategoryData?.data?.[0].title}
+              <h2 className="text-gray-700 font-[600]  line-clamp-2 my-4">
+                {newsCategoryData?.data?.[0]?.title}
               </h2>
             </Link>
           ) : (
