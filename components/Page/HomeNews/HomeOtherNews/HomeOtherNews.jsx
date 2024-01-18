@@ -1,6 +1,6 @@
 import Title from "@/components/ui/Title/Title";
 import React from "react";
-
+import Image from "next/image";
 import Link from "next/link";
 import NoDataFound from "@/components/Share/NoDataFound/NoDataFound";
 const HomeOtherNews = ({ newsCategoryData, category_no }) => {
@@ -19,16 +19,13 @@ const HomeOtherNews = ({ newsCategoryData, category_no }) => {
                     className="flex flex-col gap-5 overflow-hidden group shadow-xl rounded-lg"
                     key={news.id}
                   >
-                    <div className=" group-hover:scale-105 transition-all duration-300">
-                      {/* <Image
-                    src={news?.image}
-                    alt="Picture of the author"
-                    style={{ objectFit: "contain" }}
-                  /> */}
-                      <img
+                    <div className="overflow-hidden group rounded-md">
+                      <Image
+                        width={500}
+                        height={500}
                         src={news?.post_img}
-                        alt="Picture "
-                        style={{ objectFit: "contain" }}
+                        alt="Image"
+                        className="rounded-md group-hover:scale-105 transition-all duration-300 cursor-pointer"
                       />
                     </div>
                     <div className="p-3 flex flex-col h-full">

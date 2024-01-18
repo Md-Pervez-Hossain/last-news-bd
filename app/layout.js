@@ -18,7 +18,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en"  >
-      <body className={`${inter.className}${noto.className}`}>
+      <body className={`${inter.className}${noto.className} overflow-x-hidden`}>
 
         <Headers />
         <div className=" hidden lg:flex fixed right-0 top-1/2 -translate-y-1/2   p-3 z-50 ">

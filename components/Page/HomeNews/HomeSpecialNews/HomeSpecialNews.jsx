@@ -12,7 +12,7 @@ const HomeSpecialNews = ({ newsCategoryData, category_no }) => {
       <div className="grid md:grid-cols-2 3 xl:grid-cols-3 gap-10 my-8">
         {newsCategoryData?.data?.length > 0 ? (
           newsCategoryData.data
-            ?.filter((news) => news?.social_news === "true")
+            ?.filter((news) => news?.special_news === "true")
             ?.map((news) => {
               return (
                 <>
@@ -20,17 +20,12 @@ const HomeSpecialNews = ({ newsCategoryData, category_no }) => {
                     className="flex flex-col gap-5 overflow-hidden group  shadow-lg rounded-lg"
                     key={news?.id}
                   >
-                    <div className=" group-hover:scale-105 transition-all duration-300 cursor-pointer">
-                      {/* <Image
-                    src={news?.image}
-                    alt="Picture of the author"
-                    style={{ objectFit: "contain" }}
-                    width={500}
-                  /> */}
-                      <img
+                    <div className=" relative overflow-hidden group rounded-md ">
+                      <Image
                         src={news?.post_img}
-                        alt="Picture "
-                        style={{ objectFit: "contain" }}
+                        alt="Image"
+                        fill
+                        className="rounded-md group-hover:scale-105 transition-all duration-300 cursor-pointer"
                       />
                     </div>
                     <div className="p-4 flex flex-col h-full">

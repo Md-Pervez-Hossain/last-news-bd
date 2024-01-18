@@ -14,6 +14,7 @@ const ContactInfo = ({ contactInfo }) => {
           <Image
             src={addressIcon}
             alt="Picture"
+            fill
             style={{ objectFit: "contain" }}
           />
           <h4 className="lg:text-[24px] text-base font-[600] my-2">ঠিকানা</h4>
@@ -30,6 +31,7 @@ const ContactInfo = ({ contactInfo }) => {
           <Image
             src={emailIcon}
             alt="Picture of the Email"
+            fill
             style={{ objectFit: "contain" }}
           />
           <h4 className="text-[24px] font-[600] my-2">ইমেইল</h4>
@@ -43,6 +45,7 @@ const ContactInfo = ({ contactInfo }) => {
           <Image
             src={addressIcon}
             alt="Picture of the author"
+            fill
             style={{ objectFit: "contain" }}
           />
           <h4 className="text-[24px] font-[600] my-2">যোগাযোগ নাম্বার</h4>

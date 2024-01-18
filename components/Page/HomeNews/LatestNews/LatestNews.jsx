@@ -11,16 +11,14 @@ const LatestNews = ({ newsCategoryData, category_no }) => {
     <div className="my-8">
       {/* <Title> সর্বশেষ সংবাদ</Title> */}
       <div className="py-5 relative ">
-        <div className=" overflow-hidden  group rounded-md  ">
+        <div className=" relative h-[400px] overflow-hidden  group rounded-md  ">
           <Image
             src={
               newsCategoryData?.data?.length > 0 &&
               newsCategoryData?.data?.[0]?.post_img
             }
             alt="Picture "
-            style={{ objectFit: "contain" }}
-            width={600}
-            height={500}
+            fill
             className="group-hover:scale-105 transition-all duration-300 cursor-pointer rounded-md"
           />
         </div>

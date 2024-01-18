@@ -76,16 +76,19 @@ export default async function Home({ searchParams }) {
               />
             </div>
           </div>
+
           <RecentNews
             category_no="CTR1021"
             newsCategoryData={search ? searchData : homeData}
           />
+
           <div>
             <MoreBreakingNews
               category_no="CTR1021"
               newsCategoryData={search ? searchData : homeData}
             />
           </div>
+
           <div className="my-8">
             <HomeOtherNews
               category_no="CTR1021"

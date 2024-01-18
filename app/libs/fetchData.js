@@ -111,7 +111,7 @@ export const fetchAboutUsData = async () => {
 
 export const fetchPhotoData = async () => {
   try {
-    const res = await fetch(`https://server.lastnewsbd.com/api/v1/media/list/image??deleted=0&status=0&page=${1}&perpage=${100}`, {
+    const res = await fetch(`https://server.lastnewsbd.com/api/v1/media/list/image?deleted=0&status=0&page=${1}&perpage=${100}`, {
       cache: "no-store"
     })
     // if (!res.ok) {

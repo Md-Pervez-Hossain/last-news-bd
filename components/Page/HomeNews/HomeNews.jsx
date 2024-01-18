@@ -58,7 +58,7 @@ const HomeNews = ({ newsCategoryData, adsData, photos }) => {
             <Add adsData={adsData} />
           </div>
         </div>
-        <div className="py-8">
+        <div className="mt-8">
           <BreakingNews
             category_no={category_no}
             newsCategoryData={newsCategoryData}

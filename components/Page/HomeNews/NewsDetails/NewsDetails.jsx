@@ -1,11 +1,12 @@
 import Container from "@/components/ui/Container/Container";
 import React from "react";
-import HomeBanner from "../HomeBanner/HomeBanner";
+
 import HomeTodayNews from "../HomeTodayNews/HomeTodayNews";
 import NewsTitle from "../NewsTitle/NewsTitle";
 import HomeOtherNews from "../HomeOtherNews/HomeOtherNews";
 import SingleNewsPostDetails from "./SingleNewsPostDetails";
 import Add from "../Adds/Add";
+import HomeBanner from "../HomeBanner/HomeBanner";
 
 const NewsDetails = ({
   postDetails,
@@ -16,7 +17,7 @@ const NewsDetails = ({
   return (
     <div>
       <Container>
-        <HomeBanner adsData={adsData} />
+        {/* <HomeBanner adsData={adsData} /> */}
         <div className="grid grid-cols-3 gap-10 my-8">
           <div className="lg:col-span-2 col-span-3">
             <SingleNewsPostDetails

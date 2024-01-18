@@ -15,11 +15,18 @@ const MoreBreakingNews = ({ newsCategoryData, category_no }) => {
         <div className=" col-span-3 lg:col-span-2 row-span-4   cursor-pointer rounded-lg">
           <div className="  overflow-hidden group">
             <div className=" group-hover:scale-105 transition-all duration-300">
-              <img
-                src={image1}
-                alt="Picture"
-                style={{ objectFit: "contain" }}
-              />
+              <div className=" overflow-hidden group rounded-md ">
+                <Image
+                  src={
+                    newsCategoryData?.data?.length > 0 &&
+                    newsCategoryData?.data?.[0]?.post_img
+                  }
+                  alt="Image"
+                  width={600}
+                  height={600}
+                  className="rounded-md group-hover:scale-105 transition-all duration-300 cursor-pointer"
+                />
+              </div>
             </div>
             {newsCategoryData?.data?.length > 0 ? (
               <Link
@@ -42,12 +49,15 @@ const MoreBreakingNews = ({ newsCategoryData, category_no }) => {
               return (
                 <>
                   <div className="overflow-hidden group shadow-xl rounded-lg">
-                    <img
-                      src={image1}
-                      alt="Picture "
-                      style={{ objectFit: "contain" }}
-                      className="group-hover:scale-105 transition-all duration-300"
-                    />
+                    <div className=" overflow-hidden group rounded-md ">
+                      <Image
+                        src={news?.post_img}
+                        alt="Image"
+                        width={600}
+                        height={600}
+                        className="rounded-md group-hover:scale-105 transition-all duration-300 cursor-pointer"
+                      />
+                    </div>
                     <div className="p-4 flex flex-col h-full">
                       <Link
                         className=" line-clamp-2 text-base font-[600] text-gray-700"

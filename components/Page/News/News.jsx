@@ -27,12 +27,12 @@ const News = ({ newsCategoryData }) => {
             return (
               <>
                 <div className="bg-white shadow-xl rounded-lg">
-                  <div className="group overflow-hidden cursor-pointer">
-                    <img
-                      src={sports?.post_img}
-                      alt="Picture "
-                      style={{ objectFit: "contain" }}
-                      className="group-hover:scale-105 transition-all duration-300"
+                  <div className="  ">
+                    <Image
+                      src={sports?.sports_img}
+                      alt="Image"
+                      width={500}
+                      className="rounded-md group-hover:scale-105 transition-all duration-300 cursor-pointer"
                     />
                   </div>
                   <div className="p-3">

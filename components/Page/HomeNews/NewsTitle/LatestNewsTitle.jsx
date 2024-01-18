@@ -15,7 +15,7 @@ const LatestNewsTitle = ({ newsCategoryData, category_no }) => {
                   <Link
                     href={`/news-details/${item?.slug}?category_no=${category_no}&post_no=${item?.post_no}`}
                   >
-                    <li className="mb-5 hover:text-secondary transition-all duration-300 hover:ps-2 text-base text-gray-700 font-[600] ">
+                    <li className="mb-5 hover:text-secondary transition-all duration-300 hover:ps-2 text-base text-gray-700 font-[600] text-[14px] ">
                       {item.title}
                       <hr className="w-full h-[2px] bg-[#222222] opacity-10 mt-3" />
                     </li>

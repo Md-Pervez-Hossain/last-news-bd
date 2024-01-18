@@ -10,9 +10,18 @@ const RecentNews = ({ newsCategoryData, category_no }) => {
     <div>
       <Title>বিশেষ সংবাদ</Title>
       <div className="grid lg:grid-cols-2 gap-10 my-5 cursor-pointer">
-        <div className=" overflow-hidden group">
-          <div className="  group-hover:scale-105 transition-all duration-300">
-            <img src={image1} alt="Picture " style={{ objectFit: "contain" }} />
+        <div>
+          <div className=" overflow-hidden group rounded-md ">
+            <Image
+              src={
+                newsCategoryData?.data?.length > 0 &&
+                newsCategoryData?.data?.[0]?.post_img
+              }
+              alt="Image"
+              width={600}
+              height={600}
+              className="rounded-md group-hover:scale-105 transition-all duration-300 cursor-pointer"
+            />
           </div>
           {newsCategoryData?.data?.length > 0 ? (
             <Link
@@ -26,9 +35,18 @@ const RecentNews = ({ newsCategoryData, category_no }) => {
             <NoDataFound />
           )}
         </div>
-        <div className=" overflow-hidden group">
-          <div className="group-hover:scale-105 transition-all duration-300">
-            <img src={image1} alt="Picture" style={{ objectFit: "contain" }} />
+        <div>
+          <div className=" overflow-hidden group rounded-md ">
+            <Image
+              src={
+                newsCategoryData?.data?.length > 0 &&
+                newsCategoryData?.data?.[0]?.post_img
+              }
+              alt="Image"
+              width={600}
+              height={600}
+              className="rounded-md group-hover:scale-105 transition-all duration-300 cursor-pointer"
+            />
           </div>
           {newsCategoryData?.data?.length > 0 ? (
             <Link

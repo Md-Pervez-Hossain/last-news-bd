@@ -61,13 +61,16 @@ const Menubar = ({ menuData, logo, socialData }) => {
                   {logo?.data?.map((logo) => {
                     return (
                       <>
-                        <div className="flex items-center  justify-end gap-5">
-                          <img
-                            src={logo?.logo}
-                            alt="logo"
-                            style={{ objectFit: "contain" }}
-                            className="group-hover:scale-105 transition-all duration-300 h-[30px] w-[30px]"
-                          />
+                        <div className=" pt-5 flex flex-col md:flex-row   md:items-center md:gap-5 ">
+                          <div className="flex items-center justify-end">
+                            <Image
+                              src={logo?.logo}
+                              alt="Image"
+                              width={250}
+                              height={250}
+                              className="  cursor-pointer  w-[100px]  "
+                            />
+                          </div>
                           <h2 className="text-white text-end lg:flex py-3 lg:py-0 text-[13px]">
                             {banglaDate}
                           </h2>

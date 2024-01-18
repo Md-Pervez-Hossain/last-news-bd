@@ -8,12 +8,13 @@ import newsIcon from "../../assets/icons/News_Paper_white_icon 1 (1).svg";
 import FooterBottom from "./FooterBottom";
 
 import Link from "next/link";
-import { fetchContactInfoData } from "@/app/libs/fetchData";
+import { fetchContactInfoData, fetchLogoData } from "@/app/libs/fetchData";
 import NoDataFound from "../Share/NoDataFound/NoDataFound";
 import NewsLetter from "./NewsLetter";
 
 const Footer = async () => {
   const footerInfo = await fetchContactInfoData();
+  const logo = await fetchLogoData();
   return (
     <div className="bg-primary mt-16 ">
       <Container>
@@ -21,8 +22,29 @@ const Footer = async () => {
           <div className=" text-center lg:text-start grid md:grid-cols-2 lg:grid-cols-4 lg:gap-10 gap-5 text-white my-8">
             <div>
               <div className="flex items-center justify-center lg:justify-start gap-3 mb-5 ">
-                <Image alt="image" width={30} height={30} src={newsIcon} />
-                <h2 className="lg:text-[24px] text-[18px] ">লাস্ট নিউজ বিডি</h2>
+                {logo?.data?.length > 0 ? (
+                  <>
+                    {logo?.data?.map((logo) => {
+                      return (
+                        <>
+                          <div>
+                            <Image
+                              src={logo?.logo}
+                              alt="Image"
+                              width={250}
+                              height={250}
+                              className="  cursor-pointer  w-1/2 "
+                            />
+                          </div>
+                        </>
+                      );
+                    })}
+                  </>
+                ) : (
+                  <>
+                    <p>No Logo Found</p>
+                  </>
+                )}
               </div>
               <h4 className="text-[18px] mb-3 font-[400]">
                 সাবস্ক্রাইব করুন এবং প্রকৃত অর্থনৈতিক খবর সম্পর্কে প্রথমে অবহিত

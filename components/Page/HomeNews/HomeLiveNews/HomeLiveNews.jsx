@@ -1,6 +1,6 @@
 import Title from "@/components/ui/Title/Title";
 import React from "react";
-
+import Image from "next/image";
 import Link from "next/link";
 import NoDataFound from "@/components/Share/NoDataFound/NoDataFound";
 const HomeLiveNews = ({ newsCategoryData, category_no }) => {
@@ -13,28 +13,25 @@ const HomeLiveNews = ({ newsCategoryData, category_no }) => {
             return (
               <>
                 <div
-                  className="flex flex-col gap-5 overflow-hidden group shadow-xl rounded-lg"
-                  key={news.id}
+                  className="flex flex-col gap-2 shadow-xl rounded-lg"
+                  key={news?.id}
                 >
-                  <div className=" group-hover:scale-105 transition-all duration-300 cursor-pointer">
-                    {/* <Image
-                    src={news?.image}
-                    alt="Picture of the author"
-                    style={{ objectFit: "contain" }}
-                  /> */}
-                    <img
+                  <div className="overflow-hidden group rounded-md">
+                    <Image
                       src={news?.post_img}
-                      alt="Picture"
-                      style={{ objectFit: "contain" }}
+                      alt="Image"
+                      width={500}
+                      height={200}
+                      objectFit="cover"
+                      className="aspect-[4/3] rounded-t group-hover:scale-105 transition-all duration-300 cursor-pointer"
                     />
                   </div>
-                  <div className="p-4 flex flex-col h-full">
+                  <div className="p-4 flex flex-col justify-between h-[116px]">
                     <h2 className="text-[18px] mb-3 line-clamp-2 text-base text-gray-700 font-[600]">{`${news.title}`}</h2>
                     <Link
-                      className="mt-auto "
                       href={`/news-details/${news?.slug}?category_no=${category_no}&post_no=${news?.post_no}`}
                     >
-                      <span className=" cursor-pointer text-[13px] text-gray-500">
+                      <span className="cursor-pointer text-[13px] text-gray-500">
                         আরও পড়ুন
                       </span>
                     </Link>

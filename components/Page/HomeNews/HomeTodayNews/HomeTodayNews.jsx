@@ -28,11 +28,13 @@ const HomeTodayNews = ({ newsCategoryData, category_no }) => {
               className="flex flex-col gap-5 overflow-hidden group shadow-xl mb-5 rounded-lg"
               key={news.id}
             >
-              <div className="group-hover:scale-105 transition-all duration-300">
-                <img
+              <div className=" overflow-hidden group rounded-md ">
+                <Image
                   src={news?.post_img}
-                  alt="Picture "
-                  style={{ objectFit: "contain" }}
+                  alt="Image"
+                  width={600}
+                  height={600}
+                  className="rounded-md group-hover:scale-105 transition-all duration-300 cursor-pointer"
                 />
               </div>
               <div className="p-3 flex flex-col h-full">

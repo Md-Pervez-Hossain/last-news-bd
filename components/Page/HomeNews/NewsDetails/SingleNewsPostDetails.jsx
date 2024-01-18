@@ -1,6 +1,7 @@
 import NoDataFound from "@/components/Share/NoDataFound/NoDataFound";
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 const SingleNewsPostDetails = ({ postDetails, socialData }) => {
   return (
     <div>
@@ -21,11 +22,12 @@ const SingleNewsPostDetails = ({ postDetails, socialData }) => {
                 <>
                   <div>
                     <Link href={social?.url_link}>
-                      <img
-                        src={social?.custom_icon}
-                        alt="img"
-                        style={{ objectFit: "contain" }}
-                        className="group-hover:scale-105 transition-all duration-300"
+                      <Image
+                        src={social?.logo}
+                        alt="Image"
+                        width={250}
+                        height={250}
+                        className="  cursor-pointer  w-[100px]  "
                       />
                     </Link>
                   </div>

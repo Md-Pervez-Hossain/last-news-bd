@@ -16,12 +16,16 @@ const BreakingNews = ({ newsCategoryData, category_no }) => {
       <Title>সদ্যপ্রাপ্ত সংবাদ</Title>
       <div className="grid grid-cols-3  grid-rows-4 gap-5  py-5">
         <div className=" col-span-3 lg:col-span-2 row-span-4 cursor-pointer  rounded-lg">
-          <div className="  overflow-hidden group">
-            <div className=" group-hover:scale-105 transition-all duration-300">
-              <img
-                src={image1}
-                alt="Picture "
-                style={{ objectFit: "contain" }}
+          <div>
+            <div className=" overflow-hidden group rounded-md ">
+              <Image
+                src={
+                  (newsCategoryData?.data?.length > 0) &
+                  newsCategoryData?.data?.[0]?.sports_img
+                }
+                fill
+                alt="Image"
+                className="rounded-md group-hover:scale-105 transition-all duration-300 cursor-pointer"
               />
             </div>
             {newsCategoryData?.data?.length > 0 ? (
@@ -43,12 +47,15 @@ const BreakingNews = ({ newsCategoryData, category_no }) => {
               return (
                 <>
                   <div className=" shadow-xl rounded-lg ">
-                    <div className="overflow-hidden group">
-                      <img
-                        src={image1}
-                        alt="Picture"
-                        style={{ objectFit: "contain" }}
-                        className="group-hover:scale-105 transition-all duration-300"
+                    <div className=" overflow-hidden group rounded-md ">
+                      <Image
+                        src={
+                          (newsCategoryData?.data?.length > 0) &
+                          newsCategoryData?.data?.[0]?.sports_img
+                        }
+                        fill
+                        alt="Image"
+                        className="rounded-md group-hover:scale-105 transition-all duration-300 cursor-pointer"
                       />
                     </div>
                     <div className="p-4">
