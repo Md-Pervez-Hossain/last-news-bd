@@ -51,7 +51,7 @@ const Menubar = ({ menuData, logo, socialData }) => {
   };
 
   return (
-    <div className="mb-8 ">
+    <div className="lg:pb-8 pb-4">
       <div className="bg-primary pb-6 ">
         <Container>
           <div>

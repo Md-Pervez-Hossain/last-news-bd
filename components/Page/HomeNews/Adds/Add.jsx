@@ -39,7 +39,7 @@ const Add = ({ adsData }) => {
                 return (
                   <>
                     {imageVisible && (
-                      <SplideSlide className="relative h-[300px] rounded-md ">
+                      <SplideSlide className="relative lg:h-[300px] h-[200px] rounded-md ">
                         <Image
                           src={ads?.ads_img}
                           alt="Image 1"

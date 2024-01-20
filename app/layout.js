@@ -6,6 +6,7 @@ import Headers from '@/components/Headers/Headers'
 import Footer from '@/components/Footer/Footer'
 import FixedSocialMedia from '@/components/Share/FixedSocialMedia/FixedSocialMedia'
 import ToastRapper from '@/components/Share/ToastRapper/ToastRapper'
+import { UseRedux } from './Providers';
 
 const inter = Inter({ subsets: ['latin'] })
 const noto = Noto_Sans_Bengali({ subsets: ["bengali"], weight: ["400", "500", "600"] })
@@ -20,13 +21,15 @@ export default function RootLayout({ children }) {
     <html lang="en"  >
       <body className={`${inter.className}${noto.className} overflow-x-hidden`}>
 
-        <Headers />
-        <div className=" hidden lg:flex fixed right-0 top-1/2 -translate-y-1/2   p-3 z-50 ">
-          <FixedSocialMedia />
-        </div>
-        {children}
-        <ToastRapper />
-        <Footer />
+        <UseRedux>
+          <Headers />
+          <div className=" hidden lg:flex fixed right-0 top-1/2 -translate-y-1/2   p-3 z-50 ">
+            <FixedSocialMedia />
+          </div>
+          {children}
+          <ToastRapper />
+          <Footer />
+        </UseRedux>
 
       </body>
     </html>

@@ -23,7 +23,7 @@ const HomeLiveNews = ({ newsCategoryData, category_no }) => {
                       width={500}
                       height={200}
                       objectFit="cover"
-                      className="aspect-[4/3] rounded-t group-hover:scale-105 transition-all duration-300 cursor-pointer"
+                      className=" rounded-t group-hover:scale-105 transition-all duration-300 cursor-pointer"
                     />
                   </div>
                   <div className="p-4 flex flex-col justify-between h-[116px]">

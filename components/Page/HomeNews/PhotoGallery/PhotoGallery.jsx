@@ -45,8 +45,8 @@ const PhotoGallery = ({ photos }) => {
                       src={photo?.photo}
                       alt="Image"
                       width={300}
-                      height={300}
-                      className="rounded-md w-[300px] h-[300px]"
+                      height={350}
+                      className="rounded-md w-full h-[350px]"
                     />
                   </SplideSlide>
                 </>

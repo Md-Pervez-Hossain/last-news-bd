@@ -1,23 +1,22 @@
+"use client";
 import React from "react";
 import Navigation from "./Navigation/Navigation";
-import MiddleMenu from "./MiddleMenu/MiddleMenu";
 import Menubar from "./Menubar/Menubar";
 import {
-  fetchData,
-  fetchLogoData,
-  fetchSocialData,
-} from "@/app/libs/fetchData";
+  useGetCategoryQuery,
+  useGetLogoQuery,
+  useGetSocialDataQuery,
+} from "@/redux/api/apiSlice";
 
-const Headers = async () => {
-  const menuData = await fetchData();
-  const socialData = await fetchSocialData();
-  const logo = await fetchLogoData();
+const Headers = () => {
+  const { data: menuData } = useGetCategoryQuery();
+  const { data: logoData } = useGetLogoQuery();
+  const { data: socialData } = useGetSocialDataQuery();
+  console.log(menuData);
   return (
-    <div className=" sticky top-0 z-[1000] ">
-      <div>
-        <Navigation socialData={socialData} />
-      </div>
-      <Menubar menuData={menuData} logo={logo} />
+    <div className=" sticky -top-[59.5px] z-[1000] ">
+      <Navigation socialData={socialData} />
+      <Menubar menuData={menuData} logo={logoData} />
     </div>
   );
 };

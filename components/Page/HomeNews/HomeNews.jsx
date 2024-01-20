@@ -16,8 +16,18 @@ import HomeSpecialNews from "./HomeSpecialNews/HomeSpecialNews";
 import MoreBreakingNews from "./MoreBreakingNews/MoreBreakingNews";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import News from "../News/News";
+import {
+  useGetAdsQuery,
+  useGetCategoryNewsQuery,
+  useGetPhotosQuery,
+} from "@/redux/api/apiSlice";
 
-const HomeNews = ({ newsCategoryData, adsData, photos }) => {
+const HomeNews = ({ query, search }) => {
+  console.log(query);
+  const { data: newsCategoryData } = useGetCategoryNewsQuery(query);
+  console.log(newsCategoryData);
+  const { data: adsData } = useGetAdsQuery();
+  const { data: photos } = useGetPhotosQuery();
   const category_no = useSearchParams().get("name");
   const pathname = usePathname();
   return (
@@ -68,7 +78,7 @@ const HomeNews = ({ newsCategoryData, adsData, photos }) => {
           <HomeBanner adsData={adsData} />
         </div>
         {pathname === "/home" && <PhotoGallery photos={photos} />}
-        <div className="grid grid-cols-3 my-10 gap-10">
+        {/* <div className="grid grid-cols-3 my-10 gap-10">
           <div className="lg:col-span-2 col-span-3">
             <HomeLiveNews
               category_no={category_no}
@@ -81,14 +91,13 @@ const HomeNews = ({ newsCategoryData, adsData, photos }) => {
               newsCategoryData={newsCategoryData}
             />
           </div>
-        </div>
-        {pathname === "/home" ||
-          (pathname === "/" && (
-            <RecentNews
-              category_no={category_no}
-              newsCategoryData={newsCategoryData}
-            />
-          ))}
+        </div> */}
+        {pathname === "/home" && (
+          <RecentNews
+            category_no={category_no}
+            newsCategoryData={newsCategoryData}
+          />
+        )}
         <div>
           <MoreBreakingNews
             category_no={category_no}

@@ -13,7 +13,7 @@ const HomeBanner = ({ adsData }) => {
   };
 
   return (
-    <div className="pb-8">
+    <div className="lg:pb-8 pb-4">
       {adsData?.data?.length > 0 ? (
         <>
           {" "}
@@ -38,7 +38,7 @@ const HomeBanner = ({ adsData }) => {
               ?.map((ads) => {
                 return (
                   <>
-                    <SplideSlide className="relative h-[200px]">
+                    <SplideSlide className="relative lg:h-[150px] h-[100px]">
                       <Image
                         src={ads?.ads_img}
                         alt="Image"

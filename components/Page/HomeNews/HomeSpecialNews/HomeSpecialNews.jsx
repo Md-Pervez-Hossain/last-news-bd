@@ -31,7 +31,7 @@ const HomeSpecialNews = ({ newsCategoryData, category_no }) => {
                       />
                     </div>
                     <div className="p-4 flex flex-col justify-between h-[116px]">
-                      <h2 className="text-[18px] mb-3 line-clamp-2 text-base text-gray-700 font-[600]">{`${news.title}`}</h2>
+                      <h2 className="text-[18px] mb-3 line-clamp-2 text-base text-gray-700 font-[600] line-clamp-2">{`${news.title}`}</h2>
                       <Link
                         href={`/news-details/${news?.slug}?category_no=${category_no}&post_no=${news?.post_no}`}
                       >

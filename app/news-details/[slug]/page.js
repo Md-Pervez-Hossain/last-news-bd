@@ -1,19 +1,18 @@
-import { fetchAdsData, fetchCategoryNewsData, fetchPostDetails, fetchSocialData } from '@/app/libs/fetchData';
+"use client"
 import NewsDetails from '@/components/Page/HomeNews/NewsDetails/NewsDetails';
-import Container from '@/components/ui/Container/Container';
+import { useGetAdsQuery, useGetCategoryNewsDataQuery, useGetPostDetailsQuery, useGetSocialDataQuery } from '@/redux/api/apiSlice';
 import React from 'react';
-
-const NewsDetailsPage = async ({ searchParams }) => {
+const NewsDetailsPage = ({ searchParams }) => {
   console.log(searchParams);
   const category_no = searchParams.category_no
   const query = searchParams.post_no
-  const postDetails = await fetchPostDetails(query)
-  const newsCategoryData = await fetchCategoryNewsData(category_no)
-  const adsData = await fetchAdsData()
-  const socialData = await fetchSocialData()
+  const { data: postDetails } = useGetPostDetailsQuery(query)
+  const { data: socialData } = useGetSocialDataQuery()
+  const { data: adsData } = useGetAdsQuery()
+  const { data: newsCategoryData } = useGetCategoryNewsDataQuery(category_no)
   return (
     <div>
-      <NewsDetails socialData={socialData} newsCategoryData={newsCategoryData} postDetails={postDetails} adsData={adsData} />
+      <NewsDetails postDetails={postDetails} socialData={socialData} adsData={adsData} newsCategoryData={newsCategoryData} />
     </div>
   );
 };

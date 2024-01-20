@@ -1,25 +1,17 @@
 export const fetchData = async (query) => {
   try {
     const res = await fetch(`https://server.lastnewsbd.com/api/v1/category/list?deleted=0&status=0&page=${1}&perpage=${100}`)
-    // if (!res.ok) {
-    //   throw new Error('Failed to fetch data')
-    // }
     return res.json();
   } catch (error) {
     console.log(error);
-
   }
 }
 export const fetchPostDetails = async (query) => {
   try {
     const res = await fetch(`https://server.lastnewsbd.com/api/v1/post/details?post_no=${query}`)
-    // if (!res.ok) {
-    //   throw new Error('Failed to fetch data')
-    // }
     return res.json();
   } catch (error) {
     console.log(error);
-
   }
 }
 export const fetchCategoryNewsData = async (query) => {
@@ -28,9 +20,7 @@ export const fetchCategoryNewsData = async (query) => {
     const res = await fetch(` https://server.lastnewsbd.com/api/v1/post/list?deleted=0&status=0&page=${1}&perpage=${100}&category_no=${query}`, {
       cache: "no-store"
     })
-    // if (!res.ok) {
-    //   throw new Error('Failed to fetch data')
-    // }
+
     return res.json();
   } catch (error) {
     console.log(error);
@@ -41,9 +31,7 @@ export const fetchSearchCategoryNewsData = async (query, search) => {
     const res = await fetch(`https://server.lastnewsbd.com/api/v1/post/list?deleted=0&status=0&page=${1}&perpage=${100}&category_no=${query}&search=${search}`, {
       cache: "no-store"
     })
-    // if (!res.ok) {
-    //   throw new Error('Failed to fetch data')
-    // }
+
     return res.json();
   } catch (error) {
     console.log(error);
@@ -54,24 +42,21 @@ export const fetchHomeNewsData = async () => {
     const res = await fetch(`https://server.lastnewsbd.com/api/v1/post/list?deleted=0&status=0&page=${1}&perpage=${100}&category_no=CTR1021&`, {
       cache: "no-store"
     })
-    // if (!res.ok) {
-    //   throw new Error('Failed to fetch data')
-    // }
+
     return res.json();
   } catch (error) {
     console.log(error);
 
   }
 }
+
 export const fetchSearchNewsData = async (search) => {
 
   try {
     const res = await fetch(`https://server.lastnewsbd.com/api/v1/post/list?deleted=0&status=0&page=${1}&perpage=${100}&search=${search}`, {
       cache: "no-store"
     })
-    // if (!res.ok) {
-    //   throw new Error('Failed to fetch data')
-    // }
+
     return res.json();
   } catch (error) {
     console.log(error);
@@ -84,9 +69,7 @@ export const fetchTermAndConditionData = async () => {
     const res = await fetch(`https://server.lastnewsbd.com/api/v1/settings/terms_conditions/list?deleted=0&status=0&page=${1}&perpage=${100}`, {
       cache: "no-store"
     })
-    // if (!res.ok) {
-    //   throw new Error('Failed to fetch data')
-    // }
+
     return res.json();
   } catch (error) {
     console.log(error);
@@ -99,9 +82,7 @@ export const fetchAboutUsData = async () => {
     const res = await fetch(`https://server.lastnewsbd.com/api/v1/settings/about_us/list?deleted=0&status=0&page=${1}&perpage=${100}`, {
       cache: "no-store"
     })
-    // if (!res.ok) {
-    //   throw new Error('Failed to fetch data')
-    // }
+
     return res.json();
   } catch (error) {
     console.log(error);
@@ -114,9 +95,7 @@ export const fetchPhotoData = async () => {
     const res = await fetch(`https://server.lastnewsbd.com/api/v1/media/list/image?deleted=0&status=0&page=${1}&perpage=${100}`, {
       cache: "no-store"
     })
-    // if (!res.ok) {
-    //   throw new Error('Failed to fetch data')
-    // }
+
     return res.json();
   } catch (error) {
     console.log(error);
@@ -129,9 +108,7 @@ export const fetchAdsData = async () => {
     const res = await fetch(`https://server.lastnewsbd.com/api/v1/ads/list?deleted=0&status=0&page=${1}&perpage=${100}`, {
       cache: "no-store"
     })
-    // if (!res.ok) {
-    //   throw new Error('Failed to fetch data')
-    // }
+
     return res.json();
   } catch (error) {
     console.log(error);
@@ -144,9 +121,7 @@ export const fetchSocialData = async () => {
     const res = await fetch(`https://server.lastnewsbd.com/api/v1/social/list?deleted=0&status=0&page=${1}&perpage=${100}`, {
       cache: "no-store"
     })
-    // if (!res.ok) {
-    //   throw new Error('Failed to fetch data')
-    // }
+
     return res.json();
   } catch (error) {
     console.log(error);
@@ -159,9 +134,7 @@ export const fetchLogoData = async () => {
     const res = await fetch(`https://server.lastnewsbd.com/api/v1/settings/logo/list?deleted=0&status=0&page=${1}&perpage=${100}`, {
       cache: "no-store"
     })
-    // if (!res.ok) {
-    //   throw new Error('Failed to fetch data')
-    // }
+
     return res.json();
   } catch (error) {
     console.log(error);
@@ -173,9 +146,7 @@ export const fetchDashboardInfoData = async () => {
     const res = await fetch(`https://server.lastnewsbd.com/api/v1/dashboard/info?deleted=0&status=0&page=${1}&perpage=${100}`, {
       cache: "no-store"
     })
-    // if (!res.ok) {
-    //   throw new Error('Failed to fetch data')
-    // }
+
     return res.json();
   } catch (error) {
     console.log(error);
@@ -188,9 +159,7 @@ export const fetchContactInfoData = async () => {
     const res = await fetch(`https://server.lastnewsbd.com/api/v1/settings/footer/info/details?deleted=0&status=0&page=${1}&perpage=${100}`, {
       cache: "no-store"
     })
-    // if (!res.ok) {
-    //   throw new Error('Failed to fetch data')
-    // }
+
     return res.json();
   } catch (error) {
     console.log(error);
@@ -202,9 +171,7 @@ export const fetchAdsPackageData = async () => {
     const res = await fetch(`https://server.lastnewsbd.com/api/v1/package/list?deleted=0&status=0&page=${1}&perpage=${100}`, {
       cache: "no-store"
     })
-    // if (!res.ok) {
-    //   throw new Error('Failed to fetch data')
-    // }
+
     return res.json();
   } catch (error) {
     console.log(error);
