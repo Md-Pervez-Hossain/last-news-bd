@@ -24,28 +24,26 @@ const News = ({ newsCategoryData }) => {
         {newsCategoryData?.data?.length > 0 ? (
           newsCategoryData?.data?.map((sports) => {
             return (
-              <>
-                <div className="bg-white shadow-xl rounded-lg">
-                  <div className="  ">
-                    <Image
-                      src={sports?.sports_img}
-                      alt="Image"
-                      width={500}
-                      className="rounded-md group-hover:scale-105 transition-all duration-300 cursor-pointer"
-                    />
-                  </div>
-                  <div className="p-3">
-                    <h4 className="text-base mb-3 font-[600] text-gray-700">
-                      {sports?.title}
-                    </h4>
-                    <Link
-                      href={`/news-details/${sports?.slug}?post_no=${sports?.post_no}`}
-                    >
-                      <p className="text-gray-500 text-sm">আরও পড়ুন </p>
-                    </Link>
-                  </div>
+              <div key={sports?.id} className="bg-white shadow-xl rounded-lg">
+                <div className="  ">
+                  <Image
+                    src={sports?.sports_img}
+                    alt="Image"
+                    width={500}
+                    className="rounded-md group-hover:scale-105 transition-all duration-300 cursor-pointer"
+                  />
                 </div>
-              </>
+                <div className="p-3">
+                  <h4 className="text-base mb-3 font-[600] text-gray-700">
+                    {sports?.title}
+                  </h4>
+                  <Link
+                    href={`/news-details/${sports?.slug}?post_no=${sports?.post_no}`}
+                  >
+                    <p className="text-gray-500 text-sm">আরও পড়ুন </p>
+                  </Link>
+                </div>
+              </div>
             );
           })
         ) : (

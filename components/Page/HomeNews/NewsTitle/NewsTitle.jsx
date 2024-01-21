@@ -1,9 +1,7 @@
 "use client";
 
-import ShowContent from "@/components/Share/ShowContent/ShowContent";
-import Container from "@/components/ui/Container/Container";
 import React, { useState } from "react";
-import LatestNews from "../LatestNews/LatestNews";
+
 import LatestNewsTitle from "./LatestNewsTitle";
 import TrendingNewsTitle from "./TrendingNewsTitle";
 

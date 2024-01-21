@@ -23,10 +23,9 @@ const RecentNews = ({ newsCategoryData, category_no }) => {
               />
 
               <div className="flex items-center justify-center">
-                <div className="absolute   bottom-0 w-full bg-primary lg:h-[65px] h-[60px] opacity-75 "></div>
                 <Link
                   href={`/news-details/${newsCategoryData?.data?.[0]?.slug}?category_no=${category_no}&post_no=${newsCategoryData?.data?.[0]?.post_no}`}
-                  className="  font-[400] lg:text-[20px] text-base line-clamp-1 absolute    bottom-2 w-full text-white p-5"
+                  className=" bg-primary/20 font-[400] lg:text-[20px] text-base line-clamp-1 absolute    bottom-2 w-full text-white px-5 py-4"
                 >
                   {filteredNews?.[0]?.title}
                 </Link>
@@ -42,10 +41,9 @@ const RecentNews = ({ newsCategoryData, category_no }) => {
                 />
 
                 <div className="flex items-center justify-center">
-                  <div className="absolute   bottom-0 w-full bg-primary lg:h-[65px] h-[60px] opacity-75 "></div>
                   <Link
                     href={`/news-details/${newsCategoryData?.data?.[1]?.slug}?category_no=${category_no}&post_no=${newsCategoryData?.data?.[1]?.post_no}`}
-                    className="  font-[400] lg:text-[20px] text-base line-clamp-1 absolute    bottom-1 w-full text-white p-5"
+                    className=" bg-primary/20  font-[400] lg:text-[20px] text-base line-clamp-1 absolute    bottom-1 w-full text-white px-5 py-4"
                   >
                     {filteredNews?.[1]?.title}
                   </Link>

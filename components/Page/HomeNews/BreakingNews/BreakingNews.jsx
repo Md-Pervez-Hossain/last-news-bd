@@ -27,10 +27,9 @@ const BreakingNews = ({ newsCategoryData, category_no }) => {
                 />
 
                 <div className="flex items-center justify-center">
-                  <div className="absolute   bottom-0 w-full bg-primary lg:h-[65px] h-[50px] opacity-75 "></div>
                   <Link
                     href={`/news-details/${newsCategoryData?.data?.[0]?.slug}?category_no=${category_no}&post_no=${newsCategoryData?.data?.[0]?.post_no}`}
-                    className="  font-[400] lg:text-[20px] text-base line-clamp-1 absolute   lg:bottom-3 bottom-2 w-full text-white px-5 py-2"
+                    className=" bg-primary/20  font-[400] lg:text-[20px] text-base line-clamp-1 absolute   lg:bottom-3 bottom-2 w-full text-white px-5 py-4"
                   >
                     {filteredNews?.[0]?.title}
                   </Link>
@@ -40,28 +39,26 @@ const BreakingNews = ({ newsCategoryData, category_no }) => {
             <div className="  col-span-3 lg:col-span-1 row-span-2 grid md:grid-cols-2 gap-5  cursor-pointer ">
               {filteredNewsWithoutFirstElement.map((news) => {
                 return (
-                  <>
-                    <div className=" shadow-xl rounded-lg   ">
-                      <div className="overflow-hidden group rounded-md ">
-                        <Image
-                          src={news?.post_img}
-                          alt="Image"
-                          width={250}
-                          height={220}
-                          objectFit="cover"
-                          className="aspect-[4/3] w-full rounded-t group-hover:scale-105 transition-all duration-300 cursor-pointer"
-                        />
-                      </div>
-                      <div className="p-4 ">
-                        <Link
-                          className="text-gray-700 text-base font-[600] line-clamp-2"
-                          href={`/news-details/${news?.slug}?category_no=${category_no}&post_no=${news?.post_no}`}
-                        >
-                          {news?.title}
-                        </Link>
-                      </div>
+                  <div key={news?.id} className=" shadow-xl rounded-lg   ">
+                    <div className="overflow-hidden group rounded-md ">
+                      <Image
+                        src={news?.post_img}
+                        alt="Image"
+                        width={250}
+                        height={220}
+                        objectFit="cover"
+                        className="aspect-[4/3] w-full rounded-t group-hover:scale-105 transition-all duration-300 cursor-pointer"
+                      />
                     </div>
-                  </>
+                    <div className="p-4 ">
+                      <Link
+                        className="text-gray-700 text-base font-[600] line-clamp-2"
+                        href={`/news-details/${news?.slug}?category_no=${category_no}&post_no=${news?.post_no}`}
+                      >
+                        {news?.title}
+                      </Link>
+                    </div>
+                  </div>
                 );
               })}
             </div>
