@@ -7,7 +7,7 @@ const ContactForm = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isLoading },
+    formState: { errors },
   } = useForm({});
   const handleContact = (values) => {
     console.log(values);

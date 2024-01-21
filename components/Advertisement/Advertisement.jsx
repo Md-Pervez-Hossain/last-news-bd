@@ -2,13 +2,11 @@
 import Container from "@/components/ui/Container/Container";
 import React from "react";
 import HomeBanner from "../Page/HomeNews/HomeBanner/HomeBanner";
-import Image from "next/image";
-import newsPic from "../../assets/images/advertisement_pic.png";
+
 import NoDataFound from "../Share/NoDataFound/NoDataFound";
-import Title from "../ui/Title/Title";
+
 import { PrimaryButton } from "../Share/Buttons/Buttons";
 const Advertisement = ({ addPackage, adsData }) => {
-  console.log(addPackage);
   return (
     <div>
       <Container>
