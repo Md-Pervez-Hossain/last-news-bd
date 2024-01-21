@@ -11,5 +11,7 @@ const page = ({ searchParams }) => {
     </div>
   );
 };
+export function generateStaticParams() {
 
+}
 export default page;

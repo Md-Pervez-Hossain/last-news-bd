@@ -31,7 +31,19 @@ export const api = createApi({
     getCategoryNewsData: builder.query({
       query: (query) => `/post/list?deleted=0&status=0&page=${1}&perpage=${100}&category_no=${query}`,
     }),
+    getHomeNewsData: builder.query({
+      query: () => `/post/list?deleted=0&status=0&page=${1}&perpage=${100}&category_no=CTR1021&`,
+    }),
+    getSearchNewsData: builder.query({
+      query: (search) => `/post/list?deleted=0&status=0&page=${1}&perpage=${100}&search=${search}`,
+    }),
+    getTermsAndConditionData: builder.query({
+      query: () => `/settings/terms_conditions/list?deleted=0&status=0&page=${1}&perpage=${100}`,
+    }),
+    getAboutUsData: builder.query({
+      query: () => `/settings/about_us/list?deleted=0&status=0&page=${1}&perpage=${100}`,
+    }),
   })
 })
 
-export const { useGetCategoryQuery, useGetCategoryNewsQuery, useGetAdsQuery, useGetLogoQuery, useGetSocialDataQuery, useGetPhotosQuery, useGetPostDetailsQuery, useGetCategoryNewsDataQuery } = api
+export const { useGetCategoryQuery, useGetCategoryNewsQuery, useGetAdsQuery, useGetLogoQuery, useGetSocialDataQuery, useGetPhotosQuery, useGetPostDetailsQuery, useGetCategoryNewsDataQuery, useGetHomeNewsDataQuery, useGetSearchNewsDataQuery, useGetTermsAndConditionDataQuery, useGetAboutUsDataQuery } = api

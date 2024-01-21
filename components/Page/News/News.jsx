@@ -20,7 +20,6 @@ const News = ({ newsCategoryData }) => {
           {newsCategoryData?.data?.[0].category_name}
         </Title>
       )}
-
       <div className="grid grid-cols-3 gap-5">
         {newsCategoryData?.data?.length > 0 ? (
           newsCategoryData?.data?.map((sports) => {
