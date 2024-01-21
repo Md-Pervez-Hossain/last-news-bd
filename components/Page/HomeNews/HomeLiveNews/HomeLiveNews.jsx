@@ -4,17 +4,20 @@ import Image from "next/image";
 import Link from "next/link";
 import NoDataFound from "@/components/Share/NoDataFound/NoDataFound";
 const HomeLiveNews = ({ newsCategoryData, category_no }) => {
+  const filteredNews = newsCategoryData?.data?.filter(
+    (news) => news?.latest_news === "true"
+  );
   return (
     <div>
-      <Title>সর্বশেষ সংবাদ</Title>
-      <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-10 my-8">
-        {newsCategoryData?.data?.length > 0 ? (
-          newsCategoryData?.data?.map((news) => {
-            return (
-              <>
+      {filteredNews?.length > 0 ? (
+        <>
+          <Title>সর্বশেষ সংবাদ</Title>
+          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-10 my-8">
+            {filteredNews?.map((news) => {
+              return (
                 <div
-                  className="flex flex-col gap-2 shadow-xl rounded-lg"
-                  key={news?.id}
+                  className="flex flex-col gap-5 overflow-hidden group shadow-xl rounded-lg"
+                  key={news.id}
                 >
                   <div className="overflow-hidden group rounded-md">
                     <Image
@@ -23,7 +26,7 @@ const HomeLiveNews = ({ newsCategoryData, category_no }) => {
                       width={500}
                       height={200}
                       objectFit="cover"
-                      className=" rounded-t group-hover:scale-105 transition-all duration-300 cursor-pointer"
+                      className="aspect-[4/3] rounded-t group-hover:scale-105 transition-all duration-300 cursor-pointer"
                     />
                   </div>
                   <div className="p-4 flex flex-col justify-between h-[116px]">
@@ -37,13 +40,15 @@ const HomeLiveNews = ({ newsCategoryData, category_no }) => {
                     </Link>
                   </div>
                 </div>
-              </>
-            );
-          })
-        ) : (
+              );
+            })}
+          </div>
+        </>
+      ) : (
+        <>
           <NoDataFound />
-        )}
-      </div>
+        </>
+      )}
     </div>
   );
 };
