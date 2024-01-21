@@ -6,7 +6,7 @@ import Headers from '@/components/Headers/Headers'
 import Footer from '@/components/Footer/Footer'
 import FixedSocialMedia from '@/components/Share/FixedSocialMedia/FixedSocialMedia'
 import ToastRapper from '@/components/Share/ToastRapper/ToastRapper'
-import { UseRedux } from './Providers';
+import { UseRedux } from './providers';
 
 const inter = Inter({ subsets: ['latin'] })
 const noto = Noto_Sans_Bengali({ subsets: ["bengali"], weight: ["400", "500", "600"] })
